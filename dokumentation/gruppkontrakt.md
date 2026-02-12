@@ -110,3 +110,4 @@ Om ni vill ta upp någonting utöver det fördefinierade. Skriv gärna en egen r
 - [Förnamn Efternamn](https://github.com/ditt-github-användarnamn)
 - [Erik Grahn](https://github.com/erik-grahn)
 - [Oscar Holmblad](https://github.com/oscarholmblad)
+- [Lina Svärd](https://github.com/linasvard)
