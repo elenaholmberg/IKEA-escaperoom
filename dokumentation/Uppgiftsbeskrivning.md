@@ -2,10 +2,13 @@
 
 # Uppgiftsbeskrivning
 
-Rum 1: Elena - Kök
-Rum 2: Erik - Mattor
-Rum 3: Lina - Tag själv lagret
-Rum 4: Oscar - Kassan
+- Rum 1: Elena - Kök
+  
+- Rum 2: Erik - Mattor
+  
+- Rum 3: Lina - Tag själv lagret
+  
+- Rum 4: Oscar - Kassan
 
 
 - Så många rum/problem som ni är gruppmedlemmar.
