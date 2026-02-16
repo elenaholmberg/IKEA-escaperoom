@@ -6,6 +6,8 @@
 Ta en skärmdump på er sprint-board och backlog när den är färdigplanerad 
 och lägg in det i dokumentationsmappen under respektive vecka, som betygsunderlag.
 
+## Rummen:
+
 - Rum 1: Elena - Kök
   
 - Rum 2: Erik - Mattor
