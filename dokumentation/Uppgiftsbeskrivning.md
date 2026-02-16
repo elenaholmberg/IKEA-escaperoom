@@ -1,12 +1,11 @@
-
-
 # Uppgiftsbeskrivning
+
 - Så många rum/problem som ni är gruppmedlemmar.
 - Sammanhängande "storytelling"/spelflöde och design. Samarbete & kommunikation.
 - Ni ska ha med en timer som räknar upp tiden per rum.
 - Ni ska ha med en timer som räknar ihop totaltiden.
 - Ni ska ha med en "progress bar" som visar hur många rum man har "knäckt"/tagit sig förbi.
-- Det ska gå att spara "progress", dvs. om jag har löst rum 3/5 så ska jag inte behöva börja om med rum 1, om jag stängt ner       webbläsaren. Dvs. ni behöver hålla reda på vilket rum som är aktuellt.
+- Det ska gå att spara "progress", dvs. om jag har löst rum 3/5 så ska jag inte behöva börja om med rum 1, om jag stängt ner webbläsaren. Dvs. ni behöver hålla reda på vilket rum som är aktuellt.
 - Det ska finnas en highscore-lista med top 3 spelare.
 - Man ska kunna "logga in" med sitt namn (så att det sedan sparas i highscore).
 - Det ska visas ett "Välkommen, namn!"-meddelande någonstans på sidan.
@@ -17,5 +16,6 @@
 - Det ska finnas en game over-sidan, som visar lyckat resultat eller misslyckat resultat.
 
 ## Dokumentation för betygsunderlag:
-Ta en skärmdump på er sprint-board och backlog när den är färdigplanerad 
+
+Ta en skärmdump på er sprint-board och backlog när den är färdigplanerad
 och lägg in det i dokumentationsmappen under respektive vecka, som betygsunderlag.
