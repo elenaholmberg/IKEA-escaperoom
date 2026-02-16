@@ -10,6 +10,8 @@
   
 - Rum 4: Oscar - Kassan
 
+  
+
 
 - Så många rum/problem som ni är gruppmedlemmar.
 - Sammanhängande "storytelling"/spelflöde och design. Samarbete & kommunikation.
