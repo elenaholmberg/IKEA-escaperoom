@@ -13,12 +13,12 @@ import { getElement } from "../utils/dom";
  * onLogin-callbacken anropas med spelarens namn när de trycker "Starta".
  */
 export function setupLogin(onLogin: (name: string) => void): void {
-  const form = getElement<HTMLFormElement>("#login-form");
-  const input = getElement<HTMLInputElement>("#player-name");
+  const form = getElement<HTMLFormElement>("#loginForm");
+  const input = getElement<HTMLInputElement>("#playerName");
 
   form.addEventListener("submit", (e: Event) => {
-    e.preventDefault(); // Stoppar sidan från att ladda om
-    const name = input.value.trim(); // Tar bort mellanslag i början/slutet
+    e.preventDefault();
+    const name = input.value.trim();
     if (name) {
       onLogin(name);
     }

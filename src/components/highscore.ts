@@ -9,9 +9,9 @@ import { getHighscores } from "../utils/storage";
 import { formatTime } from "../utils/timer";
 import { getElement } from "../utils/dom";
 
-/** Renderar highscore-listan i #highscore-list */
+/** Renderar highscore-listan i #highscoreList */
 export function renderHighscores(): void {
-  const list = getElement<HTMLOListElement>("#highscore-list");
+  const list = getElement<HTMLOListElement>("#highscoreList");
   const scores = getHighscores();
 
   if (scores.length === 0) {

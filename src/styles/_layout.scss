@@ -4,6 +4,10 @@
  * ============================================
  * All layout för spelets gemensamma delar:
  * login, hubb, progress bar, rumkort, game over osv.
+ *
+ * NAMNSTANDARD:
+ * id = camelCase (t.ex. #loginScreen)
+ * class = kebab-case (t.ex. .room-card)
  */
 
 @use "variables" as *;
@@ -30,7 +34,7 @@
 /* ============================================
  * Login-skärmen
  * ============================================ */
-#login-screen {
+#loginScreen {
   @include flex-center;
   flex-direction: column;
   min-height: 80vh;
@@ -74,7 +78,7 @@
 /* ============================================
  * Hubben
  * ============================================ */
-#start-screen {
+#startScreen {
   header {
     display: flex;
     justify-content: space-between;
@@ -105,7 +109,7 @@
 /* ============================================
  * Progress bar
  * ============================================ */
-#progress-container {
+#progressContainer {
   background: #e0e0e0;
   border-radius: 8px;
   height: 30px;
@@ -114,7 +118,7 @@
   overflow: hidden;
 }
 
-#progress-bar {
+#progressBar {
   background: $color-success;
   height: 100%;
   width: 0%;
@@ -122,7 +126,7 @@
   transition: width 0.5s ease;
 }
 
-#progress-text {
+#progressText {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -134,7 +138,7 @@
 /* ============================================
  * Rumkort i hubben
  * ============================================ */
-#rooms-list {
+#roomsList {
   display: grid;
   gap: $spacing-md;
   margin-top: $spacing-lg;
@@ -204,14 +208,14 @@
   border-bottom: 2px solid $color-primary;
 }
 
-#room-content {
+#roomContent {
   min-height: 300px;
 }
 
 /* ============================================
  * Game Over
  * ============================================ */
-#gameover-screen {
+#gameoverScreen {
   @include flex-center;
   flex-direction: column;
   min-height: 60vh;
@@ -227,10 +231,10 @@
 /* ============================================
  * Gemensamma knappar
  * ============================================ */
-#btn-back-to-hub,
-#btn-back-from-about,
-#btn-back-from-highscore,
-#btn-play-again {
+#btnBackToHub,
+#btnBackFromAbout,
+#btnBackFromHighscore,
+#btnPlayAgain {
   margin-top: $spacing-lg;
   padding: $spacing-sm $spacing-lg;
   background: $color-primary;

@@ -61,12 +61,12 @@ let progress: PlayerProgress = {
  * ============================================ */
 const totalTimer = createTimer((seconds) => {
   progress.totalTime = seconds;
-  const el = document.getElementById("total-timer");
+  const el = document.getElementById("totalTimer");
   if (el) el.textContent = `Total tid: ${formatTime(seconds)}`;
 });
 
 const roomTimer = createTimer((seconds) => {
-  const el = document.getElementById("room-timer");
+  const el = document.getElementById("roomTimer");
   if (el) el.textContent = `Tid: ${formatTime(seconds)}`;
 });
 
@@ -94,9 +94,9 @@ function init(): void {
  * Visar rum, progress och timer efter inloggning
  * ============================================ */
 function showStartScreen(): void {
-  showScreen("start-screen");
+  showScreen("startScreen");
 
-  const welcome = getElement("#welcome-message");
+  const welcome = getElement("#welcomeMessage");
   welcome.textContent = `Välkommen, ${progress.playerName}!`;
 
   updateProgressBar(progress.completedRooms.length, roomsData.length);
@@ -111,7 +111,7 @@ function showStartScreen(): void {
  * Varje rum får status: "Nästa", "Klart" eller "Låst"
  * ============================================ */
 function renderRoomsList(): void {
-  const container = getElement("#rooms-list");
+  const container = getElement("#roomsList");
   container.innerHTML = (roomsData as RoomData[])
     .map((room) => {
       const isCompleted = progress.completedRooms.includes(room.id);
@@ -164,16 +164,16 @@ function enterRoom(roomId: number): void {
   const roomModule = roomModules[roomId];
   if (!roomData || !roomModule) return;
 
-  showScreen("room-screen");
+  showScreen("roomScreen");
 
-  getElement("#room-name").textContent = roomData.name;
-  getElement("#room-description").textContent = roomData.description;
+  getElement("#roomName").textContent = roomData.name;
+  getElement("#roomDescription").textContent = roomData.description;
 
   document.querySelectorAll<HTMLElement>(".room-content").forEach((el) => {
     el.hidden = true;
   });
 
-  const roomContent = document.getElementById(`room-${roomId}-content`);
+  const roomContent = document.getElementById(`room${roomId}Content`);
   if (roomContent) {
     roomContent.hidden = false;
   }
@@ -196,7 +196,7 @@ function completeRoom(result: RoomResult): void {
   const roomModule = roomModules[result.roomId];
   if (roomModule) roomModule.cleanup();
 
-  const roomContent = document.getElementById(`room-${result.roomId}-content`);
+  const roomContent = document.getElementById(`room${result.roomId}Content`);
   if (roomContent) {
     roomContent.hidden = true;
   }
@@ -226,11 +226,11 @@ function completeRoom(result: RoomResult): void {
  * Visar vinst eller förlust och sparar highscore vid vinst
  * ============================================ */
 function showGameOver(success: boolean): void {
-  showScreen("gameover-screen");
+  showScreen("gameoverScreen");
 
-  const title = getElement("#gameover-title");
-  const message = getElement("#gameover-message");
-  const time = getElement("#gameover-time");
+  const title = getElement("#gameoverTitle");
+  const message = getElement("#gameoverMessage");
+  const time = getElement("#gameoverTime");
 
   if (success) {
     title.textContent = "Grattis! Du tog dig ut ur IKEA!";
@@ -256,25 +256,23 @@ function showGameOver(success: boolean): void {
  * Om-sidan, highscore, tillbaka, spela igen
  * ============================================ */
 function setupNavigation(): void {
-  const btnAbout = document.getElementById("btn-about");
-  const btnHighscore = document.getElementById("btn-highscore");
-  const btnBackFromAbout = document.getElementById("btn-back-from-about");
-  const btnBackFromHighscore = document.getElementById(
-    "btn-back-from-highscore",
-  );
-  const btnBackToHub = document.getElementById("btn-back-to-hub");
-  const btnPlayAgain = document.getElementById("btn-play-again");
+  const btnAbout = document.getElementById("btnAbout");
+  const btnHighscore = document.getElementById("btnHighscore");
+  const btnBackFromAbout = document.getElementById("btnBackFromAbout");
+  const btnBackFromHighscore = document.getElementById("btnBackFromHighscore");
+  const btnBackToHub = document.getElementById("btnBackToHub");
+  const btnPlayAgain = document.getElementById("btnPlayAgain");
 
-  btnAbout?.addEventListener("click", () => showScreen("about-screen"));
+  btnAbout?.addEventListener("click", () => showScreen("aboutScreen"));
 
   btnHighscore?.addEventListener("click", () => {
     renderHighscores();
-    showScreen("highscore-screen");
+    showScreen("highscoreScreen");
   });
 
-  btnBackFromAbout?.addEventListener("click", () => showScreen("start-screen"));
+  btnBackFromAbout?.addEventListener("click", () => showScreen("startScreen"));
   btnBackFromHighscore?.addEventListener("click", () =>
-    showScreen("start-screen"),
+    showScreen("startScreen"),
   );
 
   btnBackToHub?.addEventListener("click", () => {

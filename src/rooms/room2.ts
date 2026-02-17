@@ -17,7 +17,7 @@ function handleComplete(): void {
 const room2: RoomModule = {
   setup(onComplete) {
     onCompleteCb = onComplete;
-    const btn = document.getElementById("room2-complete");
+    const btn = document.getElementById("room2Complete");
     if (btn) {
       btn.addEventListener("click", handleComplete);
     }
@@ -25,7 +25,7 @@ const room2: RoomModule = {
 
   cleanup() {
     onCompleteCb = null;
-    const btn = document.getElementById("room2-complete");
+    const btn = document.getElementById("room2Complete");
     if (btn) {
       btn.removeEventListener("click", handleComplete);
     }

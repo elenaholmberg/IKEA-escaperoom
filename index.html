@@ -13,6 +13,10 @@
         Klassen "screen" döljer sektionen, "active" visar den.
         Logiken för att byta skärm finns i src/utils/dom.ts
 
+        NAMNSTANDARD:
+        id = camelCase (t.ex. loginScreen, playerName)
+        class = kebab-case (t.ex. room-card, room-content)
+
         ÄNDRA INTE id-attributen — de används av TypeScript-koden.
         Ni FÅR ändra text, lägga till nya element, och styla om.
       -->
@@ -20,14 +24,14 @@
       <!-- ============================================
            LOGIN — Första skärmen spelaren ser
            ============================================ -->
-      <section id="login-screen" class="screen active">
+      <section id="loginScreen" class="screen active">
         <h1>IKEA Escape Room</h1>
         <p>Ta dig ut ur IKEA innan det stänger!</p>
-        <form id="login-form">
-          <label for="player-name">Ditt namn:</label>
+        <form id="loginForm">
+          <label for="playerName">Ditt namn:</label>
           <input
             type="text"
-            id="player-name"
+            id="playerName"
             placeholder="Ange ditt namn..."
             required
             autofocus
@@ -39,41 +43,41 @@
       <!-- ============================================
            HUBB — Visar rum, progress och timer efter inloggning
            ============================================ -->
-      <section id="start-screen" class="screen">
+      <section id="startScreen" class="screen">
         <header>
-          <p id="welcome-message"></p>
+          <p id="welcomeMessage"></p>
           <nav>
-            <button id="btn-about" type="button">Om spelet</button>
-            <button id="btn-highscore" type="button">Highscore</button>
+            <button id="btnAbout" type="button">Om spelet</button>
+            <button id="btnHighscore" type="button">Highscore</button>
           </nav>
         </header>
-        <div id="progress-container">
-          <div id="progress-bar"></div>
-          <span id="progress-text"></span>
+        <div id="progressContainer">
+          <div id="progressBar"></div>
+          <span id="progressText"></span>
         </div>
-        <p id="total-timer">Total tid: 00:00</p>
+        <p id="totalTimer">Total tid: 00:00</p>
         <!-- Rumlistan genereras automatiskt av main.ts — rör inte denna div -->
-        <div id="rooms-list"></div>
+        <div id="roomsList"></div>
       </section>
 
       <!-- ============================================
            RUM-SKÄRMEN — Gemensam header + rummets innehåll
            ============================================ -->
-      <section id="room-screen" class="screen">
+      <section id="roomScreen" class="screen">
         <header class="room-header">
-          <h2 id="room-name"></h2>
-          <p id="room-description"></p>
-          <p id="room-timer">Tid: 00:00</p>
+          <h2 id="roomName"></h2>
+          <p id="roomDescription"></p>
+          <p id="roomTimer">Tid: 00:00</p>
         </header>
 
         <!-- ============================================
              RUM 1: BARNAVDELNINGEN — ELENA SKRIVER SIN HTML HÄR
              ============================================ -->
-        <div id="room-1-content" class="room-content" hidden>
+        <div id="room1Content" class="room-content" hidden>
           <div class="room-game room-1">
-            <h3>Köksavdelningen - Pussel</h3>
+            <h3>Barnavdelningen - Pussel</h3>
             <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room1-complete" type="button">
+            <button id="room1Complete" type="button">
               Klara rummet (placeholder)
             </button>
           </div>
@@ -82,11 +86,11 @@
         <!-- ============================================
              RUM 2: MATTORNA — ERIK SKRIVER SIN HTML HÄR
              ============================================ -->
-        <div id="room-2-content" class="room-content" hidden>
+        <div id="room2Content" class="room-content" hidden>
           <div class="room-game room-2">
-            <h3>Vardagsrummet - Pussel</h3>
+            <h3>Mattorna - Pussel</h3>
             <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room2-complete" type="button">
+            <button id="room2Complete" type="button">
               Klara rummet (placeholder)
             </button>
           </div>
@@ -95,11 +99,11 @@
         <!-- ============================================
              RUM 3: TA SJÄLV-LAGRET — LINA SKRIVER SIN HTML HÄR
              ============================================ -->
-        <div id="room-3-content" class="room-content" hidden>
+        <div id="room3Content" class="room-content" hidden>
           <div class="room-game room-3">
-            <h3>Sovrummet - Pussel</h3>
+            <h3>Ta själv-lagret - Pussel</h3>
             <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room3-complete" type="button">
+            <button id="room3Complete" type="button">
               Klara rummet (placeholder)
             </button>
           </div>
@@ -108,47 +112,47 @@
         <!-- ============================================
              RUM 4: KASSAN — OSCAR SKRIVER SIN HTML HÄR
              ============================================ -->
-        <div id="room-4-content" class="room-content" hidden>
+        <div id="room4Content" class="room-content" hidden>
           <div class="room-game room-4">
             <h3>Kassan - Pussel</h3>
             <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room4-complete" type="button">
+            <button id="room4Complete" type="button">
               Klara rummet (placeholder)
             </button>
           </div>
         </div>
 
-        <button id="btn-back-to-hub" type="button">Tillbaka</button>
+        <button id="btnBackToHub" type="button">Tillbaka</button>
       </section>
 
       <!-- ============================================
            OM-SIDAN — Fyll i med info om spelet och teamet
            ============================================ -->
-      <section id="about-screen" class="screen">
+      <section id="aboutScreen" class="screen">
         <h2>Om spelet</h2>
-        <div id="about-content">
+        <div id="aboutContent">
           <!-- ÄNDRA HÄR -->
         </div>
-        <button id="btn-back-from-about" type="button">Tillbaka</button>
+        <button id="btnBackFromAbout" type="button">Tillbaka</button>
       </section>
 
       <!-- ============================================
            HIGHSCORE — Genereras automatiskt
            ============================================ -->
-      <section id="highscore-screen" class="screen">
+      <section id="highscoreScreen" class="screen">
         <h2>Highscore - Top 3</h2>
-        <ol id="highscore-list"></ol>
-        <button id="btn-back-from-highscore" type="button">Tillbaka</button>
+        <ol id="highscoreList"></ol>
+        <button id="btnBackFromHighscore" type="button">Tillbaka</button>
       </section>
 
       <!-- ============================================
            GAME OVER — Visar resultat
            ============================================ -->
-      <section id="gameover-screen" class="screen">
-        <h2 id="gameover-title"></h2>
-        <p id="gameover-message"></p>
-        <p id="gameover-time"></p>
-        <button id="btn-play-again" type="button">Spela igen</button>
+      <section id="gameoverScreen" class="screen">
+        <h2 id="gameoverTitle"></h2>
+        <p id="gameoverMessage"></p>
+        <p id="gameoverTime"></p>
+        <button id="btnPlayAgain" type="button">Spela igen</button>
       </section>
     </div>
 

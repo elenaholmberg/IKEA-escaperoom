@@ -16,8 +16,8 @@ export function updateProgressBar(
   completedRooms: number,
   totalRooms: number,
 ): void {
-  const bar = getElement<HTMLDivElement>("#progress-bar");
-  const text = getElement<HTMLSpanElement>("#progress-text");
+  const bar = getElement<HTMLDivElement>("#progressBar");
+  const text = getElement<HTMLSpanElement>("#progressText");
 
   const percentage = totalRooms > 0 ? (completedRooms / totalRooms) * 100 : 0;
   bar.style.width = `${percentage}%`;
