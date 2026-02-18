@@ -1,5 +1,5 @@
 # Gruppkontrakt för The Vorticon Vikings!!
-  
+
 ## Tidigare negativa grupparbeteserfarenheter
 
 > Att man lägger ner olika mycket tid och engagemang vilket kan skapa osämja.
@@ -8,6 +8,7 @@
 > Att man inte respekterar andras tid.
 
 ## Mötestider
+
 Vilka dagar och tider jobbar vi gemensamt?
 
 - Daily standup: klockan 10 eller efter lektionstid.
@@ -18,6 +19,7 @@ Vilka dagar och tider jobbar vi gemensamt?
   Alla dessa dagar är öppna för justering alltefter vi blir bättre på förstå och uppskatta hur och när dessa moment fungerar som bäst!
 
 ## Möteskanaler & format
+
 - Teams som möteskanal tycker vi fungerar bra!
 - Vi väljer att alltid ha kameram på såvida vi inte har sjukdom eller annat förhinder!
 - Till daily standup har vi bestämt att vi ska komma förberedda med att ha skrivit enligt daily standup-mallen enskilt innan mötet. Då går mötet snabbare och blir mer effektivt! Scrum master tar emot texten som varje person skrivit och lägger in i ett gemensamt .md-dokument för dagen!
@@ -26,7 +28,7 @@ Vilka dagar och tider jobbar vi gemensamt?
 
 ## Kommunikation
 
-- Via vilka kanaler kommunicerar vi? Teams i första hand. Vi har även varandras kontaktuppgifter om något vi inte skulle få tag i varandra eller dylikt. 
+- Via vilka kanaler kommunicerar vi? Teams i första hand. Vi har även varandras kontaktuppgifter om något vi inte skulle få tag i varandra eller dylikt.
 - Okej att kommnunicera i teams-chatten mellan 06 till 01. Radiotystnad mellan 01-06 tack! :)
 - Vi svarar på meddelanden / chatt när vi ser meddelandet, men som senast inom 24 timmar!
 - Om man har ett förhinder så meddelar vi så snart vi vet om dom; planning is key! Saker kan dyka upp, men då finns förväntningen att man kommunicerar det!
@@ -45,9 +47,10 @@ Vi har diskuterat våra personlighetstyper och fått en bra förståelse för va
 - Hur vi bäst granskar varandras kod är något vi inte rikitgt vet vad som är best practice, så detta ska vi kolla upp och sedan bestämma SENAST onsdag 18/2
 
 ## Övriga förväntningar
+
 - Våe ambition i detta arbeta är att vi ska kunna samarbeta på ett bra sätt och lära oss hur man arbetar frontend med andra. Dessutom vill vi på ett smart och effektivt sätt arbeta efter kravlistan som finns för projektet/uppgiften.
-- Vi förväntar oss av varandra att vi är aktiva i arbetet och i dayli standups. Våra daily standups tror vi kommer bli en viktig kärna i vårt samarbete.
-- Har vi inte hört något från en gruppkompis inom 48h så kontaktar vi personen via sms innan vi hör av oss till kursledare. :) 
+- Vi förväntar oss av varandra att vi är aktiva i arbetet och i daily standups. Våra daily standups tror vi kommer bli en viktig kärna i vårt samarbete.
+- Har vi inte hört något från en gruppkompis inom 48h så kontaktar vi personen via sms innan vi hör av oss till kursledare. :)
 - Saker vi skulle vilja bli bättre på i denna uppgift är: GIT/GITHUB, projektledning samt att bli effektiva och konstruktiva i vårat samarbetet, både i arbetet men även vid möten etc.
 
 ## Scrum master
@@ -55,6 +58,7 @@ Vi har diskuterat våra personlighetstyper och fått en bra förståelse för va
 Vi kör en vecka i taget som Scrum Master. Scrum Master ansvarar också för retrospekten som körs i helklass den veckan!
 
 ## Kodstandard
+
 - Vi testar att köra gitmoji på våra commits, samt att skriva meddelandena på engelska!
 - Vi använder prettier och ESLint, samt gör ett så gott jobb som möjligt för att göra det enkelt att läsa koden med hjälp av snygga indenteringar!
 - Språk för t.ex. CSS-selektorer kör vi med: id="camelCase", class="kebab-case". Vi kör sass i detta projekt. samt html och js/ts.
