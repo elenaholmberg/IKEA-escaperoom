@@ -6,6 +6,84 @@
 */
 
 .room-3 {
-  background-color: #ffda1a;
+  background-color: white;
   color: #333333;
+  width: 800px;
+  padding: 10px 20px;
+  margin: 10px auto;
+  
+  h3, h4 {
+    font-family: "futura-pt", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    
+    margin: 15px 0;
+  }
+
+   h3 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+   }
+
+   h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+   }
+  
+
+  input, .id-number-item {
+    background-color: black;
+    border: none;
+    padding: 12px 20px;
+    height: 20px;
+    width: 20px;
+    
+   
+  }
+
+  input::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+
+  input, .id-number-item {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Ta bort pil upp/ned på input type number*/
+  /* Chrome, Safari, Edge */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+  -moz-appearance: textfield;
+  }
+
 }
+
+#titleHylla {
+  font-style: bold;
+}
+
+.guess-input-room-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  align-items: center;
+  
+}
+
+#guessHyllaSection {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  align-items: center;
+}
+/* TA BORT VID MERGE */
