@@ -17,10 +17,15 @@
   padding-top: 20px;
 }
 
-.introduction-div {
+#introductionDiv {
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
   border: 2px solid #333333;
-  margin: 50px;
-  padding: 20px;
+  width: 800px;
+  height: 800px;
+  z-index: 1;
 }
 
 #startRoom1Btn {
@@ -40,43 +45,60 @@
 .map-image {
   background-image: url(src/my_src/map.png);
   position: relative;
-  width: 700px;
+  width: 800px;
+  height: 800px;
+
   background-size: cover;
-  padding: 50px;
 }
 
 .zone-pillow img {
+  width: 150px;
+}
+
+.zone-pillow {
   position: absolute;
   top: 14%;
   left: 51%;
-  width: 150px;
 }
 
 .zone-teddybear img {
+  width: 150px;
+}
+
+.zone-teddybear {
   position: absolute;
   top: 30%;
   left: 25%;
-  width: 150px;
 }
 
 .zone-carpet img {
+  width: 100px;
+}
+
+.zone-carpet {
   position: absolute;
   top: 50%;
   left: 20%;
-  width: 100px;
 }
+
 .zone-bedsheets img {
-  position: absolute;
-  top: 50%;
-  left: 44%;
   width: 150px;
 }
 
+.zone-bedsheets {
+  position: absolute;
+  top: 50%;
+  left: 44%;
+}
+
 .zone-lamp img {
+  width: 130px;
+}
+
+.zone-lamp {
   position: absolute;
   top: 70%;
   left: 20%;
-  width: 130px;
 }
 
 .entry {
