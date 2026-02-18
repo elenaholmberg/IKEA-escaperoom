@@ -3,138 +3,174 @@
 ## Spelinställningar
 
 - **Rörelse:** Klicka på zoner direkt
-- **Straff:** +5 sekunder på timern (gäller både fel väg och fel argument)
-- **Vinst:** Ta sig från ENTRÉ till UTGÅNG utan att köpa något, så snabbt som möjligt
+- **Straff:** Åker tillbaka till ENTRÉ (gäller både fel väg och fel argument)
+- **Mål:** Ta dig till hjärtlampan utan att köpa något på vägen
 
 ---
 
 ## 1. Spelstart
 
-- Visa kartan med alla zoner
-- Starta timern (räknar uppåt)
-- Markera **ENTRÉ** som aktiv/synlig startpunkt
-- Pappan placeras vid ENTRÉ
-- Endast tillåtna nästa zoner är klickbara _(övriga är inaktiva)_
+- Kartan visas med pappan placerad vid **ENTRÉ**
+- En informationsruta dyker upp med uppdraget:
+  > _"Din dotter vill ha en hjärtlampa till sitt rum. Ta dig till lampan så smidigt som möjligt och undvik att köpa något på vägen — trots dotterns tjat. Börja med att välja rätt väg: klicka på gosedjuret eller kudden."_
+- Spelaren stänger rutan och spelet börjar
+- Endast **zone-pillow** och **zone-teddybear** är klickbara i detta steg _(övriga zoner är inaktiva och ej klickbara)_
 
 ---
 
-## 2. Rörelse — klicka på zon
+## 2. Steg 1 — Välj första zon
 
 ```
-spelaren klickar på en zon
-  → är zonen tillåten att klicka på?
-      JA → flytta pappan dit
-           → trigga zon-händelse (se sektion 3)
-      NEJ → visa meddelande: "Du kan inte gå dit!"
-            → lägg till +5 sek på timern
-```
-
-### Tillåten zonordning (förslag)
-
-```
-ENTRÉ → zone-pillow → zone-teddybear → zone-bedsheets → zone-lamp → UTGÅNG
-```
-
-_(Du bestämmer själv vilken ordning som passar din labyrint)_
-
----
-
-## 3. Zon-händelse — möte med dottern
-
-När pappan klickar på en produktzon (kudde, nalle, lakan, lampa):
-
-```
-pappan når zonen
-  → stoppa vidare klickning
-  → visa dialog: dottern dyker upp
-  → visa produktbild + dotterns fråga
-  → visa 3 argumentationsalternativ
-      spelaren väljer ett alternativ
-        → RÄTT argument:
-              visa feedback: "Bra argument! Dottern ger upp 😤"
-              → lås upp nästa zon
-              → stäng dialogen
-              → fortsätt spelet
-        → FEL argument:
-              visa feedback: "Dottern tjatar ännu mer! ⏱️ +5 sek"
-              → lägg till +5 sek på timern
-              → visa argumenten igen (spelaren får försöka igen)
+Spelaren klickar på zone-pillow ELLER zone-teddybear
+  → pappan flyttas till vald zon
+  → dialog-popup öppnas (se sektion 3)
 ```
 
 ---
 
-## 4. Argumentationsalternativ per zon
+## 3. Dialog-popup — möte med dottern
+
+Popup-rutan innehåller:
+
+- Dotterns "vill ha"-argument (överst)
+- Pappans tre motargument som radioknappar (under)
+- En "Svara"-knapp
+
+```
+Spelaren väljer ett argument via radioknapp och klickar "Svara"
+  → RÄTT argument:
+        Byt ut texten i popupen mot: "Bra argument! Dottern ger upp 😤"
+        → Visa "Fortsätt"-knapp
+        → Stäng popup när spelaren klickar fortsätt
+        → Lås upp nästa steg (se sektion 4)
+
+  → FEL argument:
+        Byt ut texten i popupen mot: "Dottern tjatar ännu mer! Du åker tillbaka till början! 😤"
+        → Visa "Försök igen"-knapp
+        → När spelaren klickar: stäng popup, flytta pappan till ENTRÉ
+        → Lås alla zoner utom zone-pillow och zone-teddybear
+        → Spelaren börjar om från steg 1
+```
+
+---
+
+## 4. Steg 2 — Välj andra zon
+
+Efter godkänt argument i steg 1 låses två nya zoner upp:
+
+- **zone-carpet** (mattan)
+- **zone-bedsheets** (lakanen)
+
+```
+Spelaren klickar på zone-carpet ELLER zone-bedsheets
+  → pappan flyttas till vald zon
+  → dialog-popup öppnas med dotterns argument + pappans motargument
+  → samma logik som sektion 3
+```
+
+Efter godkänt argument i steg 2 låses två nya zoner upp:
+
+- **zone-lamp** (hjärtlampan) ✅ rätt väg
+- **exit** (utgången) ❌ fel väg — se sektion 6
+
+---
+
+## 5. Steg 3 — Lampan (mål-zonen)
+
+```
+Spelaren klickar på zone-lamp
+  → pappan flyttas till lampan
+  → dialog-popup öppnas med dotterns argument + pappans motargument
+  → RÄTT argument:
+        "Bra jobbat! Nu tar vi lampan och går hem... vänta, det var ju hela poängen 😅"
+        → Lås upp exit
+        → Stäng popup
+  → FEL argument:
+        Samma straff som tidigare — tillbaka till ENTRÉ
+```
+
+---
+
+## 6. Exit — vinst eller förlust
+
+```
+Spelaren klickar på exit
+  → Har spelaren klarat zone-lamp?
+      JA  → 🎉 Vinst-skärm: "Du tog dig ut med lampan och utan att köpa något annat. Hjälte!"
+            → Visa knapp: "Spela igen"
+      NEJ → 😬 Förlust-skärm: "Du gick ut utan lampan... uppdraget misslyckat!"
+            → Visa knapp: "Försök igen"
+```
+
+---
+
+## 7. Argumentationsalternativ per zon
 
 ### 🛏️ Zone-pillow (hjärtakudde)
 
-> _"Pappa, jag MÅSTE ha den kudden!"_
+> _"Pappa, jag MÅSTE ha den kudden, mitt liv är inte komplett!"_
 
-| #   | Argument                         | Utfall          |
-| --- | -------------------------------- | --------------- |
-| A   | "Du har redan tre kuddar hemma." | ✅ Rätt         |
-| B   | "Den är för dyr."                | ❌ Fel — +5 sek |
-| C   | "Kanske till jul?"               | ❌ Fel — +5 sek |
+| #   | Argument                                                                  | Utfall                       |
+| --- | ------------------------------------------------------------------------- | ---------------------------- |
+| A   | "Du har redan 47 kuddar hemma, vi kan knappt öppna dörren till ditt rum." | ✅ Rätt                      |
+| B   | "Den är för dyr."                                                         | ❌ Fel — tillbaka till ENTRÉ |
+| C   | "Kanske till jul?"                                                        | ❌ Fel — tillbaka till ENTRÉ |
 
 ---
 
 ### 🧸 Zone-teddybear (grisknoa)
 
-> _"Pappa, den där grisen är SÅ söt!"_
+> _"Pappa, den där grisen är SÅ söt, han ser ut som mig!"_
 
-| #   | Argument                                     | Utfall          |
-| --- | -------------------------------------------- | --------------- |
-| A   | "Vi har redan Nalle-Puh hemma som är ensam." | ✅ Rätt         |
-| B   | "Nej, vi köper den inte."                    | ❌ Fel — +5 sek |
-| C   | "Den ser inte ens så söt ut."                | ❌ Fel — +5 sek |
+| #   | Argument                                                                              | Utfall                       |
+| --- | ------------------------------------------------------------------------------------- | ---------------------------- |
+| A   | "Precis, och din nalle hemma gråter sig till sömns varje kväll för att han är ensam." | ✅ Rätt                      |
+| B   | "Nej."                                                                                | ❌ Fel — tillbaka till ENTRÉ |
+| C   | "Du ser inte alls ut som en gris."                                                    | ❌ Fel — tillbaka till ENTRÉ |
+
+---
+
+### 🪆 Zone-carpet (hoppmattan)
+
+> _"Pappa, den mattan är ju helt magisk, tänk om man STUDSAR på den!"_
+
+| #   | Argument                                                                       | Utfall                       |
+| --- | ------------------------------------------------------------------------------ | ---------------------------- |
+| A   | "Vi bor i lägenhet. Grannarna under oss heter Svensson och de är inte roliga." | ✅ Rätt                      |
+| B   | "Vi har redan en matta."                                                       | ❌ Fel — tillbaka till ENTRÉ |
+| C   | "Du är för gammal för att studsa."                                             | ❌ Fel — tillbaka till ENTRÉ |
 
 ---
 
 ### 🛏️ Zone-bedsheets (hjärtalakan)
 
-> _"Pappa, de där lakanen matchar mitt rum perfekt!"_
+> _"Pappa, de där lakanen skulle göra mitt rum PERFEKT!"_
 
-| #   | Argument                                                       | Utfall          |
-| --- | -------------------------------------------------------------- | --------------- |
-| A   | "Vi bytte lakan förra månaden, de håller i minst ett år till." | ✅ Rätt         |
-| B   | "Vi har inte råd."                                             | ❌ Fel — +5 sek |
-| C   | "De finns säkert billigare någon annanstans."                  | ❌ Fel — +5 sek |
-
----
-
-### 💡 Zone-lamp (hjärtlampa)
-
-> _"Pappa, den där lampan skulle passa perfekt på mitt skrivbord!"_
-
-| #   | Argument                                                               | Utfall          |
-| --- | ---------------------------------------------------------------------- | --------------- |
-| A   | "Din gamla lampa fungerar utmärkt, vi fixar en ny glödlampa istället." | ✅ Rätt         |
-| B   | "Det är för dyrt."                                                     | ❌ Fel — +5 sek |
-| C   | "Lampor behöver du inte."                                              | ❌ Fel — +5 sek |
+| #   | Argument                                                             | Utfall                       |
+| --- | -------------------------------------------------------------------- | ---------------------------- |
+| A   | "Vi bytte lakan förra månaden. De håller tills du flyttar hemifrån." | ✅ Rätt                      |
+| B   | "Vi har inte råd."                                                   | ❌ Fel — tillbaka till ENTRÉ |
+| C   | "Hjärtan är överskattade."                                           | ❌ Fel — tillbaka till ENTRÉ |
 
 ---
 
-## 5. Utgång — vinst
+### 💡 Zone-lamp (hjärtlampa) — mål-zonen
 
-```
-pappan klickar på UTGÅNG
-  → alla zoner klarade?
-      JA → stoppa timern
-           → visa vinst-skärm:
-                "🎉 Du tog dig ut utan att köpa något!"
-                "Din tid: XX sekunder"
-           → visa knapp: "Spela igen"
-      NEJ → visa meddelande: "Du måste ta dig igenom hela butiken först!"
-```
+> _"Pappa, den lampan är ju helt magisk, mitt liv är inte komplett utan den!"_
+
+| #   | Argument                                                                                   | Utfall                       |
+| --- | ------------------------------------------------------------------------------------------ | ---------------------------- |
+| A   | "Din gamla lampa lyser utmärkt. Den har belyst tre generationers läxor och vägrar ge upp." | ✅ Rätt                      |
+| B   | "Det är för dyrt."                                                                         | ❌ Fel — tillbaka till ENTRÉ |
+| C   | "Du behöver inte se när du sover."                                                         | ❌ Fel — tillbaka till ENTRÉ |
 
 ---
 
-## 6. Vad du kan lägga till i din kod för tydligare UX
+## 8. Zonernas låsstatus — översikt
 
-| Vad                                                                | Varför                           |
-| ------------------------------------------------------------------ | -------------------------------- |
-| Markera nästa tillåtna zon med en CSS-klass (t.ex. `.active-zone`) | Spelaren vet vart de kan klicka  |
-| Lägg till en pulsande animation på aktiva zoner                    | Tydligare visuell ledtråd        |
-| Visa en liten pappa-ikon som flyttar sig mellan zoner              | Spelaren ser var de befinner sig |
-| Lägg till en synlig timer i `<header>` eller ovanför kartan        | Spelaren ser sin tid hela tiden  |
-| Visa strafftid med röd text "+5 sek" som tonar bort                | Tydlig feedback vid misstag      |
-| Lägg till `cursor: pointer` på klickbara zoner                     | Vanlig UX-konvention             |
+| Steg         | Upplåsta zoner              |
+| ------------ | --------------------------- |
+| Start        | zone-pillow, zone-teddybear |
+| Efter steg 1 | zone-carpet, zone-bedsheets |
+| Efter steg 2 | zone-lamp, exit             |
+| Efter steg 3 | exit (vinst-exit)           |
