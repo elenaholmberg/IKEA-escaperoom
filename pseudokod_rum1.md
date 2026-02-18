@@ -12,7 +12,7 @@
 
 - Kartan visas med pappan placerad vid **ENTRÉ**
 - En informationsruta dyker upp med uppdraget:
-  > _"Din dotter vill ha en hjärtlampa till sitt rum. Ta dig till lampan så smidigt som möjligt och undvik att köpa något på vägen — trots dotterns tjat. Börja med att välja rätt väg: klicka på gosedjuret eller kudden."_
+  > _"Din dotter vill ha en hjärtlampa till sitt rum. Ta dig till lampan så smidigt som möjligt och undvik att köpa något mer på vägen — trots dotterns tjat. Börja med att välja rätt väg: klicka på gosedjuret eller kudden."_
 - Spelaren stänger rutan och spelet börjar
 - Endast **zone-pillow** och **zone-teddybear** är klickbara i detta steg _(övriga zoner är inaktiva och ej klickbara)_
 
@@ -80,13 +80,11 @@ Efter godkänt argument i steg 2 låses två nya zoner upp:
 ```
 Spelaren klickar på zone-lamp
   → pappan flyttas till lampan
-  → dialog-popup öppnas med dotterns argument + pappans motargument
-  → RÄTT argument:
-        "Bra jobbat! Nu tar vi lampan och går hem... vänta, det var ju hela poängen 😅"
+  → dialog-popup öppnas:
+        "Bra jobbat! Nu tar vi lampan och går hem 😅"
         → Lås upp exit
         → Stäng popup
-  → FEL argument:
-        Samma straff som tidigare — tillbaka till ENTRÉ
+
 ```
 
 ---
