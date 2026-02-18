@@ -17,7 +17,10 @@
   padding-top: 20px;
 }
 
-#map img {
+#map {
+  position: relative;
+}
+.map-image {
   background-image: url(src/my_src/map.png);
   position: relative;
   width: 700px;
@@ -25,36 +28,15 @@
   padding: 50px;
 }
 
-.zone-start {
+.zone-pillow {
   position: absolute;
-  top: 5%;
-  left: 10%;
-  width: 70%;
-}
-
-.zone-teddybear img {
-  position: absolute;
-  top: 33%;
-  left: 50%;
-  width: 20%;
+  top: 14%;
+  left: 51%;
+  width: 150px;
 }
 
 .zone-pillow img {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  width: 20%;
-}
-
-.zone-bedsheets img {
-  position: absolute;
-  top: 60%;
-  left: 55%;
-  width: 20%;
-}
-
-.zone-path {
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  top: 20px;
+  left: 51px;
 }
