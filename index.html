@@ -20,28 +20,34 @@
         <h3 class="heading">Rum 1, Överlev barnavdelningen!</h3>
 
         <dialog id="pillowArgument">
-          <p>dotterns argument "VILL HA!"</p>
+          <p>Dottern skriker: "VILL HA DEN HÄR KUDDEN!"</p>
           <input
             type="radio"
             name="pillow-choose-argument"
             value="A"
             id="argA"
           />
-          <label for="argA">Argumentets 1</label>
+          <label for="argA"
+            >Den kudden har vi redan en likadan av hemma, titta så lika de
+            är!</label
+          >
           <input
             type="radio"
             name="pillow-choose-argument"
             value="B"
             id="argB"
           />
-          <label for="argB">Argumentets 2</label>
+          <label for="argB">Ja, den är jättefin! Låt oss köpa den!</label>
           <input
             type="radio"
             name="pillow-choose-argument"
             value="C"
             id="argC"
           />
-          <label for="argC">Argumentets 3</label>
+          <label for="argC"
+            >Du får välja en sak idag, och du har inte sett allt än. Kanske
+            finns det något ännu finare längre in!</label
+          >
           <button id="submitPillowArgument">Skicka in argument</button>
         </dialog>
 
@@ -128,7 +134,7 @@
 
           <div class="entry">ENTRE</div>
 
-          <div class="zone-pillow zone-active">
+          <div id="zonePillow" class="zone-pillow zone-active">
             <img src="/src/my_src/heartpillow.png" alt="" />
           </div>
 

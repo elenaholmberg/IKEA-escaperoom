@@ -12,6 +12,26 @@ export default function initRoom1() {
 
   startRoom1Btn?.addEventListener("click", () => {
     introductionDiv?.classList.add("hidden");
-    // Här kan du lägga till mer kod som ska köras när man klickar på startknappen, t.ex. visa kartan eller liknande
+  });
+
+  // Dialog-elementen
+  const zonePillow = document.getElementById("zonePillow");
+  const pillowArgument = document.getElementById(
+    "pillowArgument",
+  ) as HTMLParagraphElement;
+
+  zonePillow?.addEventListener("click", () => {
+    pillowArgument?.showModal();
+  });
+
+  const dialogPillow = document.getElementById(
+    "dialogPillow",
+  ) as HTMLDialogElement;
+  const closeDialogPillowBtn = document.getElementById(
+    "closeDialogPillowBtn",
+  ) as HTMLButtonElement;
+
+  closeDialogPillowBtn?.addEventListener("click", () => {
+    dialogPillow.close();
   });
 }
