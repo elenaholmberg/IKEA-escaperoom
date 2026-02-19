@@ -28,6 +28,10 @@
   z-index: 1;
 }
 
+.map-image {
+  background-color: #ffffff;
+}
+
 #startRoom1Btn {
   display: block;
   margin: 20px auto;
@@ -62,7 +66,7 @@
 }
 
 .zone-teddybear img {
-  width: 150px;
+  width: 100px;
 }
 
 .zone-teddybear {
@@ -77,7 +81,7 @@
 
 .zone-carpet {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 20%;
 }
 

@@ -37,18 +37,15 @@ export default function initRoom1() {
       }
 
       if (selected.value === "C") {
-        // Correct answer — unlock carpet and bedsheets
+        // Correct answer — unlock pillow
         document
-          .querySelector(".zone-carpet")
-          ?.classList.replace("zone-inactive", "zone-active");
-        document
-          .querySelector(".zone-bedsheets")
+          .querySelector("#zonePillow")
           ?.classList.replace("zone-inactive", "zone-active");
         pillowDialog.close();
       } else {
         // Wrong answer — tantrum
         pillowDialog.close();
-        handleTantrum("wantTantrum", "wantTantrumBtn");
+        handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
       }
     });
 
