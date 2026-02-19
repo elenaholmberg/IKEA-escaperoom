@@ -82,30 +82,9 @@
           <button id="wantTantrumBtn">Börja om</button>
         </dialog>
 
-        <dialog id="carpetArgument">
-          <p>dotterns argument "VILL HA!"</p>
-          <input
-            type="radio"
-            name="carpet-choose-argument"
-            value="A"
-            id="carpetArgA"
-          />
-          <label for="carpetArgA">Argumentets 1</label>
-          <input
-            type="radio"
-            name="carpet-choose-argument"
-            value="B"
-            id="carpetArgB"
-          />
-          <label for="carpetArgB">Argumentets 2</label>
-          <input
-            type="radio"
-            name="carpet-choose-argument"
-            value="C"
-            id="carpetArgC"
-          />
-          <label for="carpetArgC">Argumentets 3</label>
-          <button id="submitCarpetArgument">Skicka in argument</button>
+        <dialog id="carpetDialog">
+          <p>Bra! Du valde rätt väg! Nu kan du fortsätta till lampan</p>
+          <button id="carpetDialogBtn">Gå vidare till lampan</button>
         </dialog>
 
         <dialog id="bedsheetsDialog">
@@ -147,7 +126,7 @@
             <img src="/src/my_src/griseknoa.png" alt="" />
           </div>
 
-          <div class="zone-carpet zone-inactive">
+          <div id="zoneCarpet" class="zone-carpet zone-inactive">
             <img src="/src/my_src/jumpcarpet.png" alt="" />
           </div>
 

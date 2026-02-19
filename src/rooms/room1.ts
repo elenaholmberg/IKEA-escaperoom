@@ -104,6 +104,28 @@ export default function initRoom1() {
     const introductionDiv = document.getElementById("introductionDiv");
     introductionDiv?.classList.remove("hidden");
   });
+
+  if (!bedsheetsDialogBtn) {
+    return;
+  }
+
+  // Carpet-zonen
+  const zoneCarpet = document.getElementById("zoneCarpet");
+  const carpetDialog = document.getElementById(
+    "carpetDialog",
+  ) as HTMLDialogElement;
+  const carpetDialogBtn = document.getElementById("carpetDialogBtn");
+
+  zoneCarpet?.addEventListener("click", () => {
+    carpetDialog.showModal();
+  });
+
+  carpetDialogBtn?.addEventListener("click", () => {
+    carpetDialog.close();
+    document
+      .querySelector(".zone-lamp")
+      ?.classList.replace("zone-inactive", "zone-active");
+  });
 }
 
 // Funktion för att hantera utbrottet
