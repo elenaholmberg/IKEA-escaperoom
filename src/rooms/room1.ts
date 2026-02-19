@@ -14,24 +14,80 @@ export default function initRoom1() {
     introductionDiv?.classList.add("hidden");
   });
 
-  // Dialog-elementen
+  // Kudde-zonen
   const zonePillow = document.getElementById("zonePillow");
-  const pillowArgument = document.getElementById(
+  const pillowDialog = document.getElementById(
     "pillowArgument",
-  ) as HTMLParagraphElement;
+  ) as HTMLDialogElement;
 
   zonePillow?.addEventListener("click", () => {
-    pillowArgument?.showModal();
+    pillowDialog.showModal();
   });
 
-  const dialogPillow = document.getElementById(
-    "dialogPillow",
+  document
+    .getElementById("submitPillowArgument")
+    ?.addEventListener("click", () => {
+      const selected = document.querySelector<HTMLInputElement>(
+        'input[name="pillow-choose-argument"]:checked',
+      );
+
+      if (!selected) {
+        alert("Välj ett argument först!");
+        return;
+      }
+
+      if (selected.value === "C") {
+        // Rätt svar — lås upp carpet och bedsheets
+        document
+          .querySelector(".zone-carpet")
+          ?.classList.replace("zone-inactive", "zone-active");
+        document
+          .querySelector(".zone-bedsheets")
+          ?.classList.replace("zone-inactive", "zone-active");
+        pillowDialog.close();
+      } else {
+        // Fel svar — utbrott, skicka tillbaka till entrén
+        pillowDialog.close();
+        alert("Dottern får ett utbrott! Du måste börja om.");
+        // Här kan vi lägga till mer logik senare, t.ex. återställa zoner
+      }
+    });
+
+  // Gosedjur-zonen
+  const zoneTeddybear = document.getElementById("zoneTeddybear");
+  const teddybearArgument = document.getElementById(
+    "teddybearArgument",
   ) as HTMLDialogElement;
-  const closeDialogPillowBtn = document.getElementById(
-    "closeDialogPillowBtn",
-  ) as HTMLButtonElement;
 
-  closeDialogPillowBtn?.addEventListener("click", () => {
-    dialogPillow.close();
+  zoneTeddybear?.addEventListener("click", () => {
+    teddybearArgument.showModal();
   });
+
+  document
+    .getElementById("submitTeddybearArgument")
+    ?.addEventListener("click", () => {
+      const selected = document.querySelector<HTMLInputElement>(
+        'input[name="teddybear-choose-argument"]:checked',
+      );
+
+      if (!selected) {
+        alert("Välj ett argument först!");
+        return;
+      }
+
+      if (selected.value === "B") {
+        // Rätt svar — lås upp carpet och bedsheets
+        document
+          .querySelector(".zone-carpet")
+          ?.classList.replace("zone-inactive", "zone-active");
+        document
+          .querySelector(".zone-bedsheets")
+          ?.classList.replace("zone-inactive", "zone-active");
+        teddybearArgument.close();
+      } else {
+        // Fel svar — utbrott, skicka tillbaka till entrén
+        teddybearArgument.close();
+        alert("Dottern får ett utbrott! Du måste börja om.");
+      }
+    });
 }
