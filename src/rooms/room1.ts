@@ -48,8 +48,7 @@ export default function initRoom1() {
       } else {
         // Fel svar — utbrott, skicka tillbaka till entrén
         pillowDialog.close();
-        alert("Dottern får ett utbrott! Du måste börja om.");
-        // Här kan vi lägga till mer logik senare, t.ex. återställa zoner
+        handleTantrum();
       }
     });
 
@@ -87,7 +86,24 @@ export default function initRoom1() {
       } else {
         // Fel svar — utbrott, skicka tillbaka till entrén
         teddybearArgument.close();
-        alert("Dottern får ett utbrott! Du måste börja om.");
+        handleTantrum();
       }
     });
+}
+
+// Funktion för att hantera utbrottet
+function handleTantrum() {
+  const wantTantrum = document.getElementById(
+    "wantTantrum",
+  ) as HTMLDialogElement;
+  wantTantrum.showModal();
+  document.getElementById("wantTantrumBtn")?.addEventListener(
+    "click",
+    () => {
+      wantTantrum.close();
+      const introductionDiv = document.getElementById("introductionDiv");
+      introductionDiv?.classList.remove("hidden");
+    },
+    { once: true },
+  );
 }
