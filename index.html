@@ -124,7 +124,7 @@
         </dialog>
 
         <div id="map">
-          <div id="introductionDiv">
+          <div id="introductionDiv" class="introduction-div">
             <p class="welcome-information">
               "Din dotter vill ha en hjärtlampa till sitt rum. Ta dig till
               lampan så smidigt som möjligt och undvik att köpa något mer på
@@ -133,7 +133,7 @@
             </p>
 
             <button id="startRoom1Btn">Starta rum 1</button>
-          </div class="introduction-div">
+          </div>
           <img
             class="map-image"
             src="/src/my_src/maze_no_background.png"
@@ -142,7 +142,7 @@
 
           <div class="entry">ENTRE</div>
 
-          <div id="zonePillow" class="zone-pillow zone-inactive">
+          <div id="zonePillow" class="zone-pillow zone-inactive zoneRestart">
             <img src="/src/my_src/heartpillow.png" alt="" />
           </div>
 
@@ -150,11 +150,14 @@
             <img src="/src/my_src/griseknoa.png" alt="" />
           </div>
 
-          <div id="zoneCarpet" class="zone-carpet zone-inactive">
+          <div id="zoneCarpet" class="zone-carpet zone-inactive zoneRestart">
             <img src="/src/my_src/jumpcarpet.png" alt="" />
           </div>
 
-          <div id="zoneBedsheets" class="zone-bedsheets zone-inactive">
+          <div
+            id="zoneBedsheets"
+            class="zone-bedsheets zone-inactive zoneRestart"
+          >
             <img src="/src/my_src/heartsheets.png" alt="" />
           </div>
 

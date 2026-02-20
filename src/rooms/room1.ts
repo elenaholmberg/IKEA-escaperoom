@@ -20,7 +20,7 @@ export default function initRoom1() {
   const teddybearDialog = document.getElementById(
     "teddybearDialog",
   ) as HTMLDialogElement;
-  const resetTeddyBtn = document.getElementById("resetBtn");
+  const resetBtnTeddy = document.getElementById("resetBtnTeddy");
 
   zoneTeddybear?.addEventListener("click", () => {
     teddybearDialog.showModal();
@@ -174,13 +174,32 @@ function resetRoom1() {
   });
 
   // Stäng endast om dialogen faktiskt är öppen
-  const teddyTantrum = document.getElementById(
+  const wantTeddyTantrum = document.getElementById(
     "wantTeddyTantrum",
   ) as HTMLDialogElement;
-  const pillowTantrum = document.getElementById(
+  const wantPillowTantrum = document.getElementById(
     "wantPillowTantrum",
   ) as HTMLDialogElement;
+  const carpetDialog = document.getElementById(
+    "carpetDialog",
+  ) as HTMLDialogElement;
+  const lampDialog = document.getElementById("lampDialog") as HTMLDialogElement;
+  const bedsheetsDialog = document.getElementById(
+    "bedsheetsDialog",
+  ) as HTMLDialogElement;
 
-  if (teddyTantrum?.open) teddyTantrum.close();
-  if (pillowTantrum?.open) pillowTantrum.close();
+  [
+    wantTeddyTantrum,
+    wantPillowTantrum,
+    carpetDialog,
+    lampDialog,
+    bedsheetsDialog,
+  ].forEach((dialog) => {
+    if (dialog.open) dialog.close();
+  });
+
+  // Gör samtliga zoner inaktiva igen
+  document.querySelectorAll(".zoneRestart").forEach((zone) => {
+    zone.classList.replace("zone-active", "zone-inactive");
+  });
 }
