@@ -14,6 +14,50 @@ export default function initRoom1() {
     introductionDiv?.classList.add("hidden");
   });
 
+  // Teddybear-zone
+
+  const zoneTeddybear = document.getElementById("zoneTeddybear");
+  const teddybearDialog = document.getElementById(
+    "teddybearDialog",
+  ) as HTMLDialogElement;
+  const resetTeddyBtn = document.getElementById("resetBtn");
+
+  zoneTeddybear?.addEventListener("click", () => {
+    teddybearDialog.showModal();
+  });
+
+  document
+    .getElementById("submitTeddybearArgument")
+    ?.addEventListener("click", () => {
+      const selected = document.querySelector<HTMLInputElement>(
+        'input[name="teddybear-choose-argument"]:checked',
+      );
+
+      if (!selected) {
+        alert("Välj ett argument först!");
+        return;
+      }
+
+      if (selected.value === "E") {
+        // Correct answer — unlock pillow
+        document
+          .querySelector("#zonePillow")
+          ?.classList.replace("zone-inactive", "zone-active");
+        teddybearDialog.close();
+      } else {
+        // Wrong answer — tantrum
+        teddybearDialog.close();
+        handleTantrum("wantTeddyTantrum", "wantTeddyTantrumBtn");
+      }
+    });
+
+  ["resetBtnPillow", "resetBtnTeddy", "resetBtnBedsheets"].forEach((id) => {
+    document.getElementById(id)?.addEventListener("click", () => {
+      resetRoom1();
+      document.getElementById("introductionDiv")?.classList.remove("hidden");
+    });
+  });
+
   // Pillow-zone
   const zonePillow = document.getElementById("zonePillow");
   const pillowDialog = document.getElementById(
@@ -49,41 +93,6 @@ export default function initRoom1() {
         // Wrong answer — tantrum
         pillowDialog.close();
         handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
-      }
-    });
-
-  // Teddybear-zone
-  const zoneTeddybear = document.getElementById("zoneTeddybear");
-  const teddybearDialog = document.getElementById(
-    "teddybearDialog",
-  ) as HTMLDialogElement;
-
-  zoneTeddybear?.addEventListener("click", () => {
-    teddybearDialog.showModal();
-  });
-
-  document
-    .getElementById("submitTeddybearArgument")
-    ?.addEventListener("click", () => {
-      const selected = document.querySelector<HTMLInputElement>(
-        'input[name="teddybear-choose-argument"]:checked',
-      );
-
-      if (!selected) {
-        alert("Välj ett argument först!");
-        return;
-      }
-
-      if (selected.value === "E") {
-        // Correct answer — unlock pillow
-        document
-          .querySelector("#zonePillow")
-          ?.classList.replace("zone-inactive", "zone-active");
-        teddybearDialog.close();
-      } else {
-        // Wrong answer — tantrum
-        teddybearDialog.close();
-        handleTantrum("wantTeddyTantrum", "wantTeddyTantrumBtn");
       }
     });
 
@@ -130,7 +139,7 @@ export default function initRoom1() {
   const lampDialog = document.getElementById("lampDialog") as HTMLDialogElement;
   const lampDialogBtn = document.getElementById("lampDialogBtn");
 
-  zonLamp?.addEventListener("click", () => {
+  zoneLamp?.addEventListener("click", () => {
     lampDialog.showModal();
   });
 
@@ -155,18 +164,23 @@ function handleTantrum(dialogId: string, btnId: string) {
   );
 }
 
-// Function to reset room and all zones to initial state
 function resetRoom1() {
-  document
-    .querySelector("#zonePillow")
-    ?.classList.replace("zone-active", "zone-inactive");
-  document
-    .querySelector("#zoneCarpet")
-    ?.classList.replace("zone-active", "zone-inactive");
-  document
-    .querySelector("#zoneBedsheets")
-    ?.classList.replace("zone-active", "zone-inactive");
-  document
-    .querySelector(".zone-lamp")
-    ?.classList.replace("zone-active", "zone-inactive");
+  document.querySelectorAll(".zone").forEach((zone) => {
+    zone.classList.replace("zone-active", "zone-inactive");
+  });
+
+  document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+    (radio as HTMLInputElement).checked = false;
+  });
+
+  // Stäng endast om dialogen faktiskt är öppen
+  const teddyTantrum = document.getElementById(
+    "wantTeddyTantrum",
+  ) as HTMLDialogElement;
+  const pillowTantrum = document.getElementById(
+    "wantPillowTantrum",
+  ) as HTMLDialogElement;
+
+  if (teddyTantrum?.open) teddyTantrum.close();
+  if (pillowTantrum?.open) pillowTantrum.close();
 }
