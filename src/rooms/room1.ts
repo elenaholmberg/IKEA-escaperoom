@@ -9,9 +9,13 @@ import type {} from "../types/models"; // Om du vill använda dig av models på 
 export default function initRoom1() {
   const introductionDiv = document.getElementById("introductionDiv");
   const startRoom1Btn = document.getElementById("startRoom1Btn");
+  const arrow1show = document.querySelector(".arrow-1-show");
+  const arrow1hide = document.querySelector(".arrow-1-hide");
 
   startRoom1Btn?.addEventListener("click", () => {
     introductionDiv?.classList.add("hidden");
+    arrow1hide?.classList.remove("arrow-1-hide");
+    arrow1hide?.classList.add("arrow-2-show");
   });
 
   //Arrows click => show teddybear
@@ -55,11 +59,14 @@ export default function initRoom1() {
           .querySelector("#zonePillow")
           ?.classList.replace("zone-inactive", "zone-active");
         teddybearDialog.close();
-        // Correct answer — show arrows
+        // Correct answer — show new arrows
         arrow2hide?.classList.remove("arrow-2-hide");
         arrow2hide?.classList.add("arrow-2-show");
         arrow3hide?.classList.remove("arrow-3-hide");
         arrow3hide?.classList.add("arrow-3-show");
+        // Correct answer — delete old arrow
+        arrow1hide?.classList.remove("arrow-1-show");
+        arrow1hide?.classList.add("arrow-2-hide");
       } else {
         // Wrong answer — tantrum
         teddybearDialog.close();
@@ -114,6 +121,11 @@ export default function initRoom1() {
         arrow4hide?.classList.add("arrow-4-show");
         arrow5hide?.classList.remove("arrow-5-hide");
         arrow5hide?.classList.add("arrow-5-show");
+        // Correct answer — delete old arrows
+        arrow2hide?.classList.remove("arrow-2-show");
+        arrow2hide?.classList.add("arrow-2-hide");
+        arrow3hide?.classList.remove("arrow-3-show");
+        arrow3hide?.classList.add("arrow-3-hide");
       } else {
         // Wrong answer — tantrum
         pillowDialog.close();
@@ -166,6 +178,11 @@ export default function initRoom1() {
     arrow6hide?.classList.add("arrow-6-show");
     arrow7hide?.classList.remove("arrow-7-hide");
     arrow7hide?.classList.add("arrow-7-show");
+    // Correct answer — show arrows
+    arrow4hide?.classList.remove("arrow-4-show");
+    arrow4hide?.classList.add("arrow-4-hide");
+    arrow5hide?.classList.remove("arrow-5-show");
+    arrow5hide?.classList.add("arrow-5-hide");
   });
 
   // Lamp-zone
@@ -186,6 +203,11 @@ export default function initRoom1() {
     // Correct answer — show arrow
     arrow8hide?.classList.remove("arrow-8-hide");
     arrow8hide?.classList.add("arrow-8-show");
+    // Correct answer — hide old arrows
+    arrow6hide?.classList.remove("arrow-6-show");
+    arrow6hide?.classList.add("arrow-6-hide");
+    arrow7hide?.classList.remove("arrow-7-show");
+    arrow7hide?.classList.add("arrow-7-hide");
   });
 
   //Exit-zone
