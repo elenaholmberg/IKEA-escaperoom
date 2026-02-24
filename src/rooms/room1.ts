@@ -9,17 +9,14 @@ import type {} from "../types/models"; // Om du vill använda dig av models på 
 export default function initRoom1() {
   const introductionDiv = document.getElementById("introductionDiv");
   const startRoom1Btn = document.getElementById("startRoom1Btn");
-  const arrow1show = document.querySelector(".arrow-1-show");
-  const arrow1hide = document.querySelector(".arrow-1-hide");
 
   startRoom1Btn?.addEventListener("click", () => {
     introductionDiv?.classList.add("hidden");
-    arrow1hide?.classList.remove("arrow-1-hide");
-    arrow1hide?.classList.add("arrow-2-show");
   });
 
   //Arrows click => show teddybear
   const arrow1 = document.getElementById("arrow1");
+
   arrow1?.addEventListener("click", () => {
     document
       .querySelector("#zoneTeddybear")
@@ -32,47 +29,43 @@ export default function initRoom1() {
   const teddybearDialog = document.getElementById(
     "teddybearDialog",
   ) as HTMLDialogElement;
-  const arrow2hide = document.querySelector(".arrow-2-hide");
-  const arrow2show = document.querySelector(".arrow-2-show");
-  const arrow3hide = document.querySelector(".arrow-3-hide");
-  const arrow3show = document.querySelector(".arrow-3-show");
+  const submitTeddybearArgument = document.getElementById(
+    "submitTeddybearArgument",
+  );
 
   zoneTeddybear?.addEventListener("click", () => {
     teddybearDialog.showModal();
   });
 
-  document
-    .getElementById("submitTeddybearArgument")
-    ?.addEventListener("click", () => {
-      const selected = document.querySelector<HTMLInputElement>(
-        'input[name="teddybear-choose-argument"]:checked',
-      );
+  submitTeddybearArgument?.addEventListener("click", () => {
+    const selected = document.querySelector<HTMLInputElement>(
+      'input[name="teddybear-choose-argument"]:checked',
+    );
 
-      if (!selected) {
-        alert("Välj ett argument först!");
-        return;
-      }
-
-      // Correct answer — unlock pillow
-      if (selected.value === "E") {
-        document
-          .querySelector("#zonePillow")
-          ?.classList.replace("zone-inactive", "zone-active");
-        teddybearDialog.close();
-        // Correct answer — show new arrows
-        arrow2hide?.classList.remove("arrow-2-hide");
-        arrow2hide?.classList.add("arrow-2-show");
-        arrow3hide?.classList.remove("arrow-3-hide");
-        arrow3hide?.classList.add("arrow-3-show");
-        // Correct answer — hide old arrow
-        arrow1hide?.classList.remove("arrow-1-show");
-        arrow1hide?.classList.add("arrow-2-hide");
-      } else {
-        // Wrong answer — tantrum
-        teddybearDialog.close();
-        handleTantrum("wantTeddyTantrum", "wantTeddyTantrumBtn");
-      }
+    document.querySelectorAll(".arrow").forEach((arrow) => {
+      arrow.classList.remove("visible");
     });
+
+    if (!selected) {
+      alert("Välj ett argument först!");
+      return;
+    }
+
+    // Correct answer — unlock pillow and arrows
+    if (selected.value === "E") {
+      document
+        .querySelector("#zonePillow")
+        ?.classList.replace("zone-inactive", "zone-active");
+      teddybearDialog.close();
+
+      showArrow("arrow2");
+      showArrow("arrow3");
+    } else {
+      // Wrong answer — tantrum
+      teddybearDialog.close();
+      handleTantrum("wantTeddyTantrum", "wantTeddyTantrumBtn");
+    }
+  });
 
   ["resetBtnPillow", "resetBtnTeddy", "resetBtnBedsheets"].forEach((id) => {
     document.getElementById(id)?.addEventListener("click", () => {
@@ -86,10 +79,9 @@ export default function initRoom1() {
   const pillowDialog = document.getElementById(
     "pillowArgument",
   ) as HTMLDialogElement;
-  const arrow4hide = document.querySelector(".arrow-4-hide");
-  const arrow4show = document.querySelector(".arrow-4-show");
-  const arrow5hide = document.querySelector(".arrow-5-hide");
-  const arrow5show = document.querySelector(".arrow-5-show");
+  const submitPillowArgument = document.getElementById("submitPillowArgument");
+  const arrow4 = document.getElementById("arrow4");
+  const arrow5 = document.getElementById("arrow5");
 
   zonePillow?.addEventListener("click", () => {
     pillowDialog.showModal();
@@ -108,7 +100,7 @@ export default function initRoom1() {
       }
 
       if (selected.value === "C") {
-        // Correct answer — unlock chair and bedsheets
+        // Correct answer — unlock chair and bedsheets and arrows
         document
           .querySelector("#zoneChair")
           ?.classList.replace("zone-inactive", "zone-active");
@@ -116,16 +108,8 @@ export default function initRoom1() {
           .querySelector("#zoneBedsheets")
           ?.classList.replace("zone-inactive", "zone-active");
         pillowDialog.close();
-        // Correct answer — show arrows
-        arrow4hide?.classList.remove("arrow-4-hide");
-        arrow4hide?.classList.add("arrow-4-show");
-        arrow5hide?.classList.remove("arrow-5-hide");
-        arrow5hide?.classList.add("arrow-5-show");
-        // Correct answer — hide old arrows
-        arrow2hide?.classList.remove("arrow-2-show");
-        arrow2hide?.classList.add("arrow-2-hide");
-        arrow3hide?.classList.remove("arrow-3-show");
-        arrow3hide?.classList.add("arrow-3-hide");
+        arrow4?.classList.add("visible");
+        arrow5?.classList.add("visible");
       } else {
         // Wrong answer — tantrum
         pillowDialog.close();
@@ -159,10 +143,8 @@ export default function initRoom1() {
     "chairDialog",
   ) as HTMLDialogElement;
   const chairDialogBtn = document.getElementById("chairDialogBtn");
-  const arrow6hide = document.querySelector(".arrow-6-hide");
-  const arrow6show = document.querySelector(".arrow-6-show");
-  const arrow7hide = document.querySelector(".arrow-7-hide");
-  const arrow7show = document.querySelector(".arrow-7-show");
+  const arrow6 = document.getElementById("arrow6");
+  const arrow7 = document.getElementById("arrow7");
 
   zoneChair?.addEventListener("click", () => {
     chairDialog.showModal();
@@ -173,16 +155,9 @@ export default function initRoom1() {
     document
       .querySelector(".zone-lamp")
       ?.classList.replace("zone-inactive", "zone-active");
-    // Correct answer — show arrows
-    arrow6hide?.classList.remove("arrow-6-hide");
-    arrow6hide?.classList.add("arrow-6-show");
-    arrow7hide?.classList.remove("arrow-7-hide");
-    arrow7hide?.classList.add("arrow-7-show");
-    // Correct answer — hide old arrows
-    arrow4hide?.classList.remove("arrow-4-show");
-    arrow4hide?.classList.add("arrow-4-hide");
-    arrow5hide?.classList.remove("arrow-5-show");
-    arrow5hide?.classList.add("arrow-5-hide");
+
+    showArrow("arrow6");
+    showArrow("arrow7");
   });
 
   // Lamp-zone
@@ -190,8 +165,6 @@ export default function initRoom1() {
   const lampDialog = document.getElementById("lampDialog") as HTMLDialogElement;
   const lampDialogBtn = document.getElementById("lampDialogBtn");
   const zoneSuccess = document.getElementById("zoneSuccess");
-  const arrow8hide = document.querySelector(".arrow-8-hide");
-  const arrow8show = document.querySelector(".arrow-8-show");
 
   zoneLamp?.addEventListener("click", () => {
     lampDialog.showModal();
@@ -200,14 +173,8 @@ export default function initRoom1() {
   lampDialogBtn?.addEventListener("click", () => {
     lampDialog.close();
     zoneSuccess?.classList.replace("zone-inactive", "zone-active");
-    // Correct answer — show arrow
-    arrow8hide?.classList.remove("arrow-8-hide");
-    arrow8hide?.classList.add("arrow-8-show");
-    // Correct answer — hide old arrows
-    arrow6hide?.classList.remove("arrow-6-show");
-    arrow6hide?.classList.add("arrow-6-hide");
-    arrow7hide?.classList.remove("arrow-7-show");
-    arrow7hide?.classList.add("arrow-7-hide");
+
+    showArrow("arrow8");
   });
 
   //Exit-zone
@@ -256,6 +223,12 @@ function resetRoom1() {
     "bedsheetsDialog",
   ) as HTMLDialogElement;
 
+  // Döljer alla arrows
+
+  document.querySelectorAll(".arrow").forEach((arrow) => {
+    arrow.classList.remove("visible");
+  });
+
   [
     wantTeddyTantrum,
     wantPillowTantrum,
@@ -270,4 +243,8 @@ function resetRoom1() {
   document.querySelectorAll(".zone-restart").forEach((zone) => {
     zone.classList.replace("zone-active", "zone-inactive");
   });
+}
+
+function showArrow(id: string) {
+  document.getElementById(id)?.classList.add("visible");
 }
