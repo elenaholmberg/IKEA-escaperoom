@@ -73,7 +73,7 @@
 
 .zone-pillow {
   position: absolute;
-  top: 42%;
+  top: 43%;
   left: 51%;
 }
 
@@ -83,18 +83,18 @@
 
 .zone-teddybear {
   position: absolute;
-  top: 60%;
+  top: 66%;
   left: 35%;
 }
 
-.zone-carpet img {
-  width: 100px;
+.zone-chair img {
+  width: 90px;
 }
 
-.zone-carpet {
+.zone-chair {
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 38%;
+  left: 25%;
 }
 
 .zone-bedsheets img {
@@ -103,7 +103,7 @@
 
 .zone-bedsheets {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 40%;
 }
 
@@ -113,20 +113,20 @@
 
 .zone-lamp {
   position: absolute;
-  top: 15%;
+  top: 6%;
   left: 40%;
 }
 
 .entry {
   position: absolute;
-  top: 80%;
-  left: 39%;
+  top: 90%;
+  left: 38%;
   width: 130px;
 }
 
 .exit {
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 80%;
   width: 130px;
 }
@@ -172,7 +172,7 @@ button {
 
 #arrow1 {
   position: absolute;
-  top: 140%;
+  top: 79%;
   left: 37%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
@@ -180,7 +180,7 @@ button {
 
 #arrow2 {
   position: absolute;
-  top: 127%;
+  top: 66.5%;
   left: 55%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
@@ -188,16 +188,48 @@ button {
 
 #arrow3 {
   position: absolute;
-  top: 116%;
-  left: 65%;
+  top: 55%;
+  left: 63%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow4 {
   position: absolute;
-  top: 140%;
-  left: 80%;
+  top: 40%;
+  left: 41%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow5 {
+  position: absolute;
+  top: 46%;
+  left: 35%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow6 {
+  position: absolute;
+  top: 22%;
+  left: 52%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow7 {
+  position: absolute;
+  top: 24%;
+  left: 35%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow8 {
+  position: absolute;
+  top: 17%;
+  left: 65%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
@@ -205,7 +237,11 @@ button {
 #arrow1,
 #arrow2,
 #arrow3,
-#arrow4 {
+#arrow4,
+#arrow5,
+#arrow6,
+#arrow7,
+#arrow8 {
   @keyframes pulse {
     0% {
       transform: scale(1);
