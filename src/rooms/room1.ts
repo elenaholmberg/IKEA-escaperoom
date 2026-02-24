@@ -60,6 +60,7 @@ export default function initRoom1() {
 
       showArrow("arrow2");
       showArrow("arrow3");
+      hideArrow("arrow1");
     } else {
       // Wrong answer — tantrum
       teddybearDialog.close();
@@ -108,8 +109,10 @@ export default function initRoom1() {
           .querySelector("#zoneBedsheets")
           ?.classList.replace("zone-inactive", "zone-active");
         pillowDialog.close();
-        arrow4?.classList.add("visible");
-        arrow5?.classList.add("visible");
+        showArrow("arrow4");
+        showArrow("arrow5");
+        hideArrow("arrow2");
+        hideArrow("arrow3");
       } else {
         // Wrong answer — tantrum
         pillowDialog.close();
@@ -158,6 +161,8 @@ export default function initRoom1() {
 
     showArrow("arrow6");
     showArrow("arrow7");
+    hideArrow("arrow4");
+    hideArrow("arrow5");
   });
 
   // Lamp-zone
@@ -175,12 +180,14 @@ export default function initRoom1() {
     zoneSuccess?.classList.replace("zone-inactive", "zone-active");
 
     showArrow("arrow8");
+    hideArrow("arrow6");
+    hideArrow("arrow7");
   });
 
   //Exit-zone
 
   zoneSuccess?.addEventListener("click", () => {
-    document.getElementById("introductionDiv")?.classList.remove("hidden");
+    resetRoom1();
   });
 }
 
@@ -248,3 +255,9 @@ function resetRoom1() {
 function showArrow(id: string) {
   document.getElementById(id)?.classList.add("visible");
 }
+
+function hideArrow(id: string) {
+  document.getElementById(id)?.classList.remove("visible");
+}
+
+//Obs! Gör zoonerna unclickable när dem är suddade
