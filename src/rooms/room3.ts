@@ -36,7 +36,8 @@ function checkAndSubmitHyllaFack() {
   fackInput.style.background = fackValid ? "green" : "black";
 
   if (hyllaValid && fackValid) {
-    formFackHylla.submit();
+    document.querySelector("#room3Part1")?.classList.add("hidden");
+    document.querySelector("#room3Part2")?.classList.remove("hidden");
   }
 }
 
