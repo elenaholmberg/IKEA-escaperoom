@@ -14,17 +14,9 @@ export default function initRoom1() {
     introductionDiv?.classList.add("hidden");
   });
 
-  //Arrows click => show teddybear
-  const arrow1 = document.getElementById("arrow1");
-
-  arrow1?.addEventListener("click", () => {
-    document
-      .querySelector("#zoneTeddybear")
-      ?.classList.replace("zone-inactive", "zone-active");
-  });
-
   // Teddybear-zone
 
+  let teddybearUsed = false;
   const zoneTeddybear = document.getElementById("zoneTeddybear");
   const teddybearDialog = document.getElementById(
     "teddybearDialog",
@@ -34,6 +26,7 @@ export default function initRoom1() {
   );
 
   zoneTeddybear?.addEventListener("click", () => {
+    if (teddybearUsed) return; //stoppar om redan klickad
     teddybearDialog.showModal();
   });
 
@@ -42,14 +35,14 @@ export default function initRoom1() {
       'input[name="teddybear-choose-argument"]:checked',
     );
 
-    document.querySelectorAll(".arrow").forEach((arrow) => {
-      arrow.classList.remove("visible");
-    });
-
     if (!selected) {
       alert("Välj ett argument först!");
       return;
     }
+
+    teddybearUsed = true;
+
+    teddybearDialog.close();
 
     // Correct answer — unlock pillow and arrows
     if (selected.value === "E") {
@@ -148,6 +141,7 @@ export default function initRoom1() {
   const chairDialogBtn = document.getElementById("chairDialogBtn");
   const arrow6 = document.getElementById("arrow6");
   const arrow7 = document.getElementById("arrow7");
+  const arrow9 = document.getElementById("arrow9");
 
   zoneChair?.addEventListener("click", () => {
     chairDialog.showModal();
@@ -161,6 +155,7 @@ export default function initRoom1() {
 
     showArrow("arrow6");
     showArrow("arrow7");
+    showArrow("arrow9");
     hideArrow("arrow4");
     hideArrow("arrow5");
   });
@@ -182,6 +177,7 @@ export default function initRoom1() {
     showArrow("arrow8");
     hideArrow("arrow6");
     hideArrow("arrow7");
+    hideArrow("arrow9");
   });
 
   //Exit-zone

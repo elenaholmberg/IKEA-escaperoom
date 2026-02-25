@@ -131,6 +131,9 @@
   width: 130px;
 }
 
+.zone {
+  cursor: pointer;
+}
 .zone-active {
   cursor: pointer;
 }
@@ -138,6 +141,7 @@
 .zone-inactive {
   cursor: not-allowed;
   opacity: 0.4;
+  pointer-events: none;
 }
 
 .hidden {
@@ -170,17 +174,19 @@ button {
   background-color: #0058a3;
 }
 
+//Arrows
+
 #arrow1 {
   position: absolute;
   top: 79%;
-  left: 37%;
+  left: 36.5%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow2 {
   position: absolute;
-  top: 66.5%;
+  top: 67.5%;
   left: 55%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
@@ -189,7 +195,7 @@ button {
 #arrow3 {
   position: absolute;
   top: 55%;
-  left: 63%;
+  left: 64%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
@@ -197,7 +203,7 @@ button {
 #arrow4 {
   position: absolute;
   top: 40%;
-  left: 41%;
+  left: 42%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
@@ -205,30 +211,38 @@ button {
 #arrow5 {
   position: absolute;
   top: 46%;
-  left: 35%;
+  left: 39%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow6 {
   position: absolute;
-  top: 22%;
-  left: 52%;
+  top: 17%;
+  left: 53%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow7 {
   position: absolute;
-  top: 24%;
-  left: 35%;
+  top: 30%;
+  left: 34%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow9 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow8 {
   position: absolute;
-  top: 17%;
+  top: 18%;
   left: 65%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
@@ -236,6 +250,7 @@ button {
 
 .arrow {
   display: none;
+  pointer-events: none;
 }
 
 .arrow.visible {
