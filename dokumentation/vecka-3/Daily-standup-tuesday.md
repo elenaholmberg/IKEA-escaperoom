@@ -1,4 +1,4 @@
-# Daily standup tisdag 25/2
+# Daily standup tisdag 24/2
 
 ## Lina
 
