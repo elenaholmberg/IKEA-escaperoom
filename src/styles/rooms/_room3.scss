@@ -119,6 +119,49 @@
   justify-content: center;
   align-items: center;
 }
+
+.clue-1-room-3-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: end;
+}
+
+#clue1Room3 {
+  border: 1.5px solid black;
+  padding: 30px;
+  border-radius: 20px;
+  height: 175px;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+  
+  img {
+    max-width: 45%;
+    margin: 0 auto;
+    position: absolute;
+    
+  }
+
+  p {
+    text-align: left;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0;
+    position: absolute;
+   
+    left: 15px;
+    top: 15px;
+  }
+}
+
+#confusedIkeaManRoom3 {
+  max-width: 250px;
+} 
 /* TA BORT VID MERGE */
 .hidden {
   display: none;
