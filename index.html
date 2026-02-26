@@ -371,54 +371,75 @@
         <!--------------------------->
 
         <!-- TEDDYBEAR -->
+
         <dialog id="teddybearDialog" class="dialog">
-          <p>
-            👧 💬 "PAPPA! Grise-knoa MÅSTE följa med hem, hon är min själsfrände
-            och om du inte köper henne nu så berättar jag för mamma att du åt en
-            hel påse chips i smyg igår!"
+          <p class="info-teddybear">
+            Ni har knappt hunnit innanför dörren förrän första hindret dyker
+            upp! Ett supergulligt gosedjur!
           </p>
 
-          <div class="daddy-argument">
-            <input
-              type="radio"
-              name="teddybear-choose-argument"
-              value="D"
-              id="teddyArgA"
-            />
-            <label for="teddyArgA">
-              "Om du slutar tjata nu får du bestämma vad vi äter till middag i
-              en hel vecka." (ger med sig indirekt — fel)</label
-            >
+          <div class="girl-flex">
+            <div>
+              <img class="talk-bulb" src="/public/girl-talk.png" alt="">
+            </div>
+            <div>
+              <img class="happy-girl-pic" src="/public/happy-girl.png" alt="">
+           </div>
           </div>
+           
+            <p class="girl-talk">
+              "Pappa! Pappa! PAPPA!!! <br>
+              Titta vilken gullig apa! <br>
+              Det är ju dessutom en BÄSTsäljare!! <br>
+              Det betyder ju att den är BÄST!! <br>
+              En sån MÅSTE jag ha!""
+             </p>
 
-          <div class="daddy-argument">
-            <input
-              type="radio"
-              name="teddybear-choose-argument"
-              value="E"
-              id="teddyArgB"
-            />
-            <label for="teddyArgB"
-              >"Lyssna, chips-grejen funkar inte. Men jag lovar att om du hittar
-              något ännu coolare längre in i butiken så överväger jag det. Och
-              du VET att det finns coolare saker." (rätt — utmanar hennes
-              nyfikenhet)</label
-            >
+
+          <div class="all-dad-arguments">
+            <img class="dad-image" src="/public/mr_ikea.png" alt="" />
+          
+            <div class="daddy-argument">
+              <input
+                type="radio"
+                name="teddybear-choose-argument"
+                value="D"
+                id="teddyArgA"
+              />
+              <label for="teddyArgA">
+                "Det blir absolut ingen apa! Du har redan hela rummet fullt av
+                gosedjur."</label
+              >
+            </div>
+
+            <div class="daddy-argument">
+              <input
+                type="radio"
+                name="teddybear-choose-argument"
+                value="E"
+                id="teddyArgB"
+              />
+              <label for="teddyArgB"></label>
+                "Lyssna, chips-grejen funkar inte. Men jag lovar att om du
+                hittar något ännu coolare längre in i butiken så överväger jag
+                det. Och du VET att det finns coolare saker." (rätt — utmanar
+                hennes nyfikenhet)</label
+              >
+            </div>
+
+            <div class="daddy-argument">
+              <input
+                type="radio"
+                name="teddybear-choose-argument"
+                value="F"
+                id="teddyArgC"
+              />
+              <label for="teddyArgC">
+                "Den där grisen är ful och du har redan tio gosedjur hemma,
+                sluta tjata." (utbrott)</label
+              >
+            </div>
           </div>
-
-          <div class="daddy-argument">
-            <input
-              type="radio"
-              name="teddybear-choose-argument"
-              value="F"
-              id="teddyArgC"
-            />
-            <label for="teddyArgC"
-              >"Den där grisen är ful och du har redan tio gosedjur hemma, sluta
-              tjata." (utbrott)</label
-            >
-          </div>
-
           <button id="submitTeddybearArgument">Skicka in argument</button>
         </dialog>
 
