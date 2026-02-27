@@ -24,8 +24,8 @@ room3StartBtn.addEventListener("click", () => {
 
 // Del ett
 
-const regexHylla = /^15$/;
-const regexFack = /^42$/;
+const regexHylla = /^5$/;
+const regexFack = /^39$/;
 
 // const formFackHylla = document.querySelector("#guessHyllaFackSection") as HTMLFormElement;
 const fackInput = document.querySelector("#fackInput") as HTMLInputElement;
@@ -71,9 +71,9 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
   const optionsContainerRoom3 = document.querySelector("#guessFurniture") as HTMLDivElement;
   if (!optionsContainerRoom3) return;
 
-  
+  const shuffledOptionsRoom3 = [...items].sort(() => Math.random() - 0.5);
 
-  optionsContainerRoom3.innerHTML = items.map((item) => `
+  optionsContainerRoom3.innerHTML = shuffledOptionsRoom3.map((item) => `
     <div class="optionContainer">
       <img 
         src="${item.img}" 
@@ -83,7 +83,7 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
         tabindex="0"
         role="button"
         aria-label="Välj ${item.name}">
-      <p>${item.id}</p>
+      <!--<p>${item.id}</p>-->
     </div>
   `).join("");
 
