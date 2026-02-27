@@ -59,28 +59,45 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
   const optionsContainerRoom3 = document.querySelector("#guessFurniture") as HTMLDivElement;
   if (!optionsContainerRoom3) return;
 
-  optionsContainerRoom3.innerHTML = ""; // Rensa tidigare innehåll
-
   optionsContainerRoom3.innerHTML = items.map((item) => `
-    <div class="optionContainer"><img src="${item.img}" alt="${item.name}" data-id="${item.id}" class="furniture-option">
-    <p>${item.id}</p></div>
-  `)
-  .join("");
+    <div class="optionContainer">
+      <img 
+        src="${item.img}" 
+        alt="${item.name}" 
+        data-id="${item.id}" 
+        class="furniture-option"
+        tabindex="0"
+        role="button"
+        aria-label="Välj ${item.name}">
+      <p>${item.id}</p>
+    </div>
+  `).join("");
 
-  // Lägg till event listeners på varje bild
   const furnitureOptions = optionsContainerRoom3.querySelectorAll(".furniture-option");
-  furnitureOptions.forEach(items => {
-    items.addEventListener("click", () => {
-      const selectedId = items.getAttribute("data-id");
-      console.log(`Vald möbel ID: ${selectedId}`);
-      
-      if (selectedId === "1") {
-        alert("Rätt val! Du har hittat Billy-hyllan.");
-      } else {
-        alert("Fel val. Försök igen!");
+  
+  furnitureOptions.forEach(item => {
+    // Hantera klick med mus
+    item.addEventListener("click", () => handleSelection(item));
+    
+    // Hantera klick med tangentbord (Enter eller Space)
+    item.addEventListener("keydown", (e) => {
+      const keyEvent = e as KeyboardEvent;
+      if (keyEvent.key === "Enter" || keyEvent.key === " ") {
+        e.preventDefault();
+        handleSelection(item);
       }
     });
   });
+
+  function handleSelection(item: Element): void {
+    const selectedId = item.getAttribute("data-id");
+    console.log(`Vald möbel ID: ${selectedId}`);
+    if (selectedId === "1") {
+      alert("Rätt val! Du har hittat Billy-hyllan.");
+    } else {
+      alert("Fel val. Försök igen!");
+    }
+  }
 }
 
 renderRoom3Options(optionsRoom3);
