@@ -12,6 +12,18 @@ export default function initRoom3() {
   // övrig kod för rum 3
 }
 
+// ==================
+// Starta rum 3
+// ==================
+
+const room3StartBtn = document.querySelector("#room3StartBtn") as HTMLButtonElement;
+room3StartBtn.addEventListener("click", () => {
+  document.querySelector("#room3start")?.classList.add("hidden");
+  document.querySelector("#room3Part1")?.classList.remove("hidden");
+});
+
+// Del ett
+
 const regexHylla = /^15$/;
 const regexFack = /^42$/;
 
@@ -59,6 +71,8 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
   const optionsContainerRoom3 = document.querySelector("#guessFurniture") as HTMLDivElement;
   if (!optionsContainerRoom3) return;
 
+  
+
   optionsContainerRoom3.innerHTML = items.map((item) => `
     <div class="optionContainer">
       <img 
@@ -93,7 +107,9 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
     const selectedId = item.getAttribute("data-id");
     console.log(`Vald möbel ID: ${selectedId}`);
     if (selectedId === "1") {
-      alert("Rätt val! Du har hittat Billy-hyllan.");
+      document.querySelector("#room3Part2")?.classList.add("hidden");
+      document.querySelector("#room3End")?.classList.remove("hidden");
+      
     } else {
       alert("Fel val. Försök igen!");
     }

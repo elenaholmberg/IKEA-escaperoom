@@ -36,19 +36,29 @@
     <!-------✨ Linas Rum ✨-------->
     
     <section class="room-3" id="room3">
-      
-      <div id="room3Part1">
-        <div class="room-3-header">  
-          <h3>Tag själv lagret</h3>
+      <div class="room-3-header">  
+        <h1>Tag själv lagret</h1>
+        <div>
+          <span class="progress-in-room-3">Rum 3</span>
+        </div>
+      </div>
+      <div id="room3start"><!--class="hidden"-->
+        <h2>Välkommen till rum 3</h2>
+        <p>Nu när du har lämnat lampavdelningen, är nästa steg att hitta rätt möbel inne på lagret.</p>
+        <h3>Är du redo?</h3>
+        <div id="room3StartBtnWrapper">
           <div>
-            <span class="progress-in-room-3">0%</span>
+            <button id="room3StartBtn" aria-label="Gå till rum 3">→</button><span>Till rum 3</span>
           </div>
-        </div>  
-        <h4>Rum 3</h4>
+        </div>
+        
+      </div>
+      <section id="room3Part1" class="hidden"> <!--class="hidden"-->
+        <h2>Vilken hylla och fack?</h2>
         <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p> 
           <p>MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
         <p>Du kommer ihåg lappen du fick med dig hemifrån och blir lite fundersam över vad som står.</p>  
-        <h4>Vilken hylla och fack ska vi till?</h4>
+        <h3>Lös rebusen:</h3>
         <div class="clue-1-room-3-wrapper">
           <img id="confusedIkeaManRoom3" src="/src/images/gubbe-ikea-forvirrad.png" alt="Lapp med kod">
           <div id="clue1Room3">
@@ -77,15 +87,9 @@
             
           </div>
         </div>  
-      </div>
-      <div id="room3Part2"> <!--class="hidden"-->
-        <div class="room-3-header">  
-          <h3>Tag själv lagret</h3>
-          <div>
-            <span class="progress-in-room-3">50%</span>
-          </div>
-        </div>
-        <h4>Rum 3</h4>
+      </section>
+      <section id="room3Part2" class="hidden"> <!--class="hidden"-->
+        <h2>Rum 3</h2>
         <p>Bra jobbat!</p>
         <p>Nu har du kommit till rätt hylla och fack.</p>
         <div class="clue-2-room-3-wrapper">
@@ -107,16 +111,16 @@
             </div>
           </div>  
         </div>
-      </div>
-      <div id="room3end">
-        <div class="room-3-header">  
-          <h3>Tag själv lagret</h3>
-          <div>
-            <span class="progress-in-room-3">100%</span>
-          </div>
+      </section>
+      <section id="room3End" class="hidden">
+        <h2>Rum 3: Klart!</h2>
+        <p>Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till kassan för att betala.</p>
+        <div id="room3ToRoom4">
+          
+          <button><span>→</span><span>Till kassan</span></button>
         </div>
-        <h4>Rum 3</h4>
-      </div>
+        
+      </section>
       
     </section>
     
