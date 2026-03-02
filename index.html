@@ -40,28 +40,75 @@
       <!-- ================================== -->
       <section class="room-4" id="room4">
         <h3>Rum 4 - Kassan</h3>
-        <p class="room4-instructions" id="room4-instructions">
-          Memorera var de gula rutorna är!
-        </p>
 
-        <p class="room4-timer" id="room4-timer"></p>
+        <!-- Memory -->
+        <div id="room4memory">
+          <p class="room4-instructions" id="room4-instructions">
+            Memorera var de gula rutorna är och dess siffror!
+          </p>
 
-        <button type="button" id="room4-start-btn">Visa de gula rutorna</button>
+          <p class="room4-timer" id="room4-timer"></p>
 
-        <div class="room4-grid" id="room4-grid">
-          <div class="room4-cell" data-index="0"></div>
-          <div class="room4-cell" data-index="1"></div>
-          <div class="room4-cell" data-index="2"></div>
-          <div class="room4-cell" data-index="3"></div>
-          <div class="room4-cell" data-index="4"></div>
-          <div class="room4-cell" data-index="5"></div>
-          <div class="room4-cell" data-index="6"></div>
-          <div class="room4-cell" data-index="7"></div>
-          <div class="room4-cell" data-index="8"></div>
-          <div class="room4-cell" data-index="9"></div>
+          <button type="button" id="room4-start-btn">
+            Visa de gula rutorna
+          </button>
+
+          <div class="room4-grid" id="room4-grid">
+            <div class="room4-cell" data-index="0"></div>
+            <div class="room4-cell" data-index="1"></div>
+            <div class="room4-cell" data-index="2"></div>
+            <div class="room4-cell" data-index="3"></div>
+            <div class="room4-cell" data-index="4"></div>
+            <div class="room4-cell" data-index="5"></div>
+            <div class="room4-cell" data-index="6"></div>
+            <div class="room4-cell" data-index="7"></div>
+            <div class="room4-cell" data-index="8"></div>
+            <div class="room4-cell" data-index="9"></div>
+          </div>
+
+          <p class="room4-message" id="room4-message"></p>
         </div>
 
-        <p class="room4-message" id="room4-message"></p>
+        <!-- Kassakoden -->
+        <div id="room4checkout" hidden>
+          <h3>Kassan</h3>
+          <p>Skriv in koden från de gula rutorna för att betala dina varor!</p>
+
+          <div class="room4-terminal">
+            <div class="room4-code-display">
+              <span id="room4CodeDisplay">----</span>
+            </div>
+
+            <div class="room4-keypad">
+              <button type="button" class="room4-key" data-key="1">1</button>
+              <button type="button" class="room4-key" data-key="2">2</button>
+              <button type="button" class="room4-key" data-key="3">3</button>
+              <button type="button" class="room4-key" data-key="4">4</button>
+              <button type="button" class="room4-key" data-key="5">5</button>
+              <button type="button" class="room4-key" data-key="6">6</button>
+              <button type="button" class="room4-key" data-key="7">7</button>
+              <button type="button" class="room4-key" data-key="8">8</button>
+              <button type="button" class="room4-key" data-key="9">9</button>
+              <button
+                type="button"
+                class="room4-key room4-key-clear"
+                data-key="clear"
+              >
+                C
+              </button>
+              <button type="button" class="room4-key" data-key="0">0</button>
+              <button
+                type="button"
+                class="room4-key room4-key-enter"
+                data-key="enter"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+
+          <p class="room4-message" id="room4CheckoutMessage"></p>
+        </div>
       </section>
       <button type="button" disabled>Gå ut från IKEA</button>
     </main>
