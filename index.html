@@ -373,74 +373,88 @@
         <!-- TEDDYBEAR -->
 
         <dialog id="teddybearDialog" class="dialog">
-          <p class="info-teddybear">
-            Ni har knappt hunnit innanför dörren förrän första hindret dyker
-            upp! Ett supergulligt gosedjur!
-          </p>
+          <div class="dialog-div">
+            <div class="daughter-argument">
+              <p>
+                Ni har knappt hunnit innanför dörren förrän första hindret dyker
+                upp! Den virala apan Punch!
+              </p>
 
-          <div class="girl-flex">
-            <div>
-              <img class="talk-bulb" src="/public/girl-talk.png" alt="">
+              <div class="monkey-box">
+                <div class="monkey-flex">
+                  <img
+                    class="want-monkey-pic"
+                    src="/public/djungelskog-with-info.png"
+                    alt=""
+                  />
+
+                  <img
+                    class="want-monkey-info"
+                    src="/public/monkey-info.png"
+                    alt=""
+                  />
+                </div>
+                <img
+                  class="want-monkey-art"
+                  src="/public/art.number-monkey.png"
+                  alt=""
+                />
+              </div>
+
+              <p>
+                Din dotter drar fram det tunga artilleriet- lägger huvudet på
+                sned, tittar på dig med de stora blanka valpögonen och drar till
+                med det mest bedårande "Snäääääällla" du någonsin hört.
+                <br />Hur tusan ska du ta dig ur det här?!
+              </p>
             </div>
-            <div>
-              <img class="happy-girl-pic" src="/public/happy-girl.png" alt="">
-           </div>
+
+            <div class="all-dad-arguments">
+              <img class="dad-image" src="/public/mr_ikea.png" alt="" />
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="teddybear-choose-argument"
+                  value="D"
+                  id="teddyArgA"
+                />
+                <label for="teddyArgA">
+                  "Det blir absolut ingen apa! Du har redan hela rummet fullt av
+                  gosedjur."</label
+                >
+              </div>
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="teddybear-choose-argument"
+                  value="E"
+                  id="teddyArgB"
+                />
+                <label for="teddyArgB">
+                  "Lyssna, chips-grejen funkar inte. Men jag lovar att om du
+                  hittar något ännu coolare längre in i butiken så överväger jag
+                  det. Och du VET att det finns coolare saker." (rätt — utmanar
+                  hennes nyfikenhet)</label
+                >
+              </div>
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="teddybear-choose-argument"
+                  value="F"
+                  id="teddyArgC"
+                />
+                <label for="teddyArgC">
+                  "Den där grisen är ful och du har redan tio gosedjur hemma,
+                  sluta tjata." (utbrott)</label
+                >
+              </div>
+            </div>
+            <button id="submitTeddybearArgument">Skicka in argument</button>
           </div>
-           
-            <p class="girl-talk">
-              "Pappa! Pappa! PAPPA!!! <br>
-              Titta vilken gullig apa! <br>
-              Det är ju dessutom en BÄSTsäljare!! <br>
-              Det betyder ju att den är BÄST!! <br>
-              En sån MÅSTE jag ha!""
-             </p>
-
-
-          <div class="all-dad-arguments">
-            <img class="dad-image" src="/public/mr_ikea.png" alt="" />
-          
-            <div class="daddy-argument">
-              <input
-                type="radio"
-                name="teddybear-choose-argument"
-                value="D"
-                id="teddyArgA"
-              />
-              <label for="teddyArgA">
-                "Det blir absolut ingen apa! Du har redan hela rummet fullt av
-                gosedjur."</label
-              >
-            </div>
-
-            <div class="daddy-argument">
-              <input
-                type="radio"
-                name="teddybear-choose-argument"
-                value="E"
-                id="teddyArgB"
-              />
-              <label for="teddyArgB"></label>
-                "Lyssna, chips-grejen funkar inte. Men jag lovar att om du
-                hittar något ännu coolare längre in i butiken så överväger jag
-                det. Och du VET att det finns coolare saker." (rätt — utmanar
-                hennes nyfikenhet)</label
-              >
-            </div>
-
-            <div class="daddy-argument">
-              <input
-                type="radio"
-                name="teddybear-choose-argument"
-                value="F"
-                id="teddyArgC"
-              />
-              <label for="teddyArgC">
-                "Den där grisen är ful och du har redan tio gosedjur hemma,
-                sluta tjata." (utbrott)</label
-              >
-            </div>
-          </div>
-          <button id="submitTeddybearArgument">Skicka in argument</button>
         </dialog>
 
         <dialog id="wantTeddyTantrum">
