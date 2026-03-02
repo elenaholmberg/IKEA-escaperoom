@@ -19,49 +19,46 @@ export default function initRoom1() {
   // monkey-zone
 
   let monkeyUsed = false;
-  const monkeyDialog = document.getElementById("monkeyDialog");
-  const zonemonkey = document.getElementById("zonemonkey");
-  const submitmonkeyArgument = document.getElementById("submitmonkeyArgument");
 
-  zonemonkey?.addEventListener("click", () => {
-    monkeyDialog?.classList.remove("hide-dialog");
+  document.getElementById("zoneMonkey")?.addEventListener("click", () => {
+    document.getElementById("monkeyDialog")?.classList.remove("hidden");
   });
 
-  submitmonkeyArgument?.addEventListener("click", () => {
-    monkeyDialog?.classList.add("hide-dialog");
-    document.querySelector(".hide-dialog")?.classList.add("hide-dialog");
-    const selected = document.querySelector<HTMLInputElement>(
-      'input[name="monkey-choose-argument"]:checked',
-    );
+  document
+    .getElementById("submitMonkeyArgument")
+    ?.addEventListener("click", () => {
+      document.getElementById("monkeyDialog")?.classList.add("hide-dialog"); //döljer dialogrutan
+      document.querySelector(".hide-dialog")?.classList.add("hide-dialog"); //döljer dialogrutan
+      const selected = document.querySelector<HTMLInputElement>(
+        'input[name="monkey-choose-argument"]:checked',
+      );
 
-    if (!selected) {
-      alert("Välj ett argument först!");
-      return;
-    }
+      if (!selected) {
+        alert("Välj ett argument först!");
+        return;
+      }
 
-    monkeyUsed = true;
+      monkeyUsed = true;
 
-    // Correct answer — unlock pillow and arrows
-    if (selected.value === "E") {
-      document
-        .querySelector("#zonePillow")
-        ?.classList.replace("zone-inactive", "zone-active");
+      // Correct answer — unlock pillow and arrows
+      if (selected.value === "E") {
+        document
+          .querySelector("#zonePillow")
+          ?.classList.replace("zone-inactive", "zone-active");
 
-      showArrow("arrow2");
-      showArrow("arrow3");
-      hideArrow("arrow1");
-    } else {
-      // Wrong answer — tantrum
+        showArrow("arrow2");
+        showArrow("arrow3");
+        hideArrow("arrow1");
+      } else {
+        // Wrong answer — tantrum
 
-      handleTantrum("wantmonkeyTantrum", "wantmonkeyTantrumBtn");
-    }
-  });
-
-  ["resetBtnPillow", "resetBtnmonkey", "resetBtnBedsheets"].forEach((id) => {
-    document.getElementById(id)?.addEventListener("click", () => {
-      resetRoom1();
-      document.getElementById("introductionDiv")?.classList.remove("hidden");
+        handleTantrum("wantmonkeyTantrum", "wantmonkeyTantrumBtn");
+      }
     });
+
+  document.getElementById("resetBtn")?.addEventListener("click", () => {
+    introductionDiv?.classList.remove("hidden");
+    tantrum;
   });
 
   // Pillow-zone
@@ -81,6 +78,8 @@ export default function initRoom1() {
       'input[name="pillow-choose-argument"]:checked',
     );
 
+    pillowArgument?.classList.add("hidden");
+
     if (!selected) {
       alert("Välj ett argument först!");
       return;
@@ -94,54 +93,47 @@ export default function initRoom1() {
       document
         .querySelector("#zoneBedsheets")
         ?.classList.replace("zone-inactive", "zone-active");
-      pillowDialog.close();
+
       showArrow("arrow4");
       showArrow("arrow5");
       hideArrow("arrow2");
       hideArrow("arrow3");
     } else {
       // Wrong answer — tantrum
-      pillowDialog.close();
+
       handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
     }
   });
 
   // Bedsheets-zone
   const zoneBedsheets = document.getElementById("zoneBedsheets");
-  const bedsheetsDialog = document.getElementById(
-    "bedsheetsDialog",
-  ) as HTMLDialogElement;
-  const bedsheetsDialogBtn = document.getElementById("bedsheetsDialogBtn");
+  const bedsheetDialog = document.getElementById("bedsheetDialog");
+  const resetBtn = document.getElementById("resetBedsheetBtn");
 
   zoneBedsheets?.addEventListener("click", () => {
-    bedsheetsDialog.showModal();
+    bedsheetDialog?.classList.remove("hidden");
   });
 
-  bedsheetsDialogBtn?.addEventListener(
-    "click",
-    () => {
-      bedsheetsDialog.close();
-      introductionDiv?.classList.remove("hidden");
-    },
-    { once: true },
-  );
+  resetBtn?.addEventListener("click", () => {
+    introductionDiv?.classList.remove("hidden");
+    bedsheetDialog?.classList.add("hidden");
+  });
 
   // Chair-zone
   const zoneChair = document.getElementById("zoneChair");
-  const chairDialog = document.getElementById(
-    "chairDialog",
-  ) as HTMLDialogElement;
+  const chairDialog = document.getElementById("chairDialog");
   const chairDialogBtn = document.getElementById("chairDialogBtn");
   const arrow6 = document.getElementById("arrow6");
   const arrow7 = document.getElementById("arrow7");
   const arrow9 = document.getElementById("arrow9");
 
   zoneChair?.addEventListener("click", () => {
-    chairDialog.showModal();
+    chairDialog?.classList.remove("hidden");
   });
 
   chairDialogBtn?.addEventListener("click", () => {
-    chairDialog.close();
+    chairDialog?.classList.add("hidden");
+
     document
       .querySelector(".zone-lamp")
       ?.classList.replace("zone-inactive", "zone-active");
@@ -155,16 +147,16 @@ export default function initRoom1() {
 
   // Lamp-zone
   const zoneLamp = document.getElementById("zoneLamp");
-  const lampDialog = document.getElementById("lampDialog") as HTMLDialogElement;
+  const lampDialog = document.getElementById("lampDialog");
   const lampDialogBtn = document.getElementById("lampDialogBtn");
   const zoneSuccess = document.getElementById("zoneSuccess");
 
   zoneLamp?.addEventListener("click", () => {
-    lampDialog.showModal();
+    lampDialog?.classList.remove("hidden");
   });
 
   lampDialogBtn?.addEventListener("click", () => {
-    lampDialog.close();
+    lampDialog?.classList.add("hidden");
     zoneSuccess?.classList.replace("zone-inactive", "zone-active");
 
     showArrow("arrow8");
