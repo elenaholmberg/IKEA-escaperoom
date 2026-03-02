@@ -18,7 +18,7 @@ export default function initRoom3() {
 
 const room3StartBtn = document.querySelector("#room3StartBtn") as HTMLButtonElement;
 room3StartBtn.addEventListener("click", () => {
-  document.querySelector("#room3start")?.classList.add("hidden");
+  document.querySelector("#room3Start")?.classList.add("hidden");
   document.querySelector("#room3Part1")?.classList.remove("hidden");
 });
 
@@ -67,11 +67,13 @@ interface IOptionsRoom3 {
   correct: boolean;
 }
 
+let wrongClicksRoom3 = 0;
+
 function renderRoom3Options(items: IOptionsRoom3[]): void {
   const optionsContainerRoom3 = document.querySelector("#guessFurniture") as HTMLDivElement;
   if (!optionsContainerRoom3) return;
 
-  let wrongClicksRoom3 = 0;
+  
 
   const shuffledOptionsRoom3 = [...items].sort(() => Math.random() - 0.5);
 
@@ -106,24 +108,24 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
   });
 
   function handleSelection(item: Element): void {
-    const selectedId = item.getAttribute("data-id");
+  const selectedId = item.getAttribute("data-id");
 
-    if (selectedId === "1") {
+  if (selectedId === "1") {
+    document.querySelector("#room3Part2")?.classList.add("hidden");
+    document.querySelector("#room3End")?.classList.remove("hidden");
+  } else {
+    wrongClicksRoom3++;
+    console.log("wrongClicksRoom3:", wrongClicksRoom3);
+    if (wrongClicksRoom3 >= 2) {
       document.querySelector("#room3Part2")?.classList.add("hidden");
-      document.querySelector("#room3End")?.classList.remove("hidden");
+      document.querySelector("#room3GameOver")?.classList.remove("hidden");
+      document.querySelector("#room2Start")?.classList.add("hidden");
       
     } else {
-      wrongClicksRoom3++; {
-          if (wrongClicksRoom3 >= 2) {
-            document.querySelector("#room3Part2")?.classList.add("hidden");
-            document.querySelector("#gameOverScreenTest")?.classList.remove("hidden");
-          } else {
-            alert("Fel val. Försök igen!"); // Eller visa ett meddelande på sidan istället för alert
-          }
-      }
-      
+      alert("Fel val. Försök igen!");
     }
   }
+}
 }
 
 renderRoom3Options(optionsRoom3);

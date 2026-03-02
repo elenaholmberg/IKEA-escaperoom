@@ -42,7 +42,7 @@
           <p class="progress-in-room-3">Rum 3</p>
         </div>
       </div>
-      <div id="room3start"><!--class="hidden"-->
+      <div id="room3Start"><!--class="hidden"-->
         <h2>Välkommen till rum 3</h2>
         <p>Nu när du har lämnat lampavdelningen, är nästa steg att hitta rätt möbel inne på lagret.</p>
         <h3>Är du redo?</h3>
@@ -99,17 +99,27 @@
         <div class="clue-2-room-3-wrapper">
           <div id="shelfForFurnituresRoom3Wrapper">
             <div id="shelfImageRoom3">
-              <img src="/src/images/gubbe-ikea-forvirrad.png" alt="hej">
-            </div>
-            <div id="hyllaAndFackShelfRoom3">
-              <div>
-                <p class="hylla-fack-title">Hylla</p>
-                <p>5</p>
+              <div id="scribbleColumn1">
+                <img src="/src/images/scribble-room3.png" alt="Överstrykning av möbelbild i blått">
               </div>
-              <div>
+              <div id="scribbleColumn2">
+                <img id="scribbleYellowRoom3" src="/src/images/scribble-yellow.png" alt="Överstrykning av möbelnamn i gult">
+                
+                <p>000.000.00</p>
+                <img id="barcodeRoom3" src="/src/images/barcodeRoom3.png">
+
+              </div>
+              
+            </div>
+           
+            <div id="hyllaAndFackShelfRoom3">
+              <div id="redBackgroundHyllaFack">  
+                <p class="hylla-fack-title">Hylla</p>
+                <p>05</p>
                 <p class="hylla-fack-title">Fack</p>
                 <p>39</p>
-              </div>
+              </div>  
+            </div>  
           </div>
         </div>
         <h3>Välj rätt möbel:</h3>
@@ -120,6 +130,7 @@
           <p>Psst! Klicka inte för många gånger.</p>
         </div>
       </section>
+      
       <section id="room3End" class="hidden">
         <h2>Rum 3: Klart!</h2>
         <p>Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till kassan för att betala.</p>
@@ -128,6 +139,19 @@
           <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
         </div>
         
+      </section>
+      <section id="room3GameOver" class="hidden">
+        <div>
+          <h2>Game Over</h2>
+          <p>Tyvärr tog tålamodet slut hos ditt barn och istället för att leta rätt på möbeln måste du nu leta rätt på ditt barn istället.</p>
+          <p class="right-before-button-room-3">När du letat klart, vill du spela igen eller vill du lämna varuhuset?</p>
+          <div>
+            <div>
+              <button id="restartGameBtn">Spela igen</button>
+              <button id="toIndexBtn">Ta mig hem</button>
+            </div>
+          </div>
+        </div>  
       </section>
       
     </section>
