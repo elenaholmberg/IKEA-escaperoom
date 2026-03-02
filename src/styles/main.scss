@@ -11,6 +11,7 @@
 */
 /* Rum-specifika stilar — varje person jobbar i sin egen fil */
 
+@use "./rooms/header";
 @use "./rooms/room1";
 @use "./rooms/room2";
 @use "./rooms/room3";
