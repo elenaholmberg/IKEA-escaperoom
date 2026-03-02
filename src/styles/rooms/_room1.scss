@@ -9,6 +9,8 @@
   height: auto;
   background-color: #ffda1a;
   color: #333333;
+
+  position: relative;
 }
 
 .heading {
@@ -29,30 +31,19 @@
 }
 
 .welcome-information {
-  font-size: 18px;
-  border: #ffda1a solid 2px;
-  border-radius: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 180px;
-  margin-bottom: 40px;
-  padding-top: 50px;
-
-  text-align: center;
+  margin: 100px;
 }
 
 #startRoom1Btn {
   display: block;
-  margin: 20px auto;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0058a3;
-  color: #ffda1a;
-  border: 2px solid #ffda1a;
-  border-radius: 10px;
-  margin-top: 60px;
-  margin-bottom: 80px;
-
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 580px;
+  top: 200px;
   cursor: pointer;
 }
 
@@ -77,11 +68,11 @@
   left: 51%;
 }
 
-.zone-teddybear img {
+.zone-monkey img {
   width: 100px;
 }
 
-.zone-teddybear {
+.zone-monkey {
   position: absolute;
   top: 66%;
   left: 35%;
@@ -150,72 +141,102 @@
 
 // Dialogs
 
-.dialog p {
-  font-size: 18px;
+.hide-dialog {
+  display: none;
 }
 
 .dialog-div {
-  width: 600px;
-  margin-left: 30px;
-  margin-right: 30px;
+  background-color: #ffffff;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: 0px;
+  margin: 0 auto;
 }
 
-.monkey-flex {
+.daughter-argument {
   display: flex;
+  width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 0 auto;
+  padding-top: 40px;
 }
 
-.monkey-box {
-  border: 1px solid black;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.want-monkey-pic {
-  width: 30%;
-  height: 30%;
+.want-monkey-pic,
+.want-pillow-pic {
+  width: 40%;
   margin-left: 50px;
 }
 
-.want-monkey-art {
-  width: 80px;
+.icecream-pic {
+  width: 50%;
+  height: 50%;
 }
-.want-monkey-info {
-  width: 30%;
-  height: 30%;
-  margin-top: 10px;
-  margin-left: 70px;
-}
-
 .all-dad-arguments {
   position: relative;
   border: 1px solid black;
   width: 600px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  height: 300px;
+  padding-top: 40px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  margin-top: 40px;
 }
 
 .dad-image {
   position: absolute;
   width: 100px;
-  top: 10px;
+  top: 25px;
   left: -25px;
 }
 
 .daddy-argument {
-  width: 500px;
+  width: 450px;
+  margin: 0 auto;
   margin-left: 70px;
   margin-bottom: 20px;
-
-  font-size: 18px;
+  padding: 10px;
   background-color: rgba(175, 183, 191, 0.3);
+  border-radius: 30px;
 }
 
-button {
-  display: block;
-  margin: 20px auto;
+.tantrum {
+  display: flex;
+  position: relative;
+  border: 1px solid black;
+  width: 600px;
+  height: 300px;
+  padding-top: 40px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  margin-top: 40px;
+
+  p {
+    padding: 30px;
+  }
+}
+
+.all-dialog-buttons {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0058a3;
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 385px;
+  top: 320px;
+}
+
+.tantrum-buttons {
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 580px;
+  top: 350px;
 }
 
 //Arrows
@@ -313,5 +334,42 @@ button {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+.room-2-lose-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffffeb;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  div {
+    display: block;
+    margin-top: 64px;
+    color: #333333;
+    font-size: 1rem;
+    width: 50%;
+    padding-bottom: 16px;
+    h2 {
+      margin-top: 16px;
+    }
+    button {
+      font-family: "Noto", Courier, monospace;
+      min-height: 56px;
+      padding: 16px 64px;
+      margin-top: 16px;
+      margin-bottom: 32px;
+      border-radius: 64px;
+      background-color: #006fd0;
+      color: #ffffff;
+      border: none;
+      margin-left: auto;
+      display: block;
+    }
+    button:hover {
+      background-color: #0057a3;
+    }
   }
 }

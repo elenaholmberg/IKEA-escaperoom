@@ -9,30 +9,29 @@ import type {} from "../types/models"; // Om du vill använda dig av models på 
 export default function initRoom1() {
   const introductionDiv = document.getElementById("introductionDiv");
   const startRoom1Btn = document.getElementById("startRoom1Btn");
+  const tantrum = document.querySelector("tantrum");
 
   startRoom1Btn?.addEventListener("click", () => {
     introductionDiv?.classList.add("hidden");
+    tantrum?.classList.add("hidden");
   });
 
-  // Teddybear-zone
+  // monkey-zone
 
-  let teddybearUsed = false;
-  const zoneTeddybear = document.getElementById("zoneTeddybear");
-  const teddybearDialog = document.getElementById(
-    "teddybearDialog",
-  ) as HTMLDialogElement;
-  const submitTeddybearArgument = document.getElementById(
-    "submitTeddybearArgument",
-  );
+  let monkeyUsed = false;
+  const monkeyDialog = document.getElementById("monkeyDialog");
+  const zonemonkey = document.getElementById("zonemonkey");
+  const submitmonkeyArgument = document.getElementById("submitmonkeyArgument");
 
-  zoneTeddybear?.addEventListener("click", () => {
-    if (teddybearUsed) return; //stoppar om redan klickad
-    teddybearDialog.showModal();
+  zonemonkey?.addEventListener("click", () => {
+    monkeyDialog?.classList.remove("hide-dialog");
   });
 
-  submitTeddybearArgument?.addEventListener("click", () => {
+  submitmonkeyArgument?.addEventListener("click", () => {
+    monkeyDialog?.classList.add("hide-dialog");
+    document.querySelector(".hide-dialog")?.classList.add("hide-dialog");
     const selected = document.querySelector<HTMLInputElement>(
-      'input[name="teddybear-choose-argument"]:checked',
+      'input[name="monkey-choose-argument"]:checked',
     );
 
     if (!selected) {
@@ -40,28 +39,25 @@ export default function initRoom1() {
       return;
     }
 
-    teddybearUsed = true;
-
-    teddybearDialog.close();
+    monkeyUsed = true;
 
     // Correct answer — unlock pillow and arrows
     if (selected.value === "E") {
       document
         .querySelector("#zonePillow")
         ?.classList.replace("zone-inactive", "zone-active");
-      teddybearDialog.close();
 
       showArrow("arrow2");
       showArrow("arrow3");
       hideArrow("arrow1");
     } else {
       // Wrong answer — tantrum
-      teddybearDialog.close();
-      handleTantrum("wantTeddyTantrum", "wantTeddyTantrumBtn");
+
+      handleTantrum("wantmonkeyTantrum", "wantmonkeyTantrumBtn");
     }
   });
 
-  ["resetBtnPillow", "resetBtnTeddy", "resetBtnBedsheets"].forEach((id) => {
+  ["resetBtnPillow", "resetBtnmonkey", "resetBtnBedsheets"].forEach((id) => {
     document.getElementById(id)?.addEventListener("click", () => {
       resetRoom1();
       document.getElementById("introductionDiv")?.classList.remove("hidden");
@@ -70,48 +66,45 @@ export default function initRoom1() {
 
   // Pillow-zone
   const zonePillow = document.getElementById("zonePillow");
-  const pillowDialog = document.getElementById(
-    "pillowArgument",
-  ) as HTMLDialogElement;
+  const pillowArgument = document.getElementById("pillowArgument");
   const submitPillowArgument = document.getElementById("submitPillowArgument");
   const arrow4 = document.getElementById("arrow4");
   const arrow5 = document.getElementById("arrow5");
 
   zonePillow?.addEventListener("click", () => {
-    pillowDialog.showModal();
+    pillowArgument?.classList.remove("hidden");
   });
 
-  document
-    .getElementById("submitPillowArgument")
-    ?.addEventListener("click", () => {
-      const selected = document.querySelector<HTMLInputElement>(
-        'input[name="pillow-choose-argument"]:checked',
-      );
+  document;
+  submitPillowArgument?.addEventListener("click", () => {
+    const selected = document.querySelector<HTMLInputElement>(
+      'input[name="pillow-choose-argument"]:checked',
+    );
 
-      if (!selected) {
-        alert("Välj ett argument först!");
-        return;
-      }
+    if (!selected) {
+      alert("Välj ett argument först!");
+      return;
+    }
 
-      if (selected.value === "C") {
-        // Correct answer — unlock chair and bedsheets and arrows
-        document
-          .querySelector("#zoneChair")
-          ?.classList.replace("zone-inactive", "zone-active");
-        document
-          .querySelector("#zoneBedsheets")
-          ?.classList.replace("zone-inactive", "zone-active");
-        pillowDialog.close();
-        showArrow("arrow4");
-        showArrow("arrow5");
-        hideArrow("arrow2");
-        hideArrow("arrow3");
-      } else {
-        // Wrong answer — tantrum
-        pillowDialog.close();
-        handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
-      }
-    });
+    if (selected.value === "C") {
+      // Correct answer — unlock chair and bedsheets and arrows
+      document
+        .querySelector("#zoneChair")
+        ?.classList.replace("zone-inactive", "zone-active");
+      document
+        .querySelector("#zoneBedsheets")
+        ?.classList.replace("zone-inactive", "zone-active");
+      pillowDialog.close();
+      showArrow("arrow4");
+      showArrow("arrow5");
+      hideArrow("arrow2");
+      hideArrow("arrow3");
+    } else {
+      // Wrong answer — tantrum
+      pillowDialog.close();
+      handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
+    }
+  });
 
   // Bedsheets-zone
   const zoneBedsheets = document.getElementById("zoneBedsheets");
@@ -187,19 +180,15 @@ export default function initRoom1() {
   });
 }
 
-// Function to handle tantrum — show tantrum dialog
+// Function to handle tantrum — show tantrum div
 function handleTantrum(dialogId: string, btnId: string) {
   const tantrum = document.getElementById(dialogId) as HTMLDialogElement;
-  tantrum.showModal();
-  document.getElementById(btnId)?.addEventListener(
-    "click",
-    () => {
-      tantrum.close();
-      resetRoom1();
-      document.getElementById("introductionDiv")?.classList.remove("hidden");
-    },
-    { once: true },
-  );
+  tantrum?.classList.remove("hide-dialog");
+  document.getElementById(btnId)?.addEventListener("click", () => {
+    tantrum.close();
+    resetRoom1();
+    document.getElementById("introductionDiv")?.classList.remove("hidden");
+  });
 }
 
 function resetRoom1() {
@@ -212,8 +201,8 @@ function resetRoom1() {
   });
 
   // Stäng endast om dialogen faktiskt är öppen
-  const wantTeddyTantrum = document.getElementById(
-    "wantTeddyTantrum",
+  const wantmonkeyTantrum = document.getElementById(
+    "wantmonkeyTantrum",
   ) as HTMLDialogElement;
   const wantPillowTantrum = document.getElementById(
     "wantPillowTantrum",
@@ -233,7 +222,7 @@ function resetRoom1() {
   });
 
   [
-    wantTeddyTantrum,
+    wantmonkeyTantrum,
     wantPillowTantrum,
     chairDialog,
     lampDialog,

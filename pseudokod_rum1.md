@@ -14,14 +14,14 @@
 - En informationsruta dyker upp med uppdraget:
   > _"Din dotter vill ha en hjärtlampa till sitt rum. Ta dig till lampan så smidigt som möjligt och undvik att köpa något mer på vägen — trots dotterns tjat. Börja med att välja rätt väg: klicka på gosedjuret eller kudden."_
 - Spelaren stänger rutan och spelet börjar
-- Endast **zone-pillow** och **zone-teddybear** är klickbara i detta steg _(övriga zoner är inaktiva och ej klickbara)_
+- Endast **zone-pillow** och **zone-monkey** är klickbara i detta steg _(övriga zoner är inaktiva och ej klickbara)_
 
 ---
 
 ## 2. Steg 1 — Välj första zon
 
 ```
-Spelaren klickar på zone-pillow ELLER zone-teddybear
+Spelaren klickar på zone-pillow ELLER zone-monkey
   → pappan flyttas till vald zon
   → div-popup öppnas (se sektion 3)
 ```
@@ -48,7 +48,7 @@ Spelaren väljer ett argument via radioknapp och klickar "Svara"
         Byt ut texten i popupen mot: "Dottern tjatar ännu mer! Du åker tillbaka till början! 😤"
         → Visa "Försök igen"-knapp
         → När spelaren klickar: stäng popup, flytta pappan till ENTRÉ
-        → Lås alla zoner utom zone-pillow och zone-teddybear
+        → Lås alla zoner utom zone-pillow och zone-monkey
         → Spelaren börjar om från steg 1
 ```
 
@@ -116,7 +116,7 @@ Spelaren klickar på exit
 
 ---
 
-### 🧸 Zone-teddybear (grisknoa)
+### 🧸 Zone-monkey (grisknoa)
 
 > _"Pappa, den där grisen är SÅ söt, han ser ut som mig!"_
 
@@ -168,7 +168,7 @@ Spelaren klickar på exit
 
 | Steg         | Upplåsta zoner              |
 | ------------ | --------------------------- |
-| Start        | zone-pillow, zone-teddybear |
+| Start        | zone-pillow, zone-monkey    |
 | Efter steg 1 | zone-carpet, zone-bedsheets |
 | Efter steg 2 | zone-lamp, exit             |
 | Efter steg 3 | exit (vinst-exit)           |
