@@ -72,11 +72,31 @@
         <!-- Kassakoden -->
         <div id="room4checkout" hidden>
           <h3>Kassan</h3>
-          <p>Skriv in koden från de gula rutorna för att betala dina varor!</p>
+          <p class="room4-checkout-instruction">
+            Skriv in koden från de gula rutorna för att betala dina varor!
+          </p>
+
+          <div class="room4-cart">
+            <h4>Varukorgssammanfattning</h4>
+            <ul class="room4-cart-list">
+              <li><span>BILLY</span><span>399 kr</span></li>
+              <li><span>[Placeholder]</span><span>59 kr</span></li>
+              <li><span>UPPLYST</span><span>149 kr</span></li>
+            </ul>
+            <div class="room4-cart-total">
+              <span>Totalt</span><span>607 kr</span>
+            </div>
+          </div>
 
           <div class="room4-terminal">
-            <div class="room4-code-display">
-              <span id="room4CodeDisplay">----</span>
+            <div class="room4-display">
+              <div class="room4-display-price">607,00 kr</div>
+              <div class="room4-display-blipp">
+                <img src="/assets/blipp.png" alt="Blipp" width="40" />
+              </div>
+              <div class="room4-display-code">
+                <span id="room4CodeDisplay">----</span>
+              </div>
             </div>
 
             <div class="room4-keypad">
