@@ -1,4 +1,4 @@
-# Daily standup måndag 03/3
+# Daily standup tisdag 03/3
 
 ## Lina
 
