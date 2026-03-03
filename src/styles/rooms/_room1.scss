@@ -30,8 +30,17 @@
   z-index: 1;
 }
 
+.introduction-text {
+  padding: 30px;
+}
 .welcome-information {
   margin: 100px;
+}
+
+.intro-picture {
+  width: 150px;
+  position: absolute;
+  top: 250px;
 }
 
 #startRoom1Btn {
@@ -42,9 +51,15 @@
   border-radius: 30px;
   border: #006fd0;
   position: absolute;
-  left: 580px;
-  top: 200px;
+  left: 530px;
+  top: 450px;
   cursor: pointer;
+}
+
+.description-flex {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 #map {
