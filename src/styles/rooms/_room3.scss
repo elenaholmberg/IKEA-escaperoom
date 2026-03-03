@@ -426,6 +426,77 @@
   font-style: italic;
 }
 
+/* ===============
+OVERLAY POPUP
+=============== */
+
+.overlayRoom3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0058a3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+.overlayRoom3.show {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.popupRoom3 {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: #d5d5d5 1px 2px 3px;
+  max-width: 400px;
+  ;
+}
+
+.overlayRoom3.show .popupRoom3 {
+  transform: scale(1);
+}
+
+.warningSymbol {
+  font-size: 3rem;
+  color: #ffda1a;
+  margin-bottom: 20px;
+}
+.popupRoom3 h2 {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+}
+
+.popupRoom3 p {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+}
+
+.popup-room-3-btn {
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #d50000;
+  border: 1.5px solid #d50000;
+  border-radius: 30px;
+  color: white;
+}
+
 /* TA BORT VID MERGE */
 .hidden {
   display: none !important;

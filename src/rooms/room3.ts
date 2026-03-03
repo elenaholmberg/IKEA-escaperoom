@@ -81,7 +81,7 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
     <div class="option-container">
       <img 
         src="${item.img}" 
-        alt="${item.name}" 
+        alt="Illustration av möbeln ${item.name}" 
         data-id="${item.id}" 
         class="furniture-option"
         tabindex="0"
@@ -115,19 +115,22 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
     document.querySelector("#room3End")?.classList.remove("hidden");
   } else {
     wrongClicksRoom3++;
-    console.log("wrongClicksRoom3:", wrongClicksRoom3);
+    
     if (wrongClicksRoom3 >= 2) {
       document.querySelector("#room3Part2")?.classList.add("hidden");
       document.querySelector("#room3GameOver")?.classList.remove("hidden");
       document.querySelector("#room2Start")?.classList.add("hidden");
       
     } else {
-      alert("Fel val. Försök igen!");
+      document.querySelector("#warnOverlayRoom3")?.classList.add("show");
     }
   }
 }
 }
-
+// stänga popup
+document.querySelector("#closeWarnPopupRoom3Btn")?.addEventListener("click", () => {
+  document.querySelector("#warnOverlayRoom3")?.classList.remove("show");
+});
 renderRoom3Options(optionsRoom3);
 
 // 
