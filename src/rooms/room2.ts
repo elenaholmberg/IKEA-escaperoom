@@ -7,27 +7,27 @@
  * ============================================
  */
 
-
 import { type ILamp } from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
 
 export default function initRoom2() {
-  const lamps: ILamp[] = [ // array för lamporna där lamporna får ett eget id samt en boolean true / false hurvida lampan är "på" eller ej
+  const lamps: ILamp[] = [
+    // array för lamporna där lamporna får ett eget id samt en boolean true / false hurvida lampan är "på" eller ej
     {
       id: 1,
-      on: false
+      on: false,
     },
     {
       id: 2,
-      on: false
+      on: false,
     },
     {
       id: 3,
-      on: false
+      on: false,
     },
     {
       id: 4,
-      on: false
-    }
+      on: false,
+    },
   ];
 
   let room2Finished = false;
@@ -37,9 +37,8 @@ export default function initRoom2() {
 
   //   localStorage.setItem(isRoom2Finished, stringified);
 
-    
   // }
-  
+
   // function readRoom2ProgFromLS() {
   //   const savedValue = localStorage.getItem(isRoom2Finished);
 
@@ -50,42 +49,44 @@ export default function initRoom2() {
 
   // }
 
+  const lampChangeBtn1: HTMLButtonElement | null =
+    document.querySelector("#room2Btn1");
+  lampChangeBtn1?.addEventListener("click", () => buttonClick(0)); // hanterar click på knapp som kopplas till ett specifikt id för att kunna "mappa" knapparna (se längre ner i buttonMapping)
 
-  const lampChangeBtn1: HTMLButtonElement |null = document.querySelector('#room2Btn1');
-  lampChangeBtn1?.addEventListener('click', () => buttonClick(0)); // hanterar click på knapp som kopplas till ett specifikt id för att kunna "mappa" knapparna (se längre ner i buttonMapping)
+  const lampChangeBtn2: HTMLButtonElement | null =
+    document.querySelector("#room2Btn2");
+  lampChangeBtn2?.addEventListener("click", () => buttonClick(1));
 
-  const lampChangeBtn2: HTMLButtonElement |null = document.querySelector('#room2Btn2');
-  lampChangeBtn2?.addEventListener('click', () => buttonClick(1));
+  const lampChangeBtn3: HTMLButtonElement | null =
+    document.querySelector("#room2Btn3");
+  lampChangeBtn3?.addEventListener("click", () => buttonClick(2));
 
-  const lampChangeBtn3: HTMLButtonElement |null = document.querySelector('#room2Btn3');
-  lampChangeBtn3?.addEventListener('click', () => buttonClick(2));
+  const lampChangeBtn4: HTMLButtonElement | null =
+    document.querySelector("#room2Btn4");
+  lampChangeBtn4?.addEventListener("click", () => buttonClick(3));
 
-  const lampChangeBtn4: HTMLButtonElement |null = document.querySelector('#room2Btn4');
-  lampChangeBtn4?.addEventListener('click', () => buttonClick(3));
-
-  const buttonMapping: number[][] = [ //mappning för knapparna. se const lampChangeBtn ovan för vilken knapp som blir mappad hur. här kan man också ändra mappningen för knapparna!
+  const buttonMapping: number[][] = [
+    //mappning för knapparna. se const lampChangeBtn ovan för vilken knapp som blir mappad hur. här kan man också ändra mappningen för knapparna!
     [0, 1, 2],
     [1, 2],
     [0, 2, 3],
-    [0, 1]
+    [0, 1],
   ];
 
-  function setAllLampsOn() { // funktion för att kunna redigera i winScreen utan att spela spelet. ställer alla lampor till on = true istället för on = false
-    lamps.forEach(lamp => {
+  function setAllLampsOn() {
+    // funktion för att kunna redigera i winScreen utan att spela spelet. ställer alla lampor till on = true istället för on = false
+    lamps.forEach((lamp) => {
       lamp.on = true;
     });
     renderLamps();
   }
 
-  
-  
   renderLamps();
   // setAllLampsOn(); ///kör ovan funktion för att kunna starta sidan med winScreen i redigeringssyfte!
   checkWinCondition();
-  
 
-
-  function toggleLampState(index: number) { // liten funktion för att säga till att om lampan är on = true så ska lampan ändras till on = false (och vise-versa)
+  function toggleLampState(index: number) {
+    // liten funktion för att säga till att om lampan är on = true så ska lampan ändras till on = false (och vise-versa)
     lamps[index].on = !lamps[index].on;
   }
 
@@ -93,43 +94,44 @@ export default function initRoom2() {
   const maxNumberOfClicks = 10;
 
   function buttonClick(buttonIndex: number) {
-    const loseScreen: HTMLDivElement |null = document.querySelector('#room2LoseScreen');
-    
+    const loseScreen: HTMLDivElement | null =
+      document.querySelector("#room2LoseScreen");
+
     numberOfClicks += 1;
     printNumberOfClicks();
-    
-    buttonMapping[buttonIndex].forEach(lampIndex => {
+
+    buttonMapping[buttonIndex].forEach((lampIndex) => {
       toggleLampState(lampIndex);
     });
-    
+
     renderLamps();
 
     checkWinCondition();
-    
+
     if (room2Finished) {
       return;
-    };
+    }
 
     if (numberOfClicks >= maxNumberOfClicks) {
-      lampChangeBtn1?.setAttribute('disabled', '');
-      lampChangeBtn2?.setAttribute('disabled', '');
-      lampChangeBtn3?.setAttribute('disabled', '');
-      lampChangeBtn4?.setAttribute('disabled', '');
+      lampChangeBtn1?.setAttribute("disabled", "");
+      lampChangeBtn2?.setAttribute("disabled", "");
+      lampChangeBtn3?.setAttribute("disabled", "");
+      lampChangeBtn4?.setAttribute("disabled", "");
       console.log("Inga fler klick kvar!");
       setTimeout(() => room2PlayLosingSound(), 300);
-      setTimeout(() => loseScreen?.classList.add('room-2-is-visible'), 1200);
-      
+      setTimeout(() => loseScreen?.classList.add("room-2-is-visible"), 1200);
+
       return;
     }
-    
-    console.log(`Du har klickat ${numberOfClicks} / ${maxNumberOfClicks} gånger`);
 
-
-    
+    console.log(
+      `Du har klickat ${numberOfClicks} / ${maxNumberOfClicks} gånger`,
+    );
   }
 
   function printNumberOfClicks() {
-    const numberOfClicksEl: HTMLDivElement |null = document.querySelector('#room2ClickCounter');
+    const numberOfClicksEl: HTMLDivElement | null =
+      document.querySelector("#room2ClickCounter");
 
     const html = `
 
@@ -143,75 +145,68 @@ export default function initRoom2() {
   }
 
   function getLampImage(lamp: ILamp): string {
-    return lamp.on 
-      ? "/room2_lamp_on.png" 
-      : "/room2_lamp_off.png";
+    return lamp.on ? "/room2_lamp_on.png" : "/room2_lamp_off.png";
   }
 
-
   function renderLamps() {
-    lamps.forEach(lamp => {
-      const lampImg: HTMLImageElement |null = document.querySelector(`#lamp${lamp.id}`);
+    lamps.forEach((lamp) => {
+      const lampImg: HTMLImageElement | null = document.querySelector(
+        `#lamp${lamp.id}`,
+      );
       if (lampImg) {
         lampImg.src = getLampImage(lamp);
       }
     });
   }
 
-
-
   function checkWinCondition() {
-    const allLampsOn = lamps.every(lamp => lamp.on);
-    
+    const allLampsOn = lamps.every((lamp) => lamp.on);
 
     if (allLampsOn) {
-
       room2Finished = true;
 
-      lampChangeBtn1?.setAttribute('disabled', '');
-      lampChangeBtn2?.setAttribute('disabled', '');
-      lampChangeBtn3?.setAttribute('disabled', '');
-      lampChangeBtn4?.setAttribute('disabled', '');
+      lampChangeBtn1?.setAttribute("disabled", "");
+      lampChangeBtn2?.setAttribute("disabled", "");
+      lampChangeBtn3?.setAttribute("disabled", "");
+      lampChangeBtn4?.setAttribute("disabled", "");
 
       setTimeout(() => room2PlaySuccessSound(), 250);
 
-      const winScreen: HTMLDivElement |null = document.querySelector('#room2WinScreen');
-      setTimeout(() => winScreen?.classList.add('room-2-is-visible'), 1400);
-
-
+      const winScreen: HTMLDivElement | null =
+        document.querySelector("#room2WinScreen");
+      setTimeout(() => winScreen?.classList.add("room-2-is-visible"), 1400);
 
       // setTimeout(() => textTypingEffect1(room2WinScreenDiv1, room2WinScreenText1), 0);
 
       // setTimeout(() => textTypingEffect2(room2WinScreenDiv2, room2WinScreenText2), 0);
-    };
-
+    }
   }
 
   function room2PlaySuccessSound() {
-    const audio = new Audio('/room_2_success_sound.wav');
+    const audio = new Audio("/room_2_success_sound.wav");
     audio.volume = 0.2;
     audio.play();
-  
   }
   function room2PlayLosingSound() {
-    const audio1 = new Audio('/room_2_game_over_sound.wav');
-    const audio2 = new Audio('/room_2_game_over_mario_sound.wav');
+    const audio1 = new Audio("/room_2_game_over_sound.wav");
+    const audio2 = new Audio("/room_2_game_over_mario_sound.wav");
     audio1.volume = 0.2;
     audio2.volume = 0.2;
     audio1.play();
     setTimeout(() => audio2.play(), 1300);
   }
 
-  const room2GoToGameBtn: HTMLButtonElement |null = document.querySelector('#room2GoToGameBtn');
-  room2GoToGameBtn?.addEventListener('click', room2GoToGame);
+  const room2GoToGameBtn: HTMLButtonElement | null =
+    document.querySelector("#room2GoToGameBtn");
+  room2GoToGameBtn?.addEventListener("click", room2GoToGame);
 
   function room2GoToGame() {
-    const room2InstructionContainer: HTMLDivElement |null = document.querySelector('#room2InstructionContainer');
-    room2InstructionContainer?.classList.remove('room-2-is-visible');
+    const room2InstructionContainer: HTMLDivElement | null =
+      document.querySelector("#room2InstructionContainer");
+    room2InstructionContainer?.classList.remove("room-2-is-visible");
   }
 
   printNumberOfClicks();
-
 
   /*
   
@@ -265,10 +260,6 @@ export default function initRoom2() {
      setTimeout(() => textTypingEffect2(element, text, i + 1), TIME_BETWEEN_LETTERS);
 
    }*/
-  
-
-
-
 
   // function toggleColorBtn1() {
   //   const room2Lamp1: HTMLElement |null = document.querySelector('#lamp1');
@@ -310,7 +301,6 @@ export default function initRoom2() {
   //   room2Lamp1?.classList.toggle('room-2-green-color');
   //   room2Lamp2?.classList.toggle('room-2-green-color');
   // }
-
 
   // övrig kod för rum 2
 }
