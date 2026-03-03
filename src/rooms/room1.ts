@@ -46,7 +46,7 @@ export default function initRoom1() {
     }
 
     monkeyDialog?.classList.add("hidden");
-    monkeyUsed = true;
+    // monkeyUsed = true;
 
     if (selected.value === "E") {
       document
