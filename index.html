@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IKEA Escape Room</title>
 </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IKEA Escape Room</title>
+  </head>
 
 <body>
   <header>
@@ -19,9 +24,542 @@
     <!-- ================================== -->
     <!-- ============= RUM 1 ============== -->
     <!-- ================================== -->
-    <section class="room-1" id="room1">
-      <h3>Rum 1</h3>
-    </section>
+
+      <section class="room-1" id="room1">
+        <div id="map">
+          <!--INTRODUCTION-->
+          <div id="introductionDiv" class="introduction-div">
+            <article class="welcome-information">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
+                <button id="startRoom1Btn">Starta rum 1</button>
+              </p>
+            </article>
+          </div>
+
+          <!--MAZE-->
+          <img class="map-image" src="/public/map_picture.jpg" alt="" />
+
+          <!--ZONES-->
+
+          <div id="zonePillow" class="zone zone-pillow zone-inactive">
+            <img src="/src/my_src/heartpillow.png" alt="" />
+          </div>
+
+          <div id="zoneMonkey" class="zone zone-monkey">
+            <img src="/src/my_src/griseknoa.png" alt="" />
+          </div>
+
+          <div id="zoneChair" class="zone zone-chair zone-inactive">
+            <img src="/public/chair.png" alt="" />
+          </div>
+
+          <div id="zoneBedsheets" class="zone zone-bedsheets zone-inactive">
+            <img src="/src/my_src/heartsheets.png" alt="" />
+          </div>
+
+          <div id="zoneLamp" class="zone zone-lamp zone-inactive">
+            <img src="/src/my_src/heartlamp.png" alt="" />
+          </div>
+
+          <div id="zoneSuccess" class="zone exit zone-inactive">UTGÅNG</div>
+
+          <!--ARROWS-->
+
+          <!--arrow-1-->
+          <div id="arrow1" class="arrow visible">
+            <svg
+              height="70px"
+              width="70px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-2-->
+          <div id="arrow2" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-3-->
+          <div id="arrow3" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-4-->
+          <div id="arrow4" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-5-->
+          <div id="arrow5" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-6-->
+          <div id="arrow6" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-7-->
+          <div id="arrow7" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-9-->
+          <div id="arrow9" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate()"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--arrow-8-->
+          <div id="arrow8" class="arrow">
+            <svg
+              height="50px"
+              width="50px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-6.19 -6.19 39.31 39.31"
+              xml:space="preserve"
+              fill="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate()"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g id="c194_arrow">
+                    <path
+                      style="fill: #030104"
+                      d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z "
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!--------------------------->
+        <!-----------ACTIONS--------->
+        <!--------------------------->
+
+        <!-- monkey -->
+
+        <div id="monkeyDialog" class="hidden">
+          <div class="dialog-div">
+            <div class="daughter-argument">
+              <p>
+                Ni har knappt hunnit innanför dörren förrän första hindret dyker
+                upp! Den virala apan Punch! Din dotter drar fram det tunga
+                artilleriet- lägger huvudet på sned, tittar på dig med de stora
+                blanka valpögonen och drar till med det mest bedårande
+                "Snäääääällla" du någonsin hört. Hur tusan ska du ta dig ur det
+                här?!
+              </p>
+
+              <img
+                class="want-monkey-pic"
+                src="/public/djungelskog-with-info.png"
+                alt=""
+              />
+            </div>
+
+            <div class="all-dad-arguments">
+              <img class="dad-image" src="/public/mr_ikea.png" alt="" />
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="monkey-choose-argument"
+                  value="D"
+                  id="monkeyArgA"
+                />
+                <label for="monkeyArgA">
+                  "Det blir absolut ingen apa! Du har redan hela rummet fullt av
+                  gosedjur."</label
+                >
+              </div>
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="monkey-choose-argument"
+                  value="E"
+                  id="monkeyArgB"
+                />
+                <label for="monkeyArgB">
+                  " Vet du vad, vi kom ju precis in på IKEA... ska vi inte titta
+                  vidare lite först. Det finns ju en massa fina saker längre
+                  in!</label
+                >
+              </div>
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="monkey-choose-argument"
+                  value="F"
+                  id="monkeyArgC"
+                />
+                <label for="monkeyArgC">
+                  "Ska du redan börja tjata om mer! Vi sa ju att vi skulle ha en
+                  lampa till ditt rum och inget mer."</label
+                >
+              </div>
+              <button class="all-dialog-buttons" id="submitMonkeyArgument">
+                Skicka in argument
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden dialog-div" id="wantmonkeyTantrum">
+          <div class="tantrum">
+            <p>
+              Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
+              du får skynda ut till bistron för att muta henne med en glass
+              innan du kan börja om din runda.
+            </p>
+            <img class="icecream-pic" src="/public/icecream.png" alt="" />
+          </div>
+          <button class="tantrum-buttons resetBtn">Börja om</button>
+        </div>
+
+        <!-- PILLOW -->
+
+        <div id="pillowArgument" class="hidden dialog">
+          <div class="dialog-div">
+            <div class="daughter-argument">
+              <p class="please-section">
+                Nästa utmaning blir en fluffig, röd hjärtkudde. Din dotter
+                trycker den mot bröstet, tittar på dig med stora ögon och viskar
+                ett utdraget: "Snääääälla…"
+              </p>
+
+              <img
+                class="want-pillow-pic"
+                src="/src/my_src/heartpillow.png"
+                alt=""
+              />
+            </div>
+
+            <div class="all-dad-arguments">
+              <img class="dad-image" src="/public/mr_ikea.png" alt="" />
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="pillow-choose-argument"
+                  value="A"
+                  id="argA"
+                />
+                <label for="argA"
+                  >Den kudden har vi redan en likadan av hemma, titta så lika de
+                  är!</label
+                >
+              </div>
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="pillow-choose-argument"
+                  value="B"
+                  id="argB"
+                />
+                <label for="argB">Ja, den är jättefin! Låt oss köpa den!</label>
+              </div>
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="pillow-choose-argument"
+                  value="C"
+                  id="argC"
+                />
+                <label for="argC"
+                  >Du får välja en sak idag, och du har inte sett allt än.
+                  Kanske finns det något ännu finare längre in!</label
+                >
+              </div>
+
+              <button id="submitPillowArgument" class="all-dialog-buttons">
+                Skicka in argument
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden dialog-div" id="wantPillowTantrum">
+          <div class="tantrum">
+            <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
+          </div>
+          <button class="tantrum-buttons resetBtn">Börja om</button>
+        </div>
+
+        <!--chair-->
+        <div class="hidden dialog-div" id="chairDialog">
+          <div class="tantrum">
+            <p>
+              Du valde rätt väg! Som tur var nöjde Emma sig med att provsitta
+              den lurviga stolen så ni kan fortsätta fram till lampan!
+            </p>
+            <img src="/public/chair.png" alt="" />
+          </div>
+          <button class="tantrum-buttons" id="chairDialogBtn">Gå vidare</button>
+        </div>
+
+        <!--bedsheet-->
+        <div class="hidden dialog-div" id="bedsheetDialog">
+          <div class="tantrum">
+            <p>
+              oh no! Du glömde att du skulle plocka upp lampan. Börja om från
+              början och välj rätt väg
+            </p>
+          </div>
+          <button class="tantrum-buttons resetBtn">Börja om</button>
+        </div>
+
+        <!--lamp-->
+        <div class="hidden dialog-div" id="lampDialog">
+          <div class="tantrum">
+            <p>
+              Grattis! Du lyckades ta dig till lampan utan att plocka på dig
+              något mer! Gå till utgången så kommer du till rum 2 där du ska
+              hitta en glödlampa.
+            </p>
+          </div>
+          <button class="lamp-button" id="lampDialogBtn">
+            Ta mig till Utgången
+          </button>
+        </div>
+      </section>
     <!-- ================================== -->
     <!-- ============= RUM 2 ============== -->
     <!-- ================================== -->
@@ -385,4 +923,6 @@
     
     
 
+  
 </html>
+

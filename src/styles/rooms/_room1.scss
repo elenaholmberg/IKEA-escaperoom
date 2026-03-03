@@ -5,6 +5,382 @@
  * I FILEN _VARIABLES.SCSS FINNS FÄRGER/FÄRGKODER SOM ÄR VANLIGA ATT SE HOS IKEA
 */
 .room-1 {
+  width: 800px;
+  height: auto;
   background-color: #ffda1a;
   color: #333333;
+
+  position: relative;
+}
+
+.heading {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.introduction-div {
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 800px;
+  height: 800px;
+  z-index: 1;
+}
+
+.welcome-information {
+  margin: 100px;
+}
+
+#startRoom1Btn {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 580px;
+  top: 200px;
+  cursor: pointer;
+}
+
+#map {
+  position: relative;
+}
+.map-image {
+  background-image: url(src/my_src/map.png);
+  width: 800px;
+  height: 800px;
+  background-color: #ffffff;
+  background-size: cover;
+}
+
+.zone-pillow img {
+  width: 150px;
+}
+
+.zone-pillow {
+  position: absolute;
+  top: 43%;
+  left: 51%;
+}
+
+.zone-monkey img {
+  width: 100px;
+}
+
+.zone-monkey {
+  position: absolute;
+  top: 66%;
+  left: 35%;
+}
+
+.zone-chair img {
+  width: 90px;
+}
+
+.zone-chair {
+  position: absolute;
+  top: 38%;
+  left: 25%;
+}
+
+.zone-bedsheets img {
+  width: 100px;
+}
+
+.zone-bedsheets {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.zone-lamp img {
+  width: 100px;
+}
+
+.zone-lamp {
+  position: absolute;
+  top: 6%;
+  left: 40%;
+}
+
+.entry {
+  position: absolute;
+  top: 90%;
+  left: 38%;
+  width: 130px;
+}
+
+.exit {
+  position: absolute;
+  top: 15%;
+  left: 80%;
+  width: 130px;
+}
+
+.zone {
+  cursor: pointer;
+}
+.zone-active {
+  cursor: pointer;
+}
+
+.zone-inactive {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+// Dialogs
+
+.hide-dialog {
+  display: none;
+}
+
+.dialog-div {
+  background-color: #ffffff;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: 0px;
+  margin: 0 auto;
+}
+
+.daughter-argument {
+  display: flex;
+  width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.want-monkey-pic,
+.want-pillow-pic {
+  width: 40%;
+  margin-left: 50px;
+}
+
+.icecream-pic {
+  width: 50%;
+  height: 50%;
+}
+.all-dad-arguments {
+  position: relative;
+  border: 1px solid black;
+  width: 600px;
+  height: 300px;
+  padding-top: 40px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  margin-top: 40px;
+}
+
+.dad-image {
+  position: absolute;
+  width: 100px;
+  top: 25px;
+  left: -25px;
+}
+
+.daddy-argument {
+  width: 450px;
+  margin: 0 auto;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(175, 183, 191, 0.3);
+  border-radius: 30px;
+}
+
+.tantrum {
+  display: flex;
+  position: relative;
+  border: 1px solid black;
+  width: 600px;
+  height: 300px;
+  padding-top: 40px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  margin-top: 40px;
+
+  p {
+    padding: 30px;
+  }
+}
+
+.all-dialog-buttons {
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 385px;
+  top: 320px;
+}
+
+.tantrum-buttons {
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 580px;
+  top: 350px;
+}
+
+.lamp-button {
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #006fd0;
+  border-radius: 30px;
+  border: #006fd0;
+  position: absolute;
+  left: 500px;
+  top: 350px;
+}
+
+//Arrows
+
+#arrow1 {
+  position: absolute;
+  top: 79%;
+  left: 36.5%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow2 {
+  position: absolute;
+  top: 67.5%;
+  left: 55%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow3 {
+  position: absolute;
+  top: 55%;
+  left: 64%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow4 {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow5 {
+  position: absolute;
+  top: 46%;
+  left: 39%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow6 {
+  position: absolute;
+  top: 17%;
+  left: 53%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow7 {
+  position: absolute;
+  top: 30%;
+  left: 34%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow9 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow8 {
+  position: absolute;
+  top: 18%;
+  left: 65%;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.arrow {
+  display: none;
+  pointer-events: none;
+}
+
+.arrow.visible {
+  display: block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.room-2-lose-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffffeb;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  div {
+    display: block;
+    margin-top: 64px;
+    color: #333333;
+    font-size: 1rem;
+    width: 50%;
+    padding-bottom: 16px;
+    h2 {
+      margin-top: 16px;
+    }
+    button {
+      font-family: "Noto", Courier, monospace;
+      min-height: 56px;
+      padding: 16px 64px;
+      margin-top: 16px;
+      margin-bottom: 32px;
+      border-radius: 64px;
+      background-color: #006fd0;
+      color: #ffffff;
+      border: none;
+      margin-left: auto;
+      display: block;
+    }
+    button:hover {
+      background-color: #0057a3;
+    }
+  }
 }
