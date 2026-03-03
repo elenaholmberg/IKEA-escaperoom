@@ -12,7 +12,7 @@
 /* ============================================
  * Imports — hämtar alla moduler vi byggt
  * ============================================ */
-// import roomsData from "./data/rooms.json"; // Låter denna ligga kvar om vi vill använda en .json för att spara info om våra rum. 
+// import roomsData from "./data/rooms.json"; // Låter denna ligga kvar om vi vill använda en .json för att spara info om våra rum.
 
 import "./styles/main.scss"; // importerar scss till .ts som sedan körs i html via script-taggen
 
