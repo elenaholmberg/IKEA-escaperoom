@@ -13,7 +13,7 @@ import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // funktioner s
 export default function initRoom3() {
   // Visa div:en för rum 3
   // övrig kod för rum 3
-}
+
 
 
 // ==================
@@ -145,6 +145,7 @@ document.querySelector("#closeWarnPopupRoom3Btn")?.addEventListener("click", () 
 });
 renderRoom3Options(optionsRoom3);
 
+}
 // 
 
 /* function renderFurnitureOptions(options: IOptionsRoom3[]) {
