@@ -6,6 +6,8 @@
 
 import type {} from "../types/models";
 
+import { saveFinishedRoomToLS, showRoom } from "./roomProgress";
+
 export default function initRoom1() {
   const introductionDiv = document.getElementById("introductionDiv");
   const startRoom1Btn = document.getElementById("startRoom1Btn");
@@ -164,6 +166,8 @@ export default function initRoom1() {
     lampDialog?.classList.add("hidden");
     zoneSuccess?.classList.replace("zone-inactive", "zone-active");
 
+    saveFinishedRoomToLS(); // funktion som ligger i roomProgress.ts som sparar vilket rum man klarat i LocalStorage
+
     showArrow("arrow8");
     hideArrow("arrow6");
     hideArrow("arrow7");
@@ -175,6 +179,7 @@ export default function initRoom1() {
   // -------------------------
   zoneSuccess?.addEventListener("click", () => {
     usedZones.clear();
+    showRoom(2);
     resetRoom1();
   });
 }
