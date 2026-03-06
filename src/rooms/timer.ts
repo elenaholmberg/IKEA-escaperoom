@@ -2,7 +2,7 @@ const TIMER_STORAGE_KEY = 'gameTimerState';
 
 let elapsedTime = 0;
 let intervalId: number | null = null;
-let isRunning = true;
+let isRunning = false; // timer should not start automatically
 
 function saveTimer() {
     const timerState = {
@@ -14,7 +14,10 @@ function saveTimer() {
 
 function loadTimer() {
     const saved = localStorage.getItem(TIMER_STORAGE_KEY);
-    if (!saved) return;
+    if (!saved) {
+        // nothing stored yet; keep defaults (elapsedTime=0, isRunning=false)
+        return;
+    }
     
     const parsedState = JSON.parse(saved);
 
@@ -68,6 +71,11 @@ export function initTimer() {
         `<span>Speltid: </span><span id="timerDisplay">00:00</span>`;
 
     updateDisplay();
+
+    // restart the interval when the state indicates the timer was running
+    if (isRunning === true) {
+        startTimer();
+    }
 
     const startBtn = document.querySelector("#startRoom1Btn");
     startBtn?.addEventListener("click", startTimer);

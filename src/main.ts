@@ -31,7 +31,6 @@ import initRoom4 from "./rooms/room4"; // importerar funktionen initRoom4 från 
 
 
 initHeader(); // initierar all ts för vår header
-resetTimer();
 initTimer(); // skapar en timer uppe i headern som startas när 'starta-spelet-knappen' trycks på
 initRoom1(); // kör funktionen initRoom1 som vi importerat från filen room1.ts i mappen rooms
 initRoom2(); // kör funktionen initRoom2 som vi importerat från filen room2.ts i mappen rooms
