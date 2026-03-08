@@ -5,6 +5,7 @@
  */
 
 import type {} from "../types/models";
+import { saveHighscore } from "./highscore";
 
 import { saveFinishedRoomToLS } from "./roomProgress";
 import { stopTimer } from "./timer";
@@ -179,10 +180,11 @@ export default function initRoom4() {
 
     if (key === "enter") {
       if (enteredCode === correctCode) {
-        stopTimer();
         saveFinishedRoomToLS();
         checkoutMessage.textContent = "Rätt kod!";
         checkoutMessage.style.color = "#27ae60";
+        stopTimer();
+        saveHighscore();
       } else {
         checkoutMessage.textContent = "Fel kod! Försök igen.";
         checkoutMessage.style.color = "#e74c3c";
