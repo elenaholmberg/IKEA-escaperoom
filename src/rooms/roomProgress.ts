@@ -32,6 +32,17 @@ export function saveFinishedRoomToLS(): void {
   console.log(`Nu har du klarat rum ${currentRoom}`);
   setCurrentRoom(nextRoom);
   // showRoom(nextRoom);
+
+  const completedRooms = nextRoom - 1;
+  const progressFill = document.querySelector(
+    "#progressBarFill",
+  ) as HTMLDivElement;
+  const progressText = document.querySelector(
+    "#progressText",
+  ) as HTMLSpanElement;
+  if (progressFill) progressFill.style.width = `${(completedRooms / 4) * 100}%`;
+  if (progressText)
+    progressText.textContent = `${completedRooms} / 4 rum klarade`;
 }
 
 export function initRoomProgress(): void {
