@@ -41,10 +41,10 @@
       margin-top: 16px;
     }
     button {
-      font-family: "Noto", Courier, monospace;
-      min-height: 56px;
-      padding: 16px 64px;
-      margin-top: 16px;
+      font-family: "noto-sans", sans-serif;
+      height: fit-content;
+      padding: 13px 40px;
+      margin-top: 25px;
       margin-bottom: 32px;
       border-radius: 64px;
       background-color: #006fd0;
@@ -55,6 +55,8 @@
     }
     button:hover {
       background-color: #0057a3;
+      outline: 2px solid #0057a3;
+      outline-offset: 3px;
     }
   }
 }
