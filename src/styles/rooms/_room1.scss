@@ -183,19 +183,27 @@
   margin: 0 auto;
 }
 
+.dialog-header-room-1 {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
 .daughter-argument {
   display: flex;
+  align-items: center;
   width: 600px;
   margin-top: 30px;
   margin-bottom: 30px;
   margin: 0 auto;
-  padding-top: 40px;
+ 
 }
 
 .want-monkey-pic,
 .want-pillow-pic {
-  width: 40%;
-  margin-left: 50px;
+  width: 150px;
+  margin-left: 40px;
 }
 
 .icecream-pic {
@@ -258,6 +266,11 @@
   margin: 20px 45px;
 }
 
+.bold-blue-text-room-1 {
+  font-weight: 600;
+  color: #0057a3;
+}
+
 .tantrum-buttons {
   padding: 10px 20px;
   color: #ffffff;
@@ -265,8 +278,14 @@
   border-radius: 30px;
   border: #006fd0;
   position: absolute;
-  left: 580px;
+  left: 130px;
   top: 350px;
+}
+
+.chair-image {
+  width: 170px;
+  margin-inline-end: 20px;
+  height: fit-content;
 }
 
 .lamp-button {
