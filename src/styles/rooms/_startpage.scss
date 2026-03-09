@@ -12,10 +12,21 @@
   padding: 5px;
 }
 
-#login {
-  color: yellow;
-  width: 200px;
-  height: 200px;
+form {
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+  background-color: white;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.start-btn-wrapper {
+  display: flex;
+  gap: 20px;
 }
 .rooms-intro {
   display: flex;
