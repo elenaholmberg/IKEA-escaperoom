@@ -148,6 +148,11 @@
   
 }
 
+.exit:hover {
+  outline: 2px solid #ffda1a;
+  outline-offset: 4px;
+}
+
 .zone {
   cursor: pointer;
 }
@@ -220,7 +225,14 @@
   margin: 0 auto;
   padding-bottom: 40px;
   margin-top: 40px;
+  
+  .all-dialog-buttons {
+    margin-left: 45px;
+  }
+
 }
+
+
 
 .dad-image {
   position: absolute;
@@ -246,7 +258,7 @@
   border: 1px solid black;
   border-radius: 20px;
   width: 600px;
-  height: 300px;
+  height: fit-content;
   padding-top: 40px;
   margin: 0 auto;
   padding-bottom: 40px;
@@ -263,8 +275,12 @@
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  margin: 20px 45px;
+  margin: 0 auto;
+  
+  
 }
+
+
 
 .bold-blue-text-room-1 {
   font-weight: 600;
@@ -277,9 +293,7 @@
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  position: absolute;
-  left: 130px;
-  top: 350px;
+  
 }
 
 .chair-image {
@@ -287,6 +301,8 @@
   margin-inline-end: 20px;
   height: fit-content;
 }
+
+
 
 .lamp-button {
   padding: 10px 20px;
@@ -297,6 +313,13 @@
   position: absolute;
   left: 500px;
   top: 350px;
+}
+
+.chair-dialog-btn {
+  position: relative;
+  left: 130px;
+  top: -100px;
+
 }
 
 //Arrows
@@ -441,3 +464,4 @@
     }
   }
 }
+

@@ -93,11 +93,12 @@ p {
 
 button {
   background-color: #ffda1a;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid #ffda1a;
   color: #333333;
   cursor: pointer;
+  font-family: "noto-sans", sans-serif;
 }
 
 button:hover {
@@ -144,4 +145,41 @@ button:hover {
   
   margin: 0;
   background-color: #ececec;
+}
+
+.all-game-over-header {
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(204, 0, 8);
+}
+
+.game-over-div {
+  background-color: white;
+  height: auto;
+}
+
+.game-over-btns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  position: absolute;
+  left: 280px;
+  top: 390px;
+
+}
+
+.to-index-btn {
+  background-color: rgb(204, 0, 8);
+  color: white;
+  border: none;
+}
+
+.to-index-btn:hover {
+  background: #ffda1a;
+  color: #333333;
+}
+
+.tantrum-buttons:hover {
+  background: #ffda1a;
+  color: #333333;
 }

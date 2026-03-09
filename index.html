@@ -374,7 +374,8 @@
         </div>
 
         <div class="hidden dialog-div" id="wantmonkeyTantrum">
-          <div class="tantrum">
+          <h1 class="all-game-over-header">Game over</h1>
+          <div class="tantrum game-over-div">
             <p>
               Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
               du får skynda ut till bistron för att muta henne med en glass
@@ -386,7 +387,11 @@
               alt=""
             />
           </div>
-          <button class="tantrum-buttons resetBtn">Börja om</button>
+          <div class="game-over-btns">
+            <button class="tantrum-buttons resetBtn">Börja om</button>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
+            
         </div>
 
         <!-- PILLOW -->
@@ -453,10 +458,15 @@
         </div>
 
         <div class="hidden dialog-div" id="wantPillowTantrum">
-          <div class="tantrum">
-            <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
+          <h1 class="all-game-over-header">Game over</h1>
+          <div class="tantrum game-over-div">
+            
+            <p>"JAG VIIIIIILL HA KUDDEN!!!!!!"</p>
           </div>
-          <button class="tantrum-buttons resetBtn">Börja om</button>
+          <div class="game-over-btns">
+            <button class="tantrum-buttons resetBtn">Börja om</button>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
         </div>
 
         <!--chair-->
@@ -470,18 +480,22 @@
             </p>
             <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
           </div>
-          <button class="tantrum-buttons" id="chairDialogBtn">Gå vidare</button>
+          <button class="tantrum-buttons chair-dialog-btn" id="chairDialogBtn">Gå vidare</button>
         </div>
 
         <!--bedsheet-->
         <div class="hidden dialog-div" id="bedsheetDialog">
-          <div class="tantrum">
+          <h1 class="all-game-over-header">Game over</h1>
+          <div class="tantrum game-over-div">
             <p>
               Oh no! Du glömde att du skulle plocka upp lampan. Börja om från
               början och välj rätt väg
             </p>
           </div>
-          <button class="tantrum-buttons resetBtn">Börja om</button>
+          <div class="game-over-btns">
+            <button class="tantrum-buttons resetBtn">Börja om</button>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
         </div>
 
         <!--lamp-->
