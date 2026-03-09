@@ -646,14 +646,15 @@
           </div>
         </div>
         <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
+          
           <div>
             <img
               class="room-2-ikea-man-sad"
               src="/room_2_ikea_man_sad.png"
               alt=""
             />
-            <h2>Lamporna</h2>
-            <p>
+            <h1 class="all-game-over-header">Game over</h1>
+            <p class="first-row-p">
               Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har
               'insert ungens namn här' tröttnat och sprungit iväg.
             </p>
@@ -664,11 +665,15 @@
 
             <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
           <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-            <a class="room-2-game-over-btn" href="">
-              <button id="goToStartBtn">
-                <span>Gå ut från varuhuset</span>
-              </button>
-            </a>
+            <div class="room-2-game-over-btn-wrapper">
+              <a class="room-2-game-over-btn" href="">
+                <button id="goToStartBtn">
+                  <span>Gå ut från varuhuset</span>
+                </button>
+              </a>
+              <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+            </div>
+
           </div>
         </div>
         <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">

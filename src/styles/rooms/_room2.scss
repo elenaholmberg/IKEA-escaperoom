@@ -231,22 +231,26 @@ h3 {
   div {
     position: relative;
     border: 1px solid #000000;
+    border-radius: 20px;
     padding: 32px 32px;
     display: block;
-    margin: 64px;
+    margin: 0 auto;
     color: #333333;
     font-size: 1rem;
     width: 50%;
     padding-bottom: 16px;
     p {
       padding: 0;
+      
+      
+
     }
     button {
       font-family: "Noto", Courier, monospace;
-      min-height: 56px;
-      padding: 16px 62px;
-      margin-top: 150px;
-      margin-bottom: 32px;
+      height: fit-content;
+      padding: 16px 30px;
+      margin-top: 50px;
+      margin-bottom: 20px;
       border-radius: 64px;
       background-color: #006fd0;
       color: #ffffff;
@@ -258,6 +262,10 @@ h3 {
       background-color: #0057a3;
     }
   }
+}
+
+.first-row-p {
+  margin-top: 20px;
 }
 
 .room-2-ikea-man-sad {
@@ -274,6 +282,8 @@ h3 {
   text-decoration: none;
   color: #ffffff;
 }
+
+
 
 .room2WinScreenDiv1,
 .room2WinScreenDiv2 {
