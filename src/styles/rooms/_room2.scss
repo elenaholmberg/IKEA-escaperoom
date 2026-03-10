@@ -44,14 +44,15 @@
       font-family: "noto-sans", sans-serif;
       height: fit-content;
       padding: 13px 40px;
-      margin-top: 25px;
-      margin-bottom: 32px;
+      margin-top: 30px;
+      margin-bottom: 0px;
       border-radius: 64px;
-      background-color: #006fd0;
+      
       color: #ffffff;
       border: none;
-      margin-left: auto;
+      
       display: block;
+      
     }
     button:hover {
       background-color: #0057a3;
@@ -61,7 +62,7 @@
   }
 }
 .room-2-instruction-last-line {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .room-2-tooltip {
@@ -252,15 +253,13 @@ h3 {
       margin-top: 50px;
       margin-bottom: 20px;
       border-radius: 64px;
-      background-color: #006fd0;
+      
       color: #ffffff;
       border: none;
-      margin-left: auto;
+      margin: 40px auto;
       display: block;
     }
-    button:hover {
-      background-color: #0057a3;
-    }
+    
   }
 }
 
@@ -278,9 +277,11 @@ h3 {
 //   border: 1px solid black;
 // }
 
-.room-2-game-over-btn {
+.go-to-start-btn button {
   text-decoration: none;
-  color: #ffffff;
+  background-color: rgb(204, 0, 8);
+  color: white;
+  border: none;
 }
 
 
