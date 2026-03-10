@@ -370,20 +370,20 @@
 
         <!-- monkey -->
 
-      <div id="monkeyDialog" class="hidden">
-        <div class="dialog-div">
-          <h2 class="dialog-header-room-1">Den söta apan</h2>
-          <div class="daughter-argument">
-
-            <p>
-              <span class="bold-blue-text-room-1">Ni har knappt hunnit innanför dörren förrän</span> första hindret
-              dyker
-              upp! Den virala apan Punch! Din dotter drar fram det tunga
-              artilleriet- lägger huvudet på sned, tittar på dig med de stora
-              blanka valpögonen och drar till med det mest bedårande
-              <span class="bold-blue-text-room-1">"Snäääääällla"</span> du någonsin hört. Hur tusan ska du ta dig ur det
-              här?!
-            </p>
+        <div id="monkeyDialog" class="hidden">
+          
+          <div class="dialog-div">
+            <h2 class="dialog-header-room-1">Den söta apan</h2>
+            <div class="daughter-argument">
+              
+              <p>
+                <span class="bold-blue-text-room-1">Ni har knappt hunnit innanför dörren förrän</span> första hindret dyker
+                upp! Den virala apan Punch! Din dotter drar fram det tunga
+                artilleriet- lägger huvudet på sned, tittar på dig med de stora
+                blanka valpögonen och drar till med det mest bedårande
+                <span class="bold-blue-text-room-1">"Snäääääällla"</span> du någonsin hört. Hur tusan ska du ta dig ur det
+                här?!
+              </p>
 
             <img class="want-monkey-pic" src="/assets-room-1/monkey-big.png" alt="" />
           </div>
@@ -437,17 +437,28 @@
           </div>
         </div>
 
-      <div class="hidden dialog-div" id="wantmonkeyTantrum">
-        <div class="tantrum">
-          <p>
-            Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
-            du får skynda ut till bistron för att muta henne med en glass
-            innan du kan börja om din runda.
-          </p>
-          <img class="icecream-pic" src="/assets-room-1/icecream.png" alt="" />
+        <div class="dialog-div hidden" id="wantmonkeyTantrum"> <!--hidden -->
+          <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
+          <div class="tantrum game-over-div">
+            
+            <p>
+              Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
+              du får skynda ut till bistron för att muta henne med en glass
+              innan du kan börja om din runda.
+            </p>
+            <img
+              class="icecream-pic"
+              src="/assets-room-1/icecream.png"
+              alt=""
+            />
+          </div>
+          <div class="game-over-btns">
+            <button class="tantrum-buttons resetBtn">Börja om</button>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
+            
         </div>
-        <button class="tantrum-buttons resetBtn">Börja om</button>
-      </div>
 
         <!-- PILLOW -->
 
@@ -508,78 +519,119 @@
           </div>
         </div>
 
-        <div class="hidden dialog-div" id="wantPillowTantrum">
-          <div class="tantrum">
-            <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
+        <div class="dialog-div hidden" id="wantPillowTantrum"> <!--hidden-->
+          <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
+          <div class="tantrum game-over-div">
+            <div>
+              <p>"JAG VIIIIIILL HA KUDDEN!!!!!!"</p>
+            <p class="right-before-button-room-3">Det blir genast dålig stämning och du funderar på vad du ska göra. Ska du börja om eller ge upp och åka hem?</p>
+            </div>
+            
           </div>
-          <button class="tantrum-buttons resetBtn">Börja om</button>
+          <div class="game-over-btns">
+            <button class="tantrum-buttons resetBtn">Börja om</button>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
         </div>
 
-      <!--chair-->
-      <div class="hidden dialog-div" id="chairDialog">
-        <h2 class="dialog-header-room-1">Snart där!</h2>
-        <div class="tantrum">
-
-          <p>
-            <span class="bold-blue-text-room-1">Du valde rätt väg!</span> Som tur var nöjde Emma sig med att provsitta
-            den lurviga stolen så ni kan fortsätta fram till lampan!
-          </p>
-          <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
+        <!--chair-->
+        <div class="dialog-div hidden" id="chairDialog"> <!---hidden -->
+          <h2 class="dialog-header-room-1 chair-dialog-header">Snart där!</h2>
+          <div class="tantrum">
+            
+            <p>
+              <span class="bold-blue-text-room-1">Du valde rätt väg!</span> Som tur var nöjde Emma sig med att provsitta
+              den lurviga stolen så ni kan fortsätta fram till lampan!
+            </p>
+            <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
+          </div>
+          <button class="tantrum-buttons chair-dialog-btn" id="chairDialogBtn">Gå vidare</button>
         </div>
-        <button class="tantrum-buttons" id="chairDialogBtn">Gå vidare</button>
-      </div>
 
-      <!--bedsheet-->
-      <div class="hidden dialog-div" id="bedsheetDialog">
-        <div class="tantrum">
-          <p>
-            Oh no! Du glömde att du skulle plocka upp lampan. Börja om från
-            början och välj rätt väg
-          </p>
+        <!--bedsheet-->
+        <div class="hidden dialog-div" id="bedsheetDialog">
+          <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
+          <div class="tantrum game-over-div">
+            <p>
+              Oh no! Du glömde att du skulle plocka upp lampan. Börja om från
+              början och välj rätt väg
+            </p>
+          </div>
+          <div class="game-over-btns">
+            <button class="tantrum-buttons resetBtn">Börja om</button>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
         </div>
-        <button class="tantrum-buttons resetBtn">Börja om</button>
-      </div>
 
-      <!--lamp-->
-      <div class="hidden dialog-div" id="lampDialog">
-        <div class="tantrum">
-          <p>
-            <span class="bold-blue-text-room-1">Grattis! </span>Du lyckades ta dig till lampan utan att plocka på dig
-            något mer! Gå till utgången så kommer du till rum 2 där du ska
-            hitta en glödlampa.
-          </p>
+        <!--lamp-->
+        <div class="dialog-div hidden" id="lampDialog"> <!---hidden -->
+          
+          <h2 class="dialog-header-room-1 chair-dialog-header">Bra jobbat</h2>
+          <div class="tantrum">
+            
+            <p>
+              <span class="bold-blue-text-room-1">Grattis! </span>Du lyckades ta dig till lampan utan att plocka på dig
+              något mer! Gå till utgången så kommer du till rum 2 där du ska
+              hitta en glödlampa.
+            </p>
+          </div>
+          <button class="lamp-button" id="lampDialogBtn">
+            Ta mig till utgången
+          </button>
         </div>
-        <button class="lamp-button" id="lampDialogBtn">
-          Ta mig till utgången
-        </button>
-      </div>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 2 ============== -->
-    <!-- ================================== -->
-    <section class="main-rooms room-2 hidden" id="room2">
-      <div class="room-2-instruction-container room-2-overlay room-2-is-visible" id="room2InstructionContainer">
-        <div>
-          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="" />
-          <h2>Lamporna</h2>
-          <p>
-            Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var
-            det vi skulle ha nu igen? Juste, vi skulle ju testa den nya,
-            flefärgade, smarta, coola, och trådlösa ljuskällan
-            <span class="room-2-tooltip" href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
-                och vitt</span>
-            </span>
-          </p>
-          <p>Men, alla lampor är ju släckta!?</p>
-          <p>
-            Jag vet vad vi måste göra! Om vi trycker på lampknappen
-            <span class="room-2-tooltip" href="">BILRESA
-              <span class="room-2-tooltip-box">Fjärrkontroll, vit smart/två knappar</span></span>
-            <span>
-              så att alla lampor i slutet lyser samtidigt, så ser vi vilken
-              hylla</span>
-            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
-                och vitt</span></span>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 2 ============== -->
+      <!-- ================================== -->
+      <section class="main-rooms room-2 hidden" id="room2">
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
+          </div>
+        </div>
+        <div
+          class="room-2-instruction-container room-2-overlay room-2-is-visible"
+          id="room2InstructionContainer"
+        >
+        
+          <div>
+            <img
+              class="room-2-ikea-man-box"
+              src="/room_2_ikea_man_box.png"
+              alt=""
+            />
+            <h2>Lamporna</h2>
+            <p>
+              Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var
+              det vi skulle ha nu igen? Juste, vi skulle ju testa den nya,
+              flefärgade, smarta, coola, och trådlösa ljuskällan
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS!<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart, färgat och vitt</span
+                >
+              </span>
+            </p>
+            <p>Men, alla lampor är ju släckta!?</p>
+            <p>
+              Jag vet vad vi måste göra! Om vi trycker på lampknappen
+              <span class="room-2-tooltip" href=""
+                >BILRESA
+                <span class="room-2-tooltip-box"
+                  >Fjärrkontroll, vit smart/två knappar</span
+                ></span
+              >
+              <span>
+                så att alla lampor i slutet lyser samtidigt, så ser vi vilken
+                hylla</span
+              >
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart, färgat och vitt</span
+                ></span
+              >
 
               <span>
                 ligger i och vi kan då lägga den i vår gula påse och gå
@@ -663,15 +715,17 @@
             </button>
           </div>
         </div>
-        <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
+        <div class="room-game-over-section room-2-overlay room-2-lose-screen" id="room2LoseScreen"> <!--room-2-overlay-->
+          
           <div>
             <img
               class="room-2-ikea-man-sad"
               src="/room_2_ikea_man_sad.png"
               alt=""
             />
-            <h2>Lamporna</h2>
-            <p>
+            <h1 class="all-game-over-header">Game over</h1>
+            <h2 class="subheading-game-over">Du tog fel möbel!</h2>
+            <p class="first-row-p">
               Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har
               'insert ungens namn här' tröttnat och sprungit iväg.
             </p>
@@ -682,11 +736,15 @@
 
             <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
           <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+           
             <a class="room-2-game-over-btn" href="">
-              <button id="goToStartBtn">
-                <span>Gå ut från varuhuset</span>
+              <button id="goToStartBtn" class="go-to-start-btn">
+                Börja om
               </button>
             </a>
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          
+
           </div>
         </div>
         <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
@@ -734,13 +792,14 @@
       <!-------✨ Linas Rum ✨-------->
 
       <section class="main-rooms room-3 hidden" id="room3">
-        <div class="room-3-header">
-          <h1>Tag själv lagret</h1>
-          <div class="room3Title">
-            <p class="progress-in-room-3">Rum 3</p>
-          </div>
-        </div>
+        
         <div id="room3Start">
+          <div class="room-3-header">
+            <h1>Tag själv lagret</h1>
+            <div class="room3Title">
+              <p class="progress-in-room-3">Rum 3</p>
+            </div>
+          </div>
           <!--class="hidden"-->
           <h2>Välkommen till rum 3</h2>
           <p>
@@ -756,6 +815,12 @@
           </div>
         </div>
         <section id="room3Part1" class="hidden">
+          <div class="room-3-header">
+            <h1>Tag själv lagret</h1>
+            <div class="room3Title">
+              <p class="progress-in-room-3">Rum 3</p>
+            </div>
+          </div>
           <!--class="hidden"-->
           <h2>Vilken hylla och fack?</h2>
           <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p>
@@ -819,6 +884,12 @@
         </section>
         <section id="room3Part2" class="hidden">
           <!--class="hidden"-->
+          <div class="room-3-header">
+            <h1>Tag själv lagret</h1>
+            <div class="room3Title">
+              <p class="progress-in-room-3">Rum 3</p>
+            </div>
+          </div>
           <h2>Korrekt</h2>
           <div class="descriptionRoom3">
             <p>
@@ -869,50 +940,58 @@
           </div>
         </section>
 
-      <section id="room3End" class="hidden">
-        <h2>Rum 3: Klart!</h2>
-        <p>
-          Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu
-          är det dags och ta sig till kassan för att betala.
-        </p>
-        <div id="room3ToRoom4">
-          <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
-        </div>
-      </section>
-      <section id="room3GameOver" class="hidden">
-        <div>
-          <h2>Game Over</h2>
-          <p>
-            Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
-            rätt på möbeln måste du nu leta rätt på ditt barn istället.
-          </p>
-          <p class="right-before-button-room-3">
-            När du letat klart, vill du spela igen eller vill du lämna
-            varuhuset?
-          </p>
-          <div>
-            <div>
-              <button id="restartGameBtn">Spela igen</button>
-              <button id="toIndexBtn">Ta mig hem</button>
+        <section id="room3End" class="hidden">
+          <div class="room-3-header">
+            <h1>Tag själv lagret</h1>
+            <div class="room3Title">
+              <p class="progress-in-room-3">Rum 3</p>
             </div>
+          </div>
+          <h2>Rum 3: Klart!</h2>
+          <p>
+            Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu
+            är det dags och ta sig till kassan för att betala.
+          </p>
+          <div id="room3ToRoom4">
+            <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button
+            ><span>Till kassan</span>
+          </div>
+        </section>
+        <section id="room3GameOver" class="room-game-over-section hidden"> <!--class="hidden"-->
+          <div>
+            <h1 class="all-game-over-header">Game over</h1>
+            <h2 class="subheading-game-over">Du tog fel möbel!</h2>
+            <p>
+              Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
+              rätt på möbeln måste du nu leta rätt på ditt barn istället.
+            </p>
+            <p class="right-before-button-room-3">
+              När du letat klart, vill du spela igen eller vill du lämna
+              varuhuset?
+            </p>
+            <div>
+              <div>
+                <button id="restartGameBtn" class="go-to-start-btn">Spela igen</button>
+                <button id="toIndexBtn">Ta mig hem</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="overlayRoom3" id="warnOverlayRoom3">
+          <div class="popupRoom3">
+            <div class="warningSymbol">⚠</div>
+            <h2>Fel möbel</h2>
+            <p>Var försiktig, du har bara ett försök kvar!</p>
+            <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">
+              Försök igen
+            </button>
           </div>
         </div>
       </section>
-      <div class="overlayRoom3" id="warnOverlayRoom3">
-        <div class="popupRoom3">
-          <div class="warningSymbol">⚠</div>
-          <h2>Fel möbel</h2>
-          <p>Var försiktig, du har bara ett försök kvar!</p>
-          <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">
-            Försök igen
-          </button>
-        </div>
-      </div>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 4 ============== -->
-    <!-- ================================== -->
-    <section class="main-rooms room-4 hidden" id="room4">
+      <!-- ================================== -->
+      <!-- ============= RUM 4 ============== -->
+      <!-- ================================== -->
+      <section class="main-rooms room-4 hidden" id="room4">
       <div class="for-all-room-header-wrapper">
         <h1>Kassan</h1>
         <div>
@@ -1010,7 +1089,25 @@
         </div>
 
       </div>
-    </section>
+      
+      </section>
+      <section id="room4GameOver" class="room-game-over-section"> <!--class="hidden"-->
+        <div>
+          <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Köpet gick inte igenom</h2>
+          <p>Du tog alldeles för många försök på dig och kunde inte genomföra ditt köp. Din dotter blir jätteledsen och du funderar på vad du vill göra.</p>
+          <p class="right-before-button-room-3">Vill du testa igen eller vill du ge upp och åka hem?</p>
+          <div>
+            <a>
+              <button class="go-to-start-btn">Börja om</button>
+            </a>
+              
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
+        </div>
+
+      </section>
+
 
       <section id="gameOverRoom"></section>
       <button type="button" disabled>Gå ut från IKEA</button>
