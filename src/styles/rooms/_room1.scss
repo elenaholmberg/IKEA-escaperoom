@@ -13,6 +13,14 @@
   position: relative;
 }
 
+.subheading-game-over {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: left;
+}
+
+
 .heading {
   font-size: 24px;
   text-align: center;
@@ -197,8 +205,12 @@
 .dialog-header-room-1 {
   width: 600px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.chair-dialog-header {
+  margin-left: 150px;
 }
 
 .daughter-argument {
@@ -261,17 +273,16 @@
 .tantrum {
   display: flex;
   position: relative;
-  border: 1px solid black;
-  border-radius: 20px;
-  width: 600px;
+  
+  width: 500px;
   height: fit-content;
-  padding-top: 40px;
+  justify-content: flex-start;
   margin: 0 auto;
   padding-bottom: 40px;
-  margin-top: 40px;
+  
 
   p {
-    padding: 30px;
+    padding: 5px 0;
   }
 }
 
@@ -324,12 +335,12 @@
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  margin: 30px 95px;
+  margin: 10px 150px;
 }
 
 .chair-dialog-btn {
   position: relative;
-  left: 130px;
+  left: 150px;
   top: -100px;
 
 }

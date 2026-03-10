@@ -54,6 +54,11 @@
       display: block;
       
     }
+    .go-to-start-btn:hover {
+      background-color: #ffda1a;
+      border-color: #ffda1a;
+      color: black;
+    }
     button:hover {
       background-color: #0057a3;
       outline: 2px solid #0057a3;
@@ -169,6 +174,7 @@ h3 {
   width: 50%;
   justify-self: center;
   align-self: center;
+  margin-top: 70px;
 }
 
 .room-2-lamp-img {
@@ -180,6 +186,9 @@ h3 {
   display: grid;
   justify-items: center;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
   button {
     justify-items: center;
     background: none;
@@ -189,6 +198,12 @@ h3 {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+  }
+
+  button:hover {
+    background: none;
+    outline: none;
+    transform: scale(1.05);
   }
   button:disabled {
     cursor: default;
@@ -231,8 +246,7 @@ h3 {
   z-index: 1000;
   div {
     position: relative;
-    border: 1px solid #000000;
-    border-radius: 20px;
+    
     padding: 32px 32px;
     display: block;
     margin: 0 auto;
@@ -305,4 +319,12 @@ h3 {
 }
 .room-2-green-color {
   background-color: #4caf50;
+}
+
+.room-3-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline-end: 20px;
+    
 }

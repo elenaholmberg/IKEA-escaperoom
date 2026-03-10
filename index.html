@@ -374,9 +374,11 @@
           </div>
         </div>
 
-        <div class="hidden dialog-div" id="wantmonkeyTantrum">
+        <div class="dialog-div hidden" id="wantmonkeyTantrum"> <!--hidden -->
           <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
           <div class="tantrum game-over-div">
+            
             <p>
               Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
               du får skynda ut till bistron för att muta henne med en glass
@@ -458,11 +460,15 @@
           </div>
         </div>
 
-        <div class="hidden dialog-div" id="wantPillowTantrum">
+        <div class="dialog-div hidden" id="wantPillowTantrum"> <!--hidden-->
           <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
           <div class="tantrum game-over-div">
+            <div>
+              <p>"JAG VIIIIIILL HA KUDDEN!!!!!!"</p>
+            <p class="right-before-button-room-3">Det blir genast dålig stämning och du funderar på vad du ska göra. Ska du börja om eller ge upp och åka hem?</p>
+            </div>
             
-            <p>"JAG VIIIIIILL HA KUDDEN!!!!!!"</p>
           </div>
           <div class="game-over-btns">
             <button class="tantrum-buttons resetBtn">Börja om</button>
@@ -471,8 +477,8 @@
         </div>
 
         <!--chair-->
-        <div class="hidden dialog-div" id="chairDialog">
-          <h2 class="dialog-header-room-1">Snart där!</h2>
+        <div class="dialog-div hidden" id="chairDialog"> <!---hidden -->
+          <h2 class="dialog-header-room-1 chair-dialog-header">Snart där!</h2>
           <div class="tantrum">
             
             <p>
@@ -487,6 +493,7 @@
         <!--bedsheet-->
         <div class="hidden dialog-div" id="bedsheetDialog">
           <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
           <div class="tantrum game-over-div">
             <p>
               Oh no! Du glömde att du skulle plocka upp lampan. Börja om från
@@ -500,14 +507,11 @@
         </div>
 
         <!--lamp-->
-        <div class="hidden dialog-div" id="lampDialog">
-          <div class="for-all-room-header-wrapper">
-            <h1>Barnavdelningen</h1>
-            <div>
-              <p class="for-all-room-header">Rum 1</p>
-            </div>
-          </div>
+        <div class="dialog-div hidden" id="lampDialog"> <!---hidden -->
+          
+          <h2 class="dialog-header-room-1 chair-dialog-header">Bra jobbat</h2>
           <div class="tantrum">
+            
             <p>
               <span class="bold-blue-text-room-1">Grattis! </span>Du lyckades ta dig till lampan utan att plocka på dig
               något mer! Gå till utgången så kommer du till rum 2 där du ska
@@ -523,10 +527,17 @@
       <!-- ============= RUM 2 ============== -->
       <!-- ================================== -->
       <section class="main-rooms room-2 hidden" id="room2">
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
+          </div>
+        </div>
         <div
           class="room-2-instruction-container room-2-overlay room-2-is-visible"
           id="room2InstructionContainer"
         >
+        
           <div>
             <img
               class="room-2-ikea-man-box"
@@ -645,7 +656,7 @@
             </button>
           </div>
         </div>
-        <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
+        <div class="room-game-over-section room-2-overlay room-2-lose-screen" id="room2LoseScreen"> <!--room-2-overlay-->
           
           <div>
             <img
@@ -654,6 +665,7 @@
               alt=""
             />
             <h1 class="all-game-over-header">Game over</h1>
+            <h2 class="subheading-game-over">Du tog fel möbel!</h2>
             <p class="first-row-p">
               Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har
               'insert ungens namn här' tröttnat och sprungit iväg.
@@ -881,7 +893,7 @@
             </p>
             <div>
               <div>
-                <button id="restartGameBtn">Spela igen</button>
+                <button id="restartGameBtn" class="go-to-start-btn">Spela igen</button>
                 <button id="toIndexBtn">Ta mig hem</button>
               </div>
             </div>
