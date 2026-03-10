@@ -21,7 +21,7 @@ export default function initRoom1() {
   });
 
   // ALLA RESETKNAPPAR
-  document.querySelectorAll(".resetBtn").forEach((btn) => {
+  document.querySelectorAll(".reset-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       usedZones.clear();
       resetRoom1();
@@ -207,9 +207,18 @@ function handleTantrum(
 // RESET-FUNKTION
 // -------------------------
 function resetRoom1() {
+  // Återställ alla zoner till inactive
   document.querySelectorAll(".zone").forEach((zone) => {
     zone.classList.replace("zone-active", "zone-inactive");
   });
+
+  // Monkey ska alltid vara active och klickbar efter reset
+  document
+    .getElementById("zoneMonkey")
+    ?.classList.replace("zone-inactive", "zone-active");
+
+  // Återställ zoneBedsheets om den blivit hidden
+  document.getElementById("zoneBedsheets")?.classList.remove("hidden");
 
   document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     (radio as HTMLInputElement).checked = false;
@@ -229,9 +238,14 @@ function resetRoom1() {
     document.getElementById(id)?.classList.add("hidden");
   });
 
+  // Ta bort visible från alla pilar först
   document.querySelectorAll(".arrow").forEach((arrow) => {
     arrow.classList.remove("visible");
   });
+
+  // Återställ arrow1 med animation och visible sist
+  document.getElementById("arrow1")?.classList.add("animation");
+  document.getElementById("arrow1")?.classList.add("visible");
 }
 
 // -------------------------
