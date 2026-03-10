@@ -12,6 +12,10 @@
   padding: 5px;
 }
 
+.intro-flex-div {
+  display: flex;
+}
+
 form {
   border: 1px solid black;
   border-radius: 20px;
@@ -30,7 +34,7 @@ form {
 }
 .rooms-intro {
   display: flex;
-  flex-wrap: wrap;
+
   justify-content: space-evenly;
   width: 50%;
 
