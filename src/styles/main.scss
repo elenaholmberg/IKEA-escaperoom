@@ -11,6 +11,7 @@
 */
 /* Rum-specifika stilar — varje person jobbar i sin egen fil */
 
+@use "./rooms/startpage";
 @use "./rooms/header";
 @use "./rooms/infopage";
 @use "./rooms/room1";
@@ -23,6 +24,7 @@
   outline: none;
 }
 
+button:focus-visible,
 button:focus-visible,
 input:focus-visible {
   outline: 2px solid #0058a3;
