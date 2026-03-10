@@ -1,12 +1,18 @@
+.startpage {
+  margin: 20px;
+  border-top: 1px solid rgb(201, 72, 12);
+  padding-top: 20px;
+}
 .game-intro {
   width: 50%;
-
   background-color: #f5f5f5;
-  margin: 20px;
-  margin-right: 0px;
+
   padding: 10px;
 }
 
+.login-wrapper {
+  width: 50%;
+}
 .intro-header {
   color: black;
   padding: 5px;
@@ -14,6 +20,7 @@
 
 .intro-flex-div {
   display: flex;
+  gap: 20px;
 }
 
 form {
@@ -22,31 +29,27 @@ form {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 300px;
+
   background-color: white;
-  margin-top: 30px;
+  margin-top: 100px;
+
   padding: 20px;
+}
+
+.ikea-img {
+  width: 50px;
 }
 
 .start-btn-wrapper {
   display: flex;
   gap: 20px;
 }
+
 .rooms-intro {
   display: flex;
-
-  justify-content: space-evenly;
-  width: 50%;
-
-  margin: 20px;
-  margin-left: 0px;
-
+  justify-content: space-between;
+  margin-top: 20px;
   gap: 20px;
-}
-
-.main-flexer {
-  display: flex;
-  height: 700px;
 }
 
 .tag {
@@ -58,7 +61,7 @@ form {
 }
 
 .scene {
-  perspective: 600px; /* Djupkänsla */
+  perspective: 600px;
 }
 
 .card {
@@ -71,7 +74,7 @@ form {
 }
 
 .card:hover {
-  transform: rotateY(180deg); /* Snurrar vid hover */
+  transform: rotateY(180deg);
 }
 
 .front {
@@ -79,22 +82,20 @@ form {
   width: 100%;
   height: 100%;
   background-color: rgb(201, 72, 12);
-  backface-visibility: hidden; /* Döljer när den är vänd bort */
+  backface-visibility: hidden;
 
   h2 {
     color: white;
     padding: 20px;
   }
 }
+
 .back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Döljer när den är vänd bort */
-}
-
-.back {
-  transform: rotateY(180deg); /* Baksidan är förvänd från start */
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 }
 
 #startGameBtn {
@@ -106,19 +107,10 @@ form {
   padding: 10px;
   border: 1.5px solid black;
   border-radius: 30px;
-  pointer-events: all;
+}
 
-  button:hover {
-    //varför fungerar inte hoover
-    background-color: #ffda1a;
-    border-color: #ffda1a;
-    color: #333333;
-  }
-
-  span {
-    margin-inline: 10px;
-    font-family: "futura-pt", sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-  }
+#startGameBtn:hover {
+  background-color: #ffda1a;
+  border-color: #ffda1a;
+  color: #333333;
 }
