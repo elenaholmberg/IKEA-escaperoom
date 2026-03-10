@@ -867,9 +867,10 @@
             ><span>Till kassan</span>
           </div>
         </section>
-        <section id="room3GameOver" class="hidden">
+        <section id="room3GameOver" class="room-game-over-section"> <!--class="hidden"-->
           <div>
-            <h2>Game Over</h2>
+            <h1 class="all-game-over-header">Game over</h1>
+            <h2 class="subheading-game-over">Du tog fel möbel!</h2>
             <p>
               Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
               rätt på möbeln måste du nu leta rätt på ditt barn istället.
@@ -990,7 +991,25 @@
         </div>  
         
       </div>
-    </section>
+      
+      </section>
+      <section id="room4GameOver" class="room-game-over-section"> <!--class="hidden"-->
+        <div>
+          <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Köpet gick inte igenom</h2>
+          <p>Du tog alldeles för många försök på dig och kunde inte genomföra ditt köp. Din dotter blir jätteledsen och du funderar på vad du vill göra.</p>
+          <p class="right-before-button-room-3">Vill du testa igen eller vill du ge upp och åka hem?</p>
+          <div>
+            <a>
+              <button class="go-to-start-btn">Börja om</button>
+            </a>
+              
+            <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
+          </div>
+        </div>
+
+      </section>
+
 
       <section id="gameOverRoom"></section>
       <button type="button" disabled>Gå ut från IKEA</button>
