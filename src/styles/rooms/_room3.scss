@@ -110,26 +110,24 @@
 }
 
 .guess-input-room-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px;
+  display: flex;            // change from grid to flex
   align-items: center;
-  
+  gap: 15px;
+  margin: 0;               // remove any default <p> margin
 }
 
-#guessInput1Room3 {
+.guess-hylla-fack-section {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;      // already default, but be explicit
   align-items: center;
-  margin-inline-end: 10px; 
+  gap: 40px;                // space between the three columns
 }
 
-#guessHyllaFackSection {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-  align-items: center;
+.guess-hylla-fack-section p {
+  margin: 0;
 }
+
+
 
 #room3Part2 {
   margin-bottom: 40px;
@@ -194,12 +192,13 @@
   max-width: 250px;
 } 
 
-#guessInput1Room3Wrapper {
+.guess-input-1-room-3-wrapper {
   border: 1.5px solid black;
   border-radius: 20px;
-  padding: 20px 35px;
+  padding: 25px 35px;
   margin: 35px 0;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 #guessFurniture {
