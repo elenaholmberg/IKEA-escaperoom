@@ -4,9 +4,10 @@ body {
 }
 
 .startpage {
-  margin: 30px;
+  margin: 0 90px;
   border-top: 3px solid #eee;
   padding-top: 20px;
+  width: min(1750px, calc(100% - 100px));
 }
 .game-intro {
   width: fill;
