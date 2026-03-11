@@ -135,8 +135,12 @@ export default function initRoom4() {
 
     if (yellowCells.includes(index)) {
       cell.style.backgroundColor = "#ffda1a";
+      cell.textContent = "✓";
+      cell.setAttribute("aria-label", "Rätt cell");
     } else {
       cell.style.backgroundColor = "#e74c3c";
+      cell.textContent = "✗";
+      cell.setAttribute("aria-label", "Fel cell");
     }
 
     if (playerGuesses.length === 4) {
@@ -163,10 +167,11 @@ export default function initRoom4() {
       wrongMemoryAttempts++;
       if (wrongMemoryAttempts >= 3) {
         handleLose("Game over! Du misslyckades 3 gånger.");
-        localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+        localStorage.removeItem("currentRoom"); // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
         resetTimer(); // resettar timern när man misslyckas med rummet
         document.querySelector("#room4memory")?.classList.add("hidden"); // tar bort memory div
         document.querySelector("#room4GameOver")?.classList.remove("hidden"); // lägger till game over sidan
+        (document.querySelector("#room4GameOver") as HTMLElement)?.focus();
         document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden"); // tar bort header för att skapa enhetlighet
       } else {
         message.textContent = `Fel! Du hade ${correctGuesses} av 4 rätt. ${3 - wrongMemoryAttempts} försök kvar.`;
@@ -200,15 +205,19 @@ export default function initRoom4() {
         wrongCodeAttempts++;
         if (wrongCodeAttempts >= 3) {
           handleLose("Game over! Du angav fel kod 3 gånger. Larmet gick!");
-          localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+          localStorage.removeItem("currentRoom"); // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
           resetTimer(); // resettar timern när man misslyckas med rummet
           document.querySelector("#room4checkout")?.classList.add("hidden"); // tar bort div
           document.querySelector("#room4GameOver")?.classList.remove("hidden"); // lägger till game over sida
-          document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden"); // Tar bort header för att göra det mer enhetligt med övriga rum
+          (document.querySelector("#room4GameOver") as HTMLElement)?.focus();
+          document
+            .querySelector("#headerRoom4Wrapper")
+            ?.classList.add("hidden"); // Tar bort header för att göra det mer enhetligt med övriga rum
         } else {
           checkoutMessage.textContent = `Fel kod! ${3 - wrongCodeAttempts} försök kvar.`;
           checkoutMessage.style.color = "#e74c3c";
-          checkoutMessage.style.boxShadow = "0px 4px 8px 0px rgba(0, 0, 0, 0.3)";
+          checkoutMessage.style.boxShadow =
+            "0px 4px 8px 0px rgba(0, 0, 0, 0.3)";
           enteredCode = "";
           codeDisplay.textContent = "----";
         }
@@ -230,6 +239,12 @@ export default function initRoom4() {
   startBtn.addEventListener("click", startGame);
   cells.forEach((cell, index) => {
     cell.addEventListener("click", () => handleCellClick(cell, index));
+    cell.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleCellClick(cell, index);
+      }
+    });
   });
   keys.forEach((key) => {
     key.addEventListener("click", () => {
