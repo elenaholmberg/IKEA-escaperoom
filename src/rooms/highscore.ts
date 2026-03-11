@@ -39,12 +39,26 @@ function formatTime(ms: number): string {
 // Visar/döljer highscore-overlayan och renderar listan
 export function initHighscore(): void {
   const btn = document.querySelector("#highscoreBtn");
-  const overlay = document.querySelector("#highscoreOverlay");
+  const overlay = document.querySelector(
+    "#highscoreOverlay",
+  ) as HTMLElement | null;
   const closeBtn = document.querySelector("#highscoreCloseBtn");
   const list = document.querySelector("#highscoreList");
 
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      overlay?.classList.add("hidden");
+    }
+  });
+
+  overlay?.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      (closeBtn as HTMLElement)?.focus();
+    }
+  });
+
   btn?.addEventListener("click", () => {
-    // Rendera listan varje gång man öppnar
     const scores = getHighscores();
     if (list) {
       if (scores.length === 0) {
@@ -53,12 +67,16 @@ export function initHighscore(): void {
         list.innerHTML = scores
           .map(
             (entry, index) =>
-              `<li><span>#${index + 1} ${entry.name}</span><span>${formatTime(entry.time)}</span><span>${entry.date}</span></li>`,
+              `<li aria-label="Plats ${index + 1}: ${entry.name}, tid ${formatTime(entry.time)}, datum ${entry.date}">` +
+              `<span>#${index + 1} ${entry.name}</span>` +
+              `<span>${formatTime(entry.time)}</span>` +
+              `<span>${entry.date}</span></li>`,
           )
           .join("");
       }
     }
     overlay?.classList.remove("hidden");
+    overlay?.focus();
   });
 
   closeBtn?.addEventListener("click", () => {
@@ -67,20 +85,20 @@ export function initHighscore(): void {
 }
 
 export function finishedGameHSEl() {
-  const listEl: HTMLDivElement | null = document.querySelector('#finishedGameHSEl');
+  const listEl: HTMLDivElement | null =
+    document.querySelector("#finishedGameHSEl");
 
   const scores = getHighscores();
   if (listEl) {
     if (scores.length === 0) {
       listEl.innerHTML = `<li>Inga resultat ännu</li>`;
-
     } else {
       listEl.innerHTML = scores
-          .map(
-            (entry, index) =>
-              `<li><span>#${index + 1} ${entry.name}</span><span>${formatTime(entry.time)}</span><span>${entry.date}</span></li>`,
-          )
-          .join("");
-      }
+        .map(
+          (entry, index) =>
+            `<li><span>#${index + 1} ${entry.name}</span><span>${formatTime(entry.time)}</span><span>${entry.date}</span></li>`,
+        )
+        .join("");
+    }
   }
 }

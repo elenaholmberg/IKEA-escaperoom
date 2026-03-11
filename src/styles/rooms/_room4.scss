@@ -69,6 +69,11 @@
   }
 }
 
+.room4-cell:focus {
+  outline: 3px solid #111;
+  outline-offset: 2px;
+}
+
 .room4-message {
   font-family: "noto-sans", sans-serif;
   margin-top: 1rem;
@@ -194,12 +199,11 @@
   margin-bottom: 30px;
   text-align: left;
   width: 500px;
-  
+
   span {
     font-weight: 800;
     color: #0058a3;
   }
-
 }
 
 .header-room-4 {
@@ -252,7 +256,7 @@
 .cart-terminal-wrapper {
   display: flex;
   justify-content: space-between;
- 
+
   margin: 0 auto;
   gap: 80px;
 }
