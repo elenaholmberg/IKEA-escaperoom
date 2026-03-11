@@ -24,8 +24,6 @@
   outline: none;
 }
 
-
-
 button:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -50,7 +48,6 @@ body {
   color: #333333;
   display: grid;
   grid-template-columns: 1fr;
-  
 }
 p {
   font-family: "noto-sans", sans-serif;
@@ -170,7 +167,6 @@ button:hover {
   position: absolute;
   left: 290px;
   top: 350px;
-
 }
 
 .to-index-btn {
@@ -211,7 +207,10 @@ button:hover {
     margin: 20px 0;
     max-width: 500px;
     text-align: left;
-    
+  }
+  a {
+    display: flex;
+    justify-self: start;
   }
 
   button {
@@ -227,7 +226,6 @@ button:hover {
     margin-bottom: 30px;
     margin-right: 20px;
   }
-  
 
   #toIndexBtn {
     background-color: #d50000;
@@ -259,8 +257,7 @@ button:hover {
   align-items: center;
   margin-top: 50px;
   margin-bottom: 30px;
-  
-    
+
   button {
     font-family: "futura-pt", sans-serif;
     width: 45px;
@@ -272,26 +269,22 @@ button:hover {
     border: 1.5px solid #333;
     border-radius: 40px;
     pointer-events: all;
-    
-    
-    }
+  }
 
-    button:hover {
-      background-color: #ffda1a;
-      border-color: #ffda1a;
+  button:hover {
+    background-color: #ffda1a;
+    border-color: #ffda1a;
 
-      outline: none;
-      color: #333333;
-    }
-  
+    outline: none;
+    color: #333333;
+  }
+
   span {
     margin-inline: 15px;
     font-family: "futura-pt", sans-serif;
     font-weight: 500;
     font-size: 1.15rem;
-    
-  }  
-
+  }
 }
 
 /*.tantrum-buttons:hover {
@@ -299,4 +292,3 @@ button:hover {
   color: #333333;
 }
   */
-

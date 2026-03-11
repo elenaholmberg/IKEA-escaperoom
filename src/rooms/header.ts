@@ -1,6 +1,6 @@
 import type {} from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
 
-import { resetTimer } from "./timer";
+import { resetGame } from "./timer";
 
 export default function initHeader() {
   const storePageBtn: HTMLButtonElement | null =
@@ -28,9 +28,7 @@ export default function initHeader() {
   homeFromHSBtn?.addEventListener("click", goToHomePage);
 
   function goToHomePage() {
-    resetTimer();
-    localStorage.removeItem("currentRoom");
-    localStorage.removeItem("playerName");
+    resetGame();
     window.location.reload();
   }
 }

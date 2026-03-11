@@ -83,7 +83,7 @@ export function getElapsedTime() {
   return elapsedTime;
 }
 
-export function resetTimer() { // denna kör vi 
+export function resetGame() { // denna kör vi så fort man misslyckats med ett rum, eller som sita funktion i sista rummet, för att en refresh från klara-spelet-rummet ska leda tillbaka till första sidan med allt återställt.
   stopTimer();
 
   elapsedTime = 0;
@@ -92,4 +92,6 @@ export function resetTimer() { // denna kör vi
 
   localStorage.removeItem("gameTimerState");
   localStorage.removeItem("playerName");
+  localStorage.removeItem('currentRoom');
 }
+        
