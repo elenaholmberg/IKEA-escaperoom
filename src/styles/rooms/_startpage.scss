@@ -4,7 +4,7 @@ body {
 }
 
 .startpage {
-  margin: 20px;
+  margin: 30px;
   border-top: 1px solid rgb(201, 72, 12);
   padding-top: 20px;
 }
@@ -26,7 +26,7 @@ body {
 
 .img-wrapper {
   display: flex;
-  gap: 10px; // fixade "10pxß" typo
+  gap: 30px; // fixade "10pxß" typo
 }
 .front-img {
   width: 295px;
@@ -47,6 +47,7 @@ body {
 .intro-flex-div {
   display: flex;
   gap: 20px;
+  justify-content: space-between;
 }
 
 .log-in-form {
@@ -81,7 +82,8 @@ body {
 .rooms-intro {
   display: flex;
   margin-top: 20px;
-  gap: 20px;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 .tag {
@@ -99,7 +101,7 @@ body {
 }
 
 .card {
-  width: 300px;
+  width: 100%;
   height: 300px;
   position: relative;
   cursor: pointer;
@@ -109,7 +111,7 @@ body {
 .card-back {
   position: absolute;
   inset: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.3s ease;
 }
 
 .card-back {
@@ -138,10 +140,19 @@ body {
 
 .back {
   position: absolute;
-  width: 85%;
-  height: 85%;
+  width: 87%;
+  height: 86%;
   border: 1px solid #d3cdcd;
+  background: #0057a3;
+  color: white;
   padding: 20px;
+  h2 {
+    color: white;
+  }
+  p {
+    font-family: "noto-sans", sans-serif;
+    font-size: 1rem;
+  }
 }
 
 #startGameBtn {
