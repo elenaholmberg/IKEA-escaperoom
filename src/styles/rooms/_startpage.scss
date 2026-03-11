@@ -151,7 +151,7 @@ body {
   
   h2 {
     color: white;
-    padding: 30px 40px;
+    padding: 25px 30px;
     
   }
 }
@@ -161,11 +161,11 @@ body {
   width: 100%;
   height: 330px; // has to be the same size as .card-front, .card-back {...}
   box-sizing: border-box;
-  background: #007cc1;
-  color: #eee;
-  padding: 30px 40px;
+  background: #eee;
+  color: #333;
+  padding: 25px 30px;
   h2 {
-    color: #eee;
+    color: #333;
   }
   p {
     font-family: "noto-sans", sans-serif;
