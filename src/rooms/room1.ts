@@ -211,12 +211,12 @@ function activateZone(id: string, focus = true) {
 // -------------------------
 // HJÄLPFUNKTION: Inaktivera zon
 // -------------------------
-function deactivateZone(id: string) {
-  const zone = document.getElementById(id);
-  if (!zone) return;
-  zone.classList.replace("zone-active", "zone-inactive");
-  zone.setAttribute("tabindex", "-1");
-}
+// function deactivateZone(id: string) {
+//   const zone = document.getElementById(id);
+//   if (!zone) return;
+//   zone.classList.replace("zone-active", "zone-inactive");
+//   zone.setAttribute("tabindex", "-1");
+// }
 
 // -------------------------
 // TANTRUM-HANDLER
