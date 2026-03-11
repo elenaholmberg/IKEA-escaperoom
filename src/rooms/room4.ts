@@ -5,8 +5,8 @@
  */
 
 import type {} from "../types/models";
-import { saveHighscore } from "./highscore";
-import { saveFinishedRoomToLS } from "./roomProgress";
+import { saveHighscore, finishedGameHSEl } from "./highscore";
+import { saveFinishedRoomToLS, showRoom } from "./roomProgress";
 import { stopTimer } from "./timer";
 
 export default function initRoom4() {
@@ -186,6 +186,8 @@ export default function initRoom4() {
         checkoutMessage.style.color = "#27ae60";
         stopTimer();
         saveHighscore();
+        finishedGameHSEl();
+        showRoom(5);
       } else {
         wrongCodeAttempts++;
         if (wrongCodeAttempts >= 3) {
