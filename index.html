@@ -46,21 +46,21 @@
       <h2>Välkommen till spelet...</h2>
 
       <div class="header-ikea-icons-wrapper">
-        <button id="homeBtn">
+        <button id="homeBtn" aria-label="Gå till startsidan">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="black">
             <path
               d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Z" />
           </svg>
         </button>
 
-        <button id="aboutBtn">
+        <button id="aboutBtn" aria-label="Om oss">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="black">
             <path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 
             11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5Z" />
           </svg>
         </button>
 
-        <button id="highscoreBtn">
+        <button id="highscoreBtn" aria-label="Visa highscore">
           <svg class="header-highscore-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
             width="24" fill-rule="evenodd">
             <path
@@ -69,7 +69,7 @@
         </button>
       </div>
       <div class="progress-bar-wrapper">
-        <div id="progressBar">
+        <div id="progressBar" role="progressbar" aria-label="Spelframsteg">
           <div id="progressBarFill"></div>
         </div>
         <span id="progressText">0 / 4 rum klarade</span>
@@ -1072,32 +1072,36 @@
         </div>
       </div>
 
+<!-- Introduktion ska komma här-->
+
       <!-- Memory -->
       <div id="room4memory" class="room-4-memory">
-        <p class="room4-instructions" id="room4-instructions">
+        <p class="room4-instructions" id="room4-instructions" aria-live="polite">
           Memorera var de gula rutorna är och dess siffror!
         </p>
 
-        <p class="room4-timer" id="room4-timer"></p>
+        <p class="room4-timer" id="room4-timer" aria-live="polite" aria-atomic="true">
+          00:00
+        </p>
 
         <button type="button" id="room4-start-btn" class="show-yellow-cards-btn">
           Visa de gula rutorna
         </button>
 
         <div class="room4-grid" id="room4-grid">
-          <div class="room4-cell" data-index="0"></div>
-          <div class="room4-cell" data-index="1"></div>
-          <div class="room4-cell" data-index="2"></div>
-          <div class="room4-cell" data-index="3"></div>
-          <div class="room4-cell" data-index="4"></div>
-          <div class="room4-cell" data-index="5"></div>
-          <div class="room4-cell" data-index="6"></div>
-          <div class="room4-cell" data-index="7"></div>
-          <div class="room4-cell" data-index="8"></div>
-          <div class="room4-cell" data-index="9"></div>
+          <div class="room4-cell" data-index="0" role="button" tabindex="0" aria-label="ruta 1"></div>
+          <div class="room4-cell" data-index="1" role="button" tabindex="0" aria-label="ruta 2"></div>
+          <div class="room4-cell" data-index="2" role="button" tabindex="0" aria-label="ruta 3"></div>
+          <div class="room4-cell" data-index="3" role="button" tabindex="0" aria-label="ruta 4"></div>
+          <div class="room4-cell" data-index="4" role="button" tabindex="0" aria-label="ruta 5"></div>
+          <div class="room4-cell" data-index="5" role="button" tabindex="0" aria-label="ruta 6"></div>
+          <div class="room4-cell" data-index="6" role="button" tabindex="0" aria-label="ruta 7"></div>
+          <div class="room4-cell" data-index="7" role="button" tabindex="0" aria-label="ruta 8"></div>
+          <div class="room4-cell" data-index="8" role="button" tabindex="0" aria-label="ruta 9"></div>
+          <div class="room4-cell" data-index="9" role="button" tabindex="0" aria-label="ruta 10"></div>
         </div>
 
-        <p class="room4-message" id="room4-message"></p>
+        <p class="room4-message" id="room4-message" aria-live="polite"></p>
       </div>
 
       <!-- Kassakoden -->
@@ -1136,10 +1140,10 @@
             <div class="room4-display">
               <div class="room4-display-price">607,00 kr</div>
               <div class="room4-display-blipp">
-                <img src="/assets/blipp.png" alt="Blipp" width="40" />
+                <img src="/assets/blipp.png" alt="" width="40" aria-hidden="true" />
               </div>
               <div class="room4-display-code">
-                <span id="room4CodeDisplay">----</span>
+                <span id="room4CodeDisplay" aria-live="polite" aria-label="Inmatad kod">----</span>
               </div>
             </div>
 
@@ -1153,15 +1157,15 @@
               <button type="button" class="room4-key" data-key="7">7</button>
               <button type="button" class="room4-key" data-key="8">8</button>
               <button type="button" class="room4-key" data-key="9">9</button>
-              <button type="button" class="room4-key room4-key-clear" data-key="clear">
+              <button type="button" class="room4-key room4-key-clear" data-key="clear" aria-label="Rensa kod">
                 C
               </button>
               <button type="button" class="room4-key" data-key="0">0</button>
-              <button type="button" class="room4-key room4-key-enter" data-key="enter">
+              <button type="button" class="room4-key room4-key-enter" data-key="enter" aria-label="Bekräfta kod">
                 OK
               </button>
             </div>
-            <p class="room4-message room-4-last-message" id="room4CheckoutMessage"></p>
+            <p class="room4-message room-4-last-message" id="room4CheckoutMessage" aria-live="assertive"></p>
           </div>
 
         </div>
@@ -1213,7 +1217,7 @@
   </main>
   <footer></footer>
 
-  <div id="highscoreOverlay" class="highscore-overlay hidden">
+  <div id="highscoreOverlay" class="highscore-overlay hidden" tabindex="-1">
     <div class="highscore-modal">
       <h2>Highscore</h2>
       <ol id="highscoreList"></ol>
