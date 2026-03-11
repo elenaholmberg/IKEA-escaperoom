@@ -41,6 +41,13 @@ export default function initRoom1() {
     usedZones.add("monkey");
     monkeyDialog?.classList.remove("hidden");
     document.getElementById("arrow1")?.classList.remove("animation");
+    const firstRadio = document.querySelector<HTMLInputElement>(
+      'input[name="monkey-choose-argument"]',
+    );
+    if (firstRadio) {
+      firstRadio.checked = true;
+      firstRadio.blur();
+    }
   });
 
   submitMonkeyArgument?.addEventListener("click", () => {
@@ -48,10 +55,7 @@ export default function initRoom1() {
       'input[name="monkey-choose-argument"]:checked',
     );
 
-    if (!selected) {
-      alert("Välj ett argument först!");
-      return;
-    }
+    if (!selected) return;
 
     monkeyDialog?.classList.add("hidden");
 
@@ -74,6 +78,13 @@ export default function initRoom1() {
     usedZones.add("pillow");
     pillowArgument?.classList.remove("hidden");
     document.getElementById("arrow2")?.classList.remove("animation");
+    const firstRadio = document.querySelector<HTMLInputElement>(
+      'input[name="pillow-choose-argument"]',
+    );
+    if (firstRadio) {
+      firstRadio.checked = true;
+      firstRadio.blur();
+    }
   });
 
   submitPillowArgument?.addEventListener("click", () => {
@@ -81,10 +92,7 @@ export default function initRoom1() {
       'input[name="pillow-choose-argument"]:checked',
     );
 
-    if (!selected) {
-      alert("Välj ett argument först!");
-      return;
-    }
+    if (!selected) return;
 
     pillowArgument?.classList.add("hidden");
 
