@@ -10,21 +10,21 @@ export default function initCancelBtnAnywhere() {
    ];
 
    function updateCancelBtnAnywhere() {
-    const anyRoomVisible = allRooms.some(
+    const anyRoomVisible = allRooms.some( // returns true om minst en av rummen inte har hidden
         (room) => !room?.classList.contains("hidden")
     );
 
     if (anyRoomVisible) {
-        cancelBtnWrapper?.classList.remove("hidden");
+        cancelBtnWrapper?.classList.remove("hidden"); // om något rum syns, hidden tas bort på knappen
     } else {
-        cancelBtnWrapper?.classList.add("hidden");
+        cancelBtnWrapper?.classList.add("hidden"); // annars hidden
     }
    }
 
    // kolla om det finns class-ändringar
    allRooms.forEach((room) => {
     if (!room) return;
-    const observeClassChangesHidden = new MutationObserver(updateCancelBtnAnywhere);
+    const observeClassChangesHidden = new MutationObserver(updateCancelBtnAnywhere); // om något ändras kallar den på updateCancelBtnAnywhere
     observeClassChangesHidden.observe(room, { attributes: true, attributeFilter: ["class"] });
 
    });
