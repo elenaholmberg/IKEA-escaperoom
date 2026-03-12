@@ -341,7 +341,11 @@
                     placeholder="Ditt namn"
                   />
                   <div class="btn-positioner">
-                    <button id="startGameBtn" class="init-cancel-btn" type="button">
+                    <button
+                      id="startGameBtn"
+                      class="init-cancel-btn"
+                      type="button"
+                    >
                       Starta spelet
                     </button>
                   </div>
@@ -1541,7 +1545,7 @@
           </p>
         </div>
         <div class="highscore-modal">
-          <h2>Highscore</h2>
+          <h2>Topp 10 Highscore</h2>
           <ol id="finishedGameHSEl"></ol>
         </div>
 
@@ -1549,14 +1553,15 @@
       </section>
 
       <section id="gameOverRoom"></section>
-      
+
       <section class="cancel-game-btn-wrapper" id="cancelGameBtnWrapper">
         <div class="hidden room-game-over-btn cancel-game-btn">
           <span>Avsluta spelet</span>
-          <button id="cancelGameBtn" aria-label="Avsluta spelet knapp"><img class="close-icon-btn" src="/close-white.svg"></button>
-        </div>    
+          <button id="cancelGameBtn" aria-label="Avsluta spelet knapp">
+            <img class="close-icon-btn" src="/close-white.svg" />
+          </button>
+        </div>
       </section>
-
     </main>
     <footer>
       <div class="footer-wrapper-main">
@@ -1575,7 +1580,7 @@
 
     <div id="highscoreOverlay" class="highscore-overlay hidden" tabindex="-1">
       <div class="highscore-modal">
-        <h2>Highscore</h2>
+        <h2>Topp 10 Highscore</h2>
         <ol id="highscoreList"></ol>
         <button id="highscoreCloseBtn">Stäng</button>
       </div>
