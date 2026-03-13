@@ -42,7 +42,7 @@ Vi har diskuterat våra personlighetstyper och fått en bra förståelse för va
 - Första veckan försöker vi att vid daily sprint fördela ut uppgifter för att sedan se hur det går för oss vid vår backlog refining.
 - Tar man på sig en uppgift utanför sprint/daily standup så kommunicerar vi i chatten så man får ett okej att köra på!
 - När något är reviewat och godkänt och reda att flyttas till DONE i vår projectboard kan vi anse att någonting är klart!
-- Hur vi bäst granskar varandras kod är något vi inte rikitgt vet vad som är best practice, så detta ska vi kolla upp och sedan bestämma SENAST onsdag 18/2
+- Vid större merge av projektet reviderar vi gärna ihop och gör merge tillsammans där vi då också granskar ihop. Vi enklare merge är det OK att göra själv om man är SÄKER på att det inte kommer bli buggar eller onödiga konflikter. Om man är osäker ska man alltid dubbelkolla :)
 
 ## Övriga förväntningar
 
