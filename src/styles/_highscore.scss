@@ -63,8 +63,8 @@
     margin-bottom: 1.5rem;
 
     li {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       padding: 0.4rem 0;
       border-bottom: 1px solid #f0f0f0;
       font-size: 0.95rem;
