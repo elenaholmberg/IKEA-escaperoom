@@ -1,7 +1,142 @@
 .about-page {
-  margin: 64px;
-  max-width: 1200px;
+  margin: 40px auto;
+  max-width: 1300px;
+
+  h1 {
+    font-family: "noto-sans", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: none;
+  }
+
+  h2 {
+    color: #333;
+    font-family: "noto-sans", sans-serif;
+    font-weight: bold;
+  }
 }
+
+.background-section {
+  max-width: 700px;
+
+  h2 {
+    font-weight: 800;
+  }
+
+}
+
+.who-are-we-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  height: fill;
+  background-color: rgb(241, 236, 227);
+  align-items: stretch;
+}
+
+.profile-img-wrapper {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hover-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px 35px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(201, 72, 12);
+  color: #eee;
+  text-align: left;
+  justify-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  
+
+  h2 {
+    text-transform: uppercase;
+    color: #eee; 
+    margin-bottom: 6px;
+    font-family: "futura-pt", sans-serif;
+    font-size: 2rem;
+  }
+  
+  p {
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 0;
+    line-height: normal;
+    max-width: 200px;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.linkedin:hover {
+
+border-radius: 7px;
+outline: 2px solid #eee;
+
+}
+
+.github:hover {
+  border-radius: 25px;
+  outline: 2px solid #eee;
+  outline-offset: 2px;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-img-wrapper:hover .hover-label {
+  opacity: 1;
+}
+
+.profile-img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.images-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.about-us-images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0;
+  height: fit-content;
+}
+
+
+.text-info-section {
+  background: rgb(241, 236, 227);
+  padding: 50px 70px;
+}
+
 
 .about-page-names {
   font-weight: 700;
