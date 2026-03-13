@@ -158,7 +158,7 @@ body {
 .card-front,
 .card-back {
   width: 100%;
-  aspect-ratio: 1 / 1; // has to be the same size as .back
+  aspect-ratio: 1 / 1;
   position: absolute;
   inset: 0;
   transition: opacity 0.3s ease;
@@ -168,11 +168,13 @@ body {
   opacity: 0;
 }
 
-.card:hover .card-front {
+.card:hover .card-front,
+.card:focus .card-front {
   opacity: 0;
 }
 
-.card:hover .card-back {
+.card:hover .card-back,
+.card:focus .card-back {
   opacity: 1;
 }
 
@@ -191,7 +193,7 @@ body {
 .back {
   position: absolute;
   width: 100%;
-  aspect-ratio: 1 / 1; // has to be the same size as .card-front, .card-back {...}
+  aspect-ratio: 1 / 1;
   box-sizing: border-box;
   background: #eee;
   color: #333;

@@ -61,5 +61,25 @@ export default function initHeader() {
     localStorage.removeItem("playerName");
     window.location.reload();
   }
+
+
+  const pageAudio: HTMLAudioElement | null = document.querySelector("#storeAudio");
+  document.querySelector('#storeAudio').volume = 0.05;
+  const audioBtn: HTMLButtonElement | null = document.querySelector("#audioBtn");
+
+  const iconOn = document.getElementById("audioIconOn");
+  const iconOff = document.getElementById("audioIconOff");
+
+  audioBtn.addEventListener("click", () => {
+  if (pageAudio.paused) {
+    pageAudio.play();
+    iconOn.classList.remove('hidden');
+    iconOff.classList.add('hidden');
+    } else {
+    pageAudio.pause();
+    iconOff.classList.remove('hidden');
+    iconOn.classList.add('hidden');
+    }
+  });
 }
 
