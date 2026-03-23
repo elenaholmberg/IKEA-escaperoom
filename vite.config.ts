@@ -9,7 +9,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/elenaholmberg/IKEA-escaperoom',
+  base: 'elenaholmberg/IKEA-escaperoom',
   build: {
     outDir: 'dist',
   },
