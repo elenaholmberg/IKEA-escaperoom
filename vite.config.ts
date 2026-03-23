@@ -6,11 +6,11 @@
  * base: "/fed25d-js-intro-grupparbete-the-vorticon-vikings/" gör att sökvägar fungerar på GitHub Pages för detta repo.
  */
 
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: "/fed25d-js-intro-grupparbete-the-vorticon-vikings/",
+  base: 'ikea-escaperoom',
   build: {
-    outDir: "dist",
+    outDir: 'dist',
   },
 });
