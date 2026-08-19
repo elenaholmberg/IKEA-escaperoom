@@ -1,4 +1,4 @@
-# IKEA Escape Room - https://elenaholmberg.github.io/IKEA-escaperoom/
+# IKEA Escape Room - ## https://elenaholmberg.github.io/IKEA-escaperoom/
 
 ## About the project
 
